@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E78AD29057914D5FE1AE3BD /* Pods_BannerExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A136731739860311D78B32DA /* Pods_BannerExample.framework */; };
+		547F96AB2582244300F84DA5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 547F96AA2582244300F84DA5 /* AppDelegate.m */; };
+		547F96B12582244300F84DA5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 547F96B02582244300F84DA5 /* ViewController.m */; };
+		547F96B42582244300F84DA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547F96B22582244300F84DA5 /* Main.storyboard */; };
+		547F96B62582244700F84DA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547F96B52582244700F84DA5 /* Assets.xcassets */; };
+		547F96B92582244700F84DA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547F96B72582244700F84DA5 /* LaunchScreen.storyboard */; };
+		547F96BC2582244700F84DA5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 547F96BB2582244700F84DA5 /* main.m */; };
+		5486033825876C2C00BD1D6E /* OGMThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5486032B25876C2C00BD1D6E /* OGMThumbnailView.m */; };
+		5486033925876C2C00BD1D6E /* OguryAdsMoPubEventBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5486032D25876C2C00BD1D6E /* OguryAdsMoPubEventBanner.m */; };
+		5486033A25876C2C00BD1D6E /* OguryAdsMoPubEventInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = 5486032E25876C2C00BD1D6E /* OguryAdsMoPubEventInterstitial.m */; };
+		5486033B25876C2C00BD1D6E /* OguryAdsMoPubEventOptin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5486033125876C2C00BD1D6E /* OguryAdsMoPubEventOptin.m */; };
+		5486033C25876C2C00BD1D6E /* OguryAdsMoPubEventThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = 5486033425876C2C00BD1D6E /* OguryAdsMoPubEventThumbnail.m */; };
+		5486033D25876C2C00BD1D6E /* OguryAdsAdapterConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5486033725876C2C00BD1D6E /* OguryAdsAdapterConfiguration.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		547F96A62582244300F84DA5 /* BannerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BannerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		547F96A92582244300F84DA5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		547F96AA2582244300F84DA5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		547F96AF2582244300F84DA5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		547F96B02582244300F84DA5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		547F96B32582244300F84DA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		547F96B52582244700F84DA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		547F96B82582244700F84DA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		547F96BA2582244700F84DA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		547F96BB2582244700F84DA5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5486032B25876C2C00BD1D6E /* OGMThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGMThumbnailView.m; sourceTree = "<group>"; };
+		5486032C25876C2C00BD1D6E /* OGMThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGMThumbnailView.h; sourceTree = "<group>"; };
+		5486032D25876C2C00BD1D6E /* OguryAdsMoPubEventBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsMoPubEventBanner.m; sourceTree = "<group>"; };
+		5486032E25876C2C00BD1D6E /* OguryAdsMoPubEventInterstitial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsMoPubEventInterstitial.m; sourceTree = "<group>"; };
+		5486032F25876C2C00BD1D6E /* OguryAdsMoPubEventThumbnail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsMoPubEventThumbnail.h; sourceTree = "<group>"; };
+		5486033025876C2C00BD1D6E /* OguryAdsAdapterConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsAdapterConfiguration.h; sourceTree = "<group>"; };
+		5486033125876C2C00BD1D6E /* OguryAdsMoPubEventOptin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsMoPubEventOptin.m; sourceTree = "<group>"; };
+		5486033225876C2C00BD1D6E /* MopubCustomEvents-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MopubCustomEvents-Bridging-Header.h"; sourceTree = "<group>"; };
+		5486033325876C2C00BD1D6E /* OguryAdsMoPubEventBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsMoPubEventBanner.h; sourceTree = "<group>"; };
+		5486033425876C2C00BD1D6E /* OguryAdsMoPubEventThumbnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsMoPubEventThumbnail.m; sourceTree = "<group>"; };
+		5486033525876C2C00BD1D6E /* OguryAdsMoPubEventInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsMoPubEventInterstitial.h; sourceTree = "<group>"; };
+		5486033625876C2C00BD1D6E /* OguryAdsMoPubEventOptin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsMoPubEventOptin.h; sourceTree = "<group>"; };
+		5486033725876C2C00BD1D6E /* OguryAdsAdapterConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsAdapterConfiguration.m; sourceTree = "<group>"; };
+		8CC1CCBF4607297D02B0E700 /* Pods-BannerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BannerExample.debug.xcconfig"; path = "Target Support Files/Pods-BannerExample/Pods-BannerExample.debug.xcconfig"; sourceTree = "<group>"; };
+		A136731739860311D78B32DA /* Pods_BannerExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BannerExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B94DD435E0A315921C660868 /* Pods-BannerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BannerExample.release.xcconfig"; path = "Target Support Files/Pods-BannerExample/Pods-BannerExample.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		547F96A32582244300F84DA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E78AD29057914D5FE1AE3BD /* Pods_BannerExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B9E445EA29478E34C311073 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A136731739860311D78B32DA /* Pods_BannerExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		547F969D2582244300F84DA5 = {
+			isa = PBXGroup;
+			children = (
+				5486032925876C2C00BD1D6E /* OguryAdsCustomEventsMoPub */,
+				547F96A82582244300F84DA5 /* BannerExample */,
+				547F96A72582244300F84DA5 /* Products */,
+				931D3DEF4666AFAF890D2FCD /* Pods */,
+				3B9E445EA29478E34C311073 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		547F96A72582244300F84DA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				547F96A62582244300F84DA5 /* BannerExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		547F96A82582244300F84DA5 /* BannerExample */ = {
+			isa = PBXGroup;
+			children = (
+				547F96A92582244300F84DA5 /* AppDelegate.h */,
+				547F96AA2582244300F84DA5 /* AppDelegate.m */,
+				547F96AF2582244300F84DA5 /* ViewController.h */,
+				547F96B02582244300F84DA5 /* ViewController.m */,
+				547F96B22582244300F84DA5 /* Main.storyboard */,
+				547F96B52582244700F84DA5 /* Assets.xcassets */,
+				547F96B72582244700F84DA5 /* LaunchScreen.storyboard */,
+				547F96BA2582244700F84DA5 /* Info.plist */,
+				547F96BB2582244700F84DA5 /* main.m */,
+			);
+			path = BannerExample;
+			sourceTree = "<group>";
+		};
+		5486032925876C2C00BD1D6E /* OguryAdsCustomEventsMoPub */ = {
+			isa = PBXGroup;
+			children = (
+				5486032A25876C2C00BD1D6E /* Thumbnail */,
+				5486032D25876C2C00BD1D6E /* OguryAdsMoPubEventBanner.m */,
+				5486032E25876C2C00BD1D6E /* OguryAdsMoPubEventInterstitial.m */,
+				5486032F25876C2C00BD1D6E /* OguryAdsMoPubEventThumbnail.h */,
+				5486033025876C2C00BD1D6E /* OguryAdsAdapterConfiguration.h */,
+				5486033125876C2C00BD1D6E /* OguryAdsMoPubEventOptin.m */,
+				5486033225876C2C00BD1D6E /* MopubCustomEvents-Bridging-Header.h */,
+				5486033325876C2C00BD1D6E /* OguryAdsMoPubEventBanner.h */,
+				5486033425876C2C00BD1D6E /* OguryAdsMoPubEventThumbnail.m */,
+				5486033525876C2C00BD1D6E /* OguryAdsMoPubEventInterstitial.h */,
+				5486033625876C2C00BD1D6E /* OguryAdsMoPubEventOptin.h */,
+				5486033725876C2C00BD1D6E /* OguryAdsAdapterConfiguration.m */,
+			);
+			path = OguryAdsCustomEventsMoPub;
+			sourceTree = "<group>";
+		};
+		5486032A25876C2C00BD1D6E /* Thumbnail */ = {
+			isa = PBXGroup;
+			children = (
+				5486032B25876C2C00BD1D6E /* OGMThumbnailView.m */,
+				5486032C25876C2C00BD1D6E /* OGMThumbnailView.h */,
+			);
+			path = Thumbnail;
+			sourceTree = "<group>";
+		};
+		931D3DEF4666AFAF890D2FCD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8CC1CCBF4607297D02B0E700 /* Pods-BannerExample.debug.xcconfig */,
+				B94DD435E0A315921C660868 /* Pods-BannerExample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		547F96A52582244300F84DA5 /* BannerExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 547F96BF2582244700F84DA5 /* Build configuration list for PBXNativeTarget "BannerExample" */;
+			buildPhases = (
+				BC676A56AEB124CC25CFCA50 /* [CP] Check Pods Manifest.lock */,
+				547F96A22582244300F84DA5 /* Sources */,
+				547F96A32582244300F84DA5 /* Frameworks */,
+				547F96A42582244300F84DA5 /* Resources */,
+				CD0B8EB1B91541BAE7C39D94 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BannerExample;
+			productName = BannerExample;
+			productReference = 547F96A62582244300F84DA5 /* BannerExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		547F969E2582244300F84DA5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					547F96A52582244300F84DA5 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+				};
+			};
+			buildConfigurationList = 547F96A12582244300F84DA5 /* Build configuration list for PBXProject "BannerExample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 547F969D2582244300F84DA5;
+			productRefGroup = 547F96A72582244300F84DA5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				547F96A52582244300F84DA5 /* BannerExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		547F96A42582244300F84DA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				547F96B92582244700F84DA5 /* LaunchScreen.storyboard in Resources */,
+				547F96B62582244700F84DA5 /* Assets.xcassets in Resources */,
+				547F96B42582244300F84DA5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BC676A56AEB124CC25CFCA50 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BannerExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD0B8EB1B91541BAE7C39D94 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BannerExample/Pods-BannerExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BannerExample/Pods-BannerExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BannerExample/Pods-BannerExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		547F96A22582244300F84DA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5486033925876C2C00BD1D6E /* OguryAdsMoPubEventBanner.m in Sources */,
+				547F96B12582244300F84DA5 /* ViewController.m in Sources */,
+				5486033B25876C2C00BD1D6E /* OguryAdsMoPubEventOptin.m in Sources */,
+				547F96AB2582244300F84DA5 /* AppDelegate.m in Sources */,
+				5486033D25876C2C00BD1D6E /* OguryAdsAdapterConfiguration.m in Sources */,
+				547F96BC2582244700F84DA5 /* main.m in Sources */,
+				5486033A25876C2C00BD1D6E /* OguryAdsMoPubEventInterstitial.m in Sources */,
+				5486033825876C2C00BD1D6E /* OGMThumbnailView.m in Sources */,
+				5486033C25876C2C00BD1D6E /* OguryAdsMoPubEventThumbnail.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		547F96B22582244300F84DA5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				547F96B32582244300F84DA5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		547F96B72582244700F84DA5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				547F96B82582244700F84DA5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		547F96BD2582244700F84DA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		547F96BE2582244700F84DA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		547F96C02582244700F84DA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8CC1CCBF4607297D02B0E700 /* Pods-BannerExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BannerExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ogury.ios.sampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		547F96C12582244700F84DA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B94DD435E0A315921C660868 /* Pods-BannerExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BannerExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ogury.ios.sampleApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		547F96A12582244300F84DA5 /* Build configuration list for PBXProject "BannerExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				547F96BD2582244700F84DA5 /* Debug */,
+				547F96BE2582244700F84DA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		547F96BF2582244700F84DA5 /* Build configuration list for PBXNativeTarget "BannerExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				547F96C02582244700F84DA5 /* Debug */,
+				547F96C12582244700F84DA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 547F969E2582244300F84DA5 /* Project object */;
+}
