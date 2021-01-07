@@ -5,19 +5,19 @@ Here you can find integration samples for Ogury Ads and Ogury Choice Manager SDK
 ## Available Sample Apps
 Direct Integration:
 - [x] Interstitial-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/Direct%20Integration/InterstitialExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/Direct%20Integration/InterstitialExample)
-- [x] Opt-In Video-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/Direct%20Integration/OptInVideoExamplee)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/Direct%20Integration/OptInVideoExample)
+- [x] Opt-In Video-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/Direct%20Integration/OptInVideoExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/Direct%20Integration/OptInVideoExample)
 - [x] Thumbnail-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/Direct%20Integration/ThumbnailExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/Direct%20Integration/ThumbnailExample)
 - [x] Banner-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/Direct%20Integration/BannerExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/Direct%20Integration/BannerExample)
 
 Google AdMob Integration:
 - [x] Interstitial-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/AdMob%20Mediation/InterstitialExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/AdMob%20Mediation/InterstitialExample)
-- [x] Opt-In Video-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/AdMob%20Mediation/OptInVideoExamplee)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/AdMob%20Mediation/OptInVideoExample)
+- [x] Opt-In Video-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/AdMob%20Mediation/OptInVideoExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/AdMob%20Mediation/OptInVideoExample)
 - [x] Thumbnail-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/AdMob%20Mediation/ThumbnailExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/AdMob%20Mediation/ThumbnailExample)
 - [x] Banner-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/AdMob%20Mediation/BannerExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/AdMob%20Mediation/BannerExample)
 
-Google AdMob Integration:
+MoPub Integration:
 - [x] Interstitial-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/MoPub%20Mediation/InterstitialExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/MoPub%20Mediation/InterstitialExample)
-- [x] Opt-In Video-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/MoPub%20Mediation/OptInVideoExamplee)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/MoPub%20Mediation/OptInVideoExample)
+- [x] Opt-In Video-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/MoPub%20Mediation/OptInVideoExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/MoPub%20Mediation/OptInVideoExample)
 - [x] Thumbnail-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/MoPub%20Mediation/ThumbnailExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/MoPub%20Mediation/ThumbnailExample)
 - [x] Banner-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/MoPub%20Mediation/BannerExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/MoPub%20Mediation/BannerExample)
 ## Requirements
