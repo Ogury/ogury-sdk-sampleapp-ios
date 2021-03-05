@@ -1,0 +1,24 @@
+PODS:
+  - AppNexusSDK (7.9):
+    - AppNexusSDK/AppNexusSDK (= 7.9)
+  - AppNexusSDK/AppNexusSDK (7.9)
+  - OguryAds (2.3.3):
+    - OguryAds/OMID (= 2.3.3)
+  - OguryAds/OMID (2.3.3)
+
+DEPENDENCIES:
+  - AppNexusSDK
+  - OguryAds
+
+SPEC REPOS:
+  trunk:
+    - AppNexusSDK
+    - OguryAds
+
+SPEC CHECKSUMS:
+  AppNexusSDK: 43e44140cccb4521b547fc3e9d2750679a6f9c2a
+  OguryAds: d2e6adcbf5825b6a1467e2c56ed75b31afeca32a
+
+PODFILE CHECKSUM: 3c063ef016615ecfa0dbff2403a739324d842b64
+
+COCOAPODS: 1.10.1

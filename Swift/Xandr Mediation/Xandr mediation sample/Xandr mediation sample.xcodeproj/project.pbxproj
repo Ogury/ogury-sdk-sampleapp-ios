@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC7976221575C4377D9EF51A /* Pods_Xandr_mediation_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F495F10D44BAF83621DA9CB5 /* Pods_Xandr_mediation_sample.framework */; };
+		C94F963725F2871D009D3F6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F963625F2871D009D3F6F /* AppDelegate.swift */; };
+		C94F963B25F2871D009D3F6F /* InterstitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F963A25F2871D009D3F6F /* InterstitialViewController.swift */; };
+		C94F963E25F2871D009D3F6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94F963C25F2871D009D3F6F /* Main.storyboard */; };
+		C94F964025F2871E009D3F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C94F963F25F2871E009D3F6F /* Assets.xcassets */; };
+		C94F964325F2871E009D3F6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C94F964125F2871E009D3F6F /* LaunchScreen.storyboard */; };
+		C94F966525F287CF009D3F6F /* OguryAdsXandrCustomEventInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = C94F965F25F287CE009D3F6F /* OguryAdsXandrCustomEventInterstitial.m */; };
+		C94F966625F287CF009D3F6F /* OguryAdsXandrCustomEventShared.m in Sources */ = {isa = PBXBuildFile; fileRef = C94F966025F287CE009D3F6F /* OguryAdsXandrCustomEventShared.m */; };
+		C94F966725F287CF009D3F6F /* OguryAdsXandrCustomEventBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = C94F966225F287CE009D3F6F /* OguryAdsXandrCustomEventBanner.m */; };
+		C94F966E25F28A36009D3F6F /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94F966D25F28A36009D3F6F /* BannerViewController.swift */; };
+		C94F967925F28F69009D3F6F /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C94F967825F28F69009D3F6F /* Config.xcconfig */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		75FEFC304B3608CAE342AB90 /* Pods-Xandr mediation sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xandr mediation sample.release.xcconfig"; path = "Target Support Files/Pods-Xandr mediation sample/Pods-Xandr mediation sample.release.xcconfig"; sourceTree = "<group>"; };
+		BAD61C885FD3C574CB7923F2 /* Pods-Xandr mediation sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xandr mediation sample.debug.xcconfig"; path = "Target Support Files/Pods-Xandr mediation sample/Pods-Xandr mediation sample.debug.xcconfig"; sourceTree = "<group>"; };
+		C94F963325F2871C009D3F6F /* Xandr mediation sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Xandr mediation sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C94F963625F2871D009D3F6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C94F963A25F2871D009D3F6F /* InterstitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialViewController.swift; sourceTree = "<group>"; };
+		C94F963D25F2871D009D3F6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C94F963F25F2871E009D3F6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C94F964225F2871E009D3F6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C94F964425F2871E009D3F6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C94F965E25F287CE009D3F6F /* OguryAdsXandrCustomEventShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsXandrCustomEventShared.h; sourceTree = "<group>"; };
+		C94F965F25F287CE009D3F6F /* OguryAdsXandrCustomEventInterstitial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsXandrCustomEventInterstitial.m; sourceTree = "<group>"; };
+		C94F966025F287CE009D3F6F /* OguryAdsXandrCustomEventShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsXandrCustomEventShared.m; sourceTree = "<group>"; };
+		C94F966125F287CE009D3F6F /* OguryAdsXandrCustomEventInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsXandrCustomEventInterstitial.h; sourceTree = "<group>"; };
+		C94F966225F287CE009D3F6F /* OguryAdsXandrCustomEventBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsXandrCustomEventBanner.m; sourceTree = "<group>"; };
+		C94F966325F287CE009D3F6F /* sdk-mediation-xandr-ios-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "sdk-mediation-xandr-ios-Bridging-Header.h"; sourceTree = "<group>"; };
+		C94F966425F287CE009D3F6F /* OguryAdsXandrCustomEventBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsXandrCustomEventBanner.h; sourceTree = "<group>"; };
+		C94F966D25F28A36009D3F6F /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
+		C94F967825F28F69009D3F6F /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		F495F10D44BAF83621DA9CB5 /* Pods_Xandr_mediation_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xandr_mediation_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C94F963025F2871C009D3F6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC7976221575C4377D9EF51A /* Pods_Xandr_mediation_sample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C55E528F06255B3D3CC933E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F495F10D44BAF83621DA9CB5 /* Pods_Xandr_mediation_sample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C94F962A25F2871C009D3F6F = {
+			isa = PBXGroup;
+			children = (
+				C94F963525F2871D009D3F6F /* Xandr mediation sample */,
+				C94F963425F2871C009D3F6F /* Products */,
+				DC0788B635AAF58B5D6AE16C /* Pods */,
+				C55E528F06255B3D3CC933E4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C94F963425F2871C009D3F6F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C94F963325F2871C009D3F6F /* Xandr mediation sample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C94F963525F2871D009D3F6F /* Xandr mediation sample */ = {
+			isa = PBXGroup;
+			children = (
+				C94F967825F28F69009D3F6F /* Config.xcconfig */,
+				C94F966925F287DC009D3F6F /* OguryAdsXandrCustomEvent */,
+				C94F963625F2871D009D3F6F /* AppDelegate.swift */,
+				C94F963A25F2871D009D3F6F /* InterstitialViewController.swift */,
+				C94F966D25F28A36009D3F6F /* BannerViewController.swift */,
+				C94F963C25F2871D009D3F6F /* Main.storyboard */,
+				C94F963F25F2871E009D3F6F /* Assets.xcassets */,
+				C94F964125F2871E009D3F6F /* LaunchScreen.storyboard */,
+				C94F964425F2871E009D3F6F /* Info.plist */,
+			);
+			path = "Xandr mediation sample";
+			sourceTree = "<group>";
+		};
+		C94F966925F287DC009D3F6F /* OguryAdsXandrCustomEvent */ = {
+			isa = PBXGroup;
+			children = (
+				C94F966325F287CE009D3F6F /* sdk-mediation-xandr-ios-Bridging-Header.h */,
+				C94F966425F287CE009D3F6F /* OguryAdsXandrCustomEventBanner.h */,
+				C94F966225F287CE009D3F6F /* OguryAdsXandrCustomEventBanner.m */,
+				C94F966125F287CE009D3F6F /* OguryAdsXandrCustomEventInterstitial.h */,
+				C94F965F25F287CE009D3F6F /* OguryAdsXandrCustomEventInterstitial.m */,
+				C94F965E25F287CE009D3F6F /* OguryAdsXandrCustomEventShared.h */,
+				C94F966025F287CE009D3F6F /* OguryAdsXandrCustomEventShared.m */,
+			);
+			path = OguryAdsXandrCustomEvent;
+			sourceTree = "<group>";
+		};
+		DC0788B635AAF58B5D6AE16C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BAD61C885FD3C574CB7923F2 /* Pods-Xandr mediation sample.debug.xcconfig */,
+				75FEFC304B3608CAE342AB90 /* Pods-Xandr mediation sample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C94F963225F2871C009D3F6F /* Xandr mediation sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C94F964725F2871E009D3F6F /* Build configuration list for PBXNativeTarget "Xandr mediation sample" */;
+			buildPhases = (
+				8D2139ACE5C2DACE1788D32F /* [CP] Check Pods Manifest.lock */,
+				C94F962F25F2871C009D3F6F /* Sources */,
+				C94F963025F2871C009D3F6F /* Frameworks */,
+				C94F963125F2871C009D3F6F /* Resources */,
+				A358925E6BC6C988858F816C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Xandr mediation sample";
+			productName = "Xandr mediation sample";
+			productReference = C94F963325F2871C009D3F6F /* Xandr mediation sample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C94F962B25F2871C009D3F6F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					C94F963225F2871C009D3F6F = {
+						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1200;
+					};
+				};
+			};
+			buildConfigurationList = C94F962E25F2871C009D3F6F /* Build configuration list for PBXProject "Xandr mediation sample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C94F962A25F2871C009D3F6F;
+			productRefGroup = C94F963425F2871C009D3F6F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C94F963225F2871C009D3F6F /* Xandr mediation sample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C94F963125F2871C009D3F6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C94F967925F28F69009D3F6F /* Config.xcconfig in Resources */,
+				C94F964325F2871E009D3F6F /* LaunchScreen.storyboard in Resources */,
+				C94F964025F2871E009D3F6F /* Assets.xcassets in Resources */,
+				C94F963E25F2871D009D3F6F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8D2139ACE5C2DACE1788D32F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Xandr mediation sample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A358925E6BC6C988858F816C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Xandr mediation sample/Pods-Xandr mediation sample-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Xandr mediation sample/Pods-Xandr mediation sample-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Xandr mediation sample/Pods-Xandr mediation sample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C94F962F25F2871C009D3F6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C94F963B25F2871D009D3F6F /* InterstitialViewController.swift in Sources */,
+				C94F966525F287CF009D3F6F /* OguryAdsXandrCustomEventInterstitial.m in Sources */,
+				C94F966625F287CF009D3F6F /* OguryAdsXandrCustomEventShared.m in Sources */,
+				C94F963725F2871D009D3F6F /* AppDelegate.swift in Sources */,
+				C94F966725F287CF009D3F6F /* OguryAdsXandrCustomEventBanner.m in Sources */,
+				C94F966E25F28A36009D3F6F /* BannerViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C94F963C25F2871D009D3F6F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C94F963D25F2871D009D3F6F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C94F964125F2871E009D3F6F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C94F964225F2871E009D3F6F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C94F964525F2871E009D3F6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C94F964625F2871E009D3F6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C94F964825F2871E009D3F6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAD61C885FD3C574CB7923F2 /* Pods-Xandr mediation sample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W7JZNL3R6G;
+				INFOPLIST_FILE = "Xandr mediation sample/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lachainemeteo.appli;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Xandr mediation sample/Xandr mediation sample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C94F964925F2871E009D3F6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75FEFC304B3608CAE342AB90 /* Pods-Xandr mediation sample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W7JZNL3R6G;
+				INFOPLIST_FILE = "Xandr mediation sample/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lachainemeteo.appli;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Xandr mediation sample/Xandr mediation sample-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C94F962E25F2871C009D3F6F /* Build configuration list for PBXProject "Xandr mediation sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C94F964525F2871E009D3F6F /* Debug */,
+				C94F964625F2871E009D3F6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C94F964725F2871E009D3F6F /* Build configuration list for PBXNativeTarget "Xandr mediation sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C94F964825F2871E009D3F6F /* Debug */,
+				C94F964925F2871E009D3F6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C94F962B25F2871C009D3F6F /* Project object */;
+}

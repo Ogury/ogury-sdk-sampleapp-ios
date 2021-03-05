@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EXn-yK-vE6">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Interstitial View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="InterstitialViewController" customModule="Xandr_mediation_sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JD-sR-rwL">
+                                <rect key="frame" x="154" y="230" width="106" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ks5-Yz-tNR"/>
+                                    <constraint firstAttribute="width" constant="106" id="Yn6-gy-wsy"/>
+                                </constraints>
+                                <state key="normal" title="Load Interstitial"/>
+                                <connections>
+                                    <action selector="loadInter" destination="BYZ-38-t0r" eventType="touchUpInside" id="OKm-cC-oug"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5B-if-Tqf">
+                                <rect key="frame" x="152" y="268" width="110" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="AaM-QL-D1A"/>
+                                    <constraint firstAttribute="height" constant="30" id="dvX-6q-iW8"/>
+                                </constraints>
+                                <state key="normal" title="Show Interstitial"/>
+                                <connections>
+                                    <action selector="ShowInter" destination="BYZ-38-t0r" eventType="touchUpInside" id="oU0-U3-NiA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="h5B-if-Tqf" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7r6-cF-drD"/>
+                            <constraint firstItem="h5B-if-Tqf" firstAttribute="top" secondItem="5JD-sR-rwL" secondAttribute="bottom" constant="8" id="C6u-q6-sJH"/>
+                            <constraint firstItem="5JD-sR-rwL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pBn-OF-iDa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Syq-lP-ZFB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16" y="89"/>
+        </scene>
+        <!--Banner View Controller-->
+        <scene sceneID="lQ1-cB-Xdu">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="EXn-yK-vE6" customClass="BannerViewController" customModule="Xandr_mediation_sample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qfx-Au-O41">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6e-w2-G1C">
+                                <rect key="frame" x="171.5" y="154" width="71" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="Gt1-rf-fwN"/>
+                                    <constraint firstAttribute="height" constant="30" id="TFJ-Ej-J10"/>
+                                </constraints>
+                                <state key="normal" title="Load MPU"/>
+                                <connections>
+                                    <action selector="loadmpu" destination="EXn-yK-vE6" eventType="touchUpInside" id="t9I-Wz-8GO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BdM-w9-3Ag">
+                                <rect key="frame" x="163.5" y="192" width="87" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8xj-x8-sKk"/>
+                                    <constraint firstAttribute="width" constant="87" id="ltO-br-xMa"/>
+                                </constraints>
+                                <state key="normal" title="Load Banner"/>
+                                <connections>
+                                    <action selector="loadBanner" destination="EXn-yK-vE6" eventType="touchUpInside" id="bcb-gT-iWu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pZg-dI-89g"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BdM-w9-3Ag" firstAttribute="top" secondItem="U6e-w2-G1C" secondAttribute="bottom" constant="8" id="9bI-Uw-QPP"/>
+                            <constraint firstItem="U6e-w2-G1C" firstAttribute="centerX" secondItem="pZg-dI-89g" secondAttribute="centerX" id="CBW-CG-os8"/>
+                            <constraint firstItem="BdM-w9-3Ag" firstAttribute="centerX" secondItem="pZg-dI-89g" secondAttribute="centerX" id="lZZ-hb-mDT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jqW-9h-irk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fYL-22-fsS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="762" y="88"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  sdk-mediation-xandr-ios
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// Versioning
+MARKETING_VERSION = 0.0.1
+BUNDLE_VERSION = 1
