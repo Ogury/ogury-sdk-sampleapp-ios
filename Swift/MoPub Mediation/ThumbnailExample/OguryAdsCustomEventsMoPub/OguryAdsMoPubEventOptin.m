@@ -21,14 +21,24 @@
 
 - (void)requestAdWithAdapterInfo:(NSDictionary *)info adMarkup:(NSString *)adMarkup {
     NSString *assetKey = [info objectForKey:@"asset_key"];
-    if (assetKey != nil) {
-        [[OguryAds shared]setupWithAssetKey:assetKey];
+    if (!assetKey || [assetKey isEqualToString:@""]) {
+        NSError *error = [NSError errorWithCode:MOPUBErrorSDKNotInitialized];
+        [self.delegate fullscreenAdAdapter:self didFailToLoadAdWithError:error];
+        return;
     }
-    [[OguryAds shared] defineMediationName:@"MoPub"];
-    NSString *adunitId = [info objectForKey:@"ad_unit_id"];
-    self.optinVideo = [[OguryAdsOptinVideo alloc] initWithAdUnitID:adunitId];
-    self.optinVideo.optInVideoDelegate = self;
-    [self.optinVideo load];
+    [[OguryAds shared]setupWithAssetKey:assetKey andCompletionHandler:^(NSError *error) {
+        if (error) {
+            NSError *error = [NSError errorWithCode:MOPUBErrorSDKNotInitialized];
+            [self.delegate fullscreenAdAdapter:self didFailToLoadAdWithError:error];
+            return;
+        }
+        [[OguryAds shared] defineMediationName:@"MoPub"];
+        NSString *adunitId = [info objectForKey:@"ad_unit_id"];
+        self.optinVideo = [[OguryAdsOptinVideo alloc] initWithAdUnitID:adunitId];
+        self.optinVideo.optInVideoDelegate = self;
+        [self.optinVideo load];
+        
+    }];
 }
 
 - (BOOL)isRewardExpected{
@@ -57,6 +67,8 @@
 - (void)oguryAdsOptinVideoAdClosed {
     [self.delegate fullscreenAdAdapterAdWillDisappear:self];
     [self.delegate fullscreenAdAdapterAdDidDisappear:self];
+    [self.delegate fullscreenAdAdapterAdWillDismiss:self];
+    [self.delegate fullscreenAdAdapterAdDidDismiss:self];
 }
 
 - (void)oguryAdsOptinVideoAdDisplayed {
@@ -93,7 +105,7 @@
     if (item.rewardValue != nil && ![item.rewardValue isEqualToString:@""]) {
         amount = item.rewardValue.integerValue;
     }
-    MPRewardedVideoReward *reward = [[MPRewardedVideoReward alloc] initWithCurrencyType:currencyType amount:@(amount)];
+    MPReward *reward = [[MPReward alloc] initWithCurrencyType:currencyType amount:@(amount)];
     [self.delegate fullscreenAdAdapter:self willRewardUser:reward];
 }
 

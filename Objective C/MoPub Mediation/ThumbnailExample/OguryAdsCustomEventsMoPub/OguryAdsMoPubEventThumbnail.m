@@ -38,24 +38,27 @@ static NSString * const OGMThumbnailAdBlacklist = @"blacklist";
 }
 
 - (void)requestAdWithSize:(CGSize)size adapterInfo:(NSDictionary *)info adMarkup:(NSString *)adMarkup {
-    NSString *assetKey = [info objectForKey:OGMThumbnailAdAssetKey];
-    if (assetKey != nil) {
-        [[OguryAds shared]setupWithAssetKey:assetKey];
-    }
-    [[OguryAds shared] defineMediationName:@"MoPub"];
-    NSString *adunitId = [info objectForKey:OGMThumbnailAdAdUnitId];
-    
-    self.thumbnail = [[OguryAdsThumbnailAd alloc] initWithAdUnitID:adunitId];
-    self.thumbnail.thumbnailAdDelegate = self;
-    self.thumbnailView = [self createViewWithThumbnail:self.thumbnail];
-    if (!self.thumbnailView) {
+    NSString *assetKey = [info objectForKey:@"asset_key"];
+    if (!assetKey || [assetKey isEqualToString:@""]) {
         NSError *error = [NSError errorWithCode:MOPUBErrorAdapterFailedToLoadAd];
         [self.delegate inlineAdAdapter:self didFailToLoadAdWithError:error];
         return;
     }
-    
-    [self configureWhitelistAndBlacklist];
-    [self load:self.thumbnail size:size];
+    [[OguryAds shared]setupWithAssetKey:assetKey andCompletionHandler:^(NSError *error) {
+        if (error) {
+            NSError *error = [NSError errorWithCode:MOPUBErrorAdapterFailedToLoadAd];
+            [self.delegate inlineAdAdapter:self didFailToLoadAdWithError:error];
+            return;
+        }
+        [[OguryAds shared] defineMediationName:@"MoPub"];
+        NSString *adunitId = [info objectForKey:OGMThumbnailAdAdUnitId];
+        self.thumbnail = [[OguryAdsThumbnailAd alloc] initWithAdUnitID:adunitId];
+        self.thumbnail.thumbnailAdDelegate = self;
+        self.thumbnailView = [self createViewWithThumbnail:self.thumbnail];
+        [self configureWhitelistAndBlacklist];
+        [self load:self.thumbnail size:size];
+        
+    }];
 }
 
 - (OGMThumbnailView *)createViewWithThumbnail:(OguryAdsThumbnailAd *)thumbnail {
@@ -128,7 +131,7 @@ static NSString * const OGMThumbnailAdBlacklist = @"blacklist";
     
     id objectBlacklist = self.localExtras[OGMThumbnailAdBlacklist];
     if (objectBlacklist && [objectBlacklist isKindOfClass:[NSArray class]]) {
-        [self.thumbnail setBlacklistViewControllers:(NSArray *)objectBlacklist];
+        [self.thumbnail setWhitelistBundleIdentifiers:(NSArray *)objectBlacklist];
     } else if (objectBlacklist) {
         NSLog(@"Missing or invalid extra '%@' to configure Thumbnail ad.", OGMThumbnailAdBlacklist);
     }

@@ -2,11 +2,11 @@
 //  ViewController.swift
 //  ThumbnailExample
 //
-//  Copyright © 2020 Ogury Co. All rights reserved.
+//  Copyright © 2021 Ogury Co. All rights reserved.
 //
 
 import UIKit
-import MoPub
+import MoPubSDK
 import OguryChoiceManager
 
 class ViewController: UIViewController {
@@ -20,7 +20,6 @@ class ViewController: UIViewController {
         self.statusLabel.text = "Choice Manager Loading..."
         
         //The setup of Ogury Choice Manager is done AppDelegate.swift file.
-        
         OguryChoiceManager.shared().ask(with: self) { (error, answer) in
             if error == nil {
                 switch answer {
@@ -45,10 +44,8 @@ class ViewController: UIViewController {
         }
     }
 
-    
     @IBAction func loadAdBtnPressed(_ sender: Any) {
         self.statusLabel.text = "Loading Ad..."
-        
         interstitial = MPInterstitialAdController(forAdUnitId: "de5cb2a3b2bc4d5cb6c97a89be556a6f")
         guard let interstitial = interstitial else {
             self.statusLabel.text = "Error while initialising the ad"
@@ -67,10 +64,10 @@ class ViewController: UIViewController {
             interstitial.show(from: self)
         }
     }
-    
 }
 
 extension ViewController:MPInterstitialAdControllerDelegate {
+    
     func interstitialDidLoadAd(_ interstitial: MPInterstitialAdController!) {
         self.statusLabel.text = "Ad received"
         self.adLoaded = true
@@ -80,16 +77,17 @@ extension ViewController:MPInterstitialAdControllerDelegate {
         self.statusLabel.text = "Error: \(error.debugDescription)"
         self.adLoaded = false
     }
+    
     func interstitialDidAppear(_ interstitial: MPInterstitialAdController!) {
         print("interstitialDidAppear")
     }
+    
     func interstitialDidDisappear(_ interstitial: MPInterstitialAdController!) {
         self.statusLabel.text = "Ad not loaded"
         self.adLoaded = false
     }
+    
     func interstitialDidReceiveTapEvent(_ interstitial: MPInterstitialAdController!) {
         print("interstitialDidReceiveTapEvent")
     }
-    
 }
-

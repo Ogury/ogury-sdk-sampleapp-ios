@@ -7,7 +7,7 @@
 
 #import "ViewController.h"
 #import <OguryChoiceManager/OguryChoiceManager.h>
-#import <MoPub/MoPub.h>
+#import <MoPubSDK/MoPub.h>
 
 @interface ViewController () <MPInterstitialAdControllerDelegate>
 
@@ -64,7 +64,6 @@
         self.statusLabel.text = @"Ad requested to show";
         [self.interstitial showFromViewController:self];
     }
-    
 }
 
 #pragma mark - MoPub Delegate
@@ -81,7 +80,7 @@
     NSLog(@"interstitialDidAppear");
 }
 
-- (void)interstitialDidDisappear:(MPInterstitialAdController *)interstitial {
+- (void)interstitialDidDismiss:(MPInterstitialAdController *)interstitial {
     self.statusLabel.text = @"Ad not loaded";
     self.isAdLoaded = NO;
 }

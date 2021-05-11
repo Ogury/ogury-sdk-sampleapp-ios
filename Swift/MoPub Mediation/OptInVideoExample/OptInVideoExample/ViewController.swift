@@ -2,11 +2,11 @@
 //  ViewController.swift
 //  OptinVideoExample
 //
-//  Copyright © 2020 Ogury Co. All rights reserved.
+//  Copyright © 2021 Ogury Co. All rights reserved.
 //
 
 import UIKit
-import MoPub
+import MoPubSDK
 import OguryChoiceManager
 
 class ViewController: UIViewController {
@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.statusLabel.text = "Choice Manager Loading..."
-        
         //The setup of Ogury Choice Manager is done AppDelegate.swift file.
         OguryChoiceManager.shared().ask(with: self) { (error, answer) in
             if error == nil {
@@ -42,45 +41,43 @@ class ViewController: UIViewController {
             }
         }
     }
-
     
     @IBAction func loadAdBtnPressed(_ sender: Any) {
         self.statusLabel.text = "Loading Ad..."
-        MPRewardedVideo.setDelegate(self, forAdUnitId: "ef93d42cfed24a23b76091f5ecb5c871")
-        MPRewardedVideo.loadAd(withAdUnitID: "ef93d42cfed24a23b76091f5ecb5c871", withMediationSettings: nil)
+        MPRewardedAds.setDelegate(self, forAdUnitId: "ef93d42cfed24a23b76091f5ecb5c871")
+        MPRewardedAds.loadRewardedAd(withAdUnitID: "ef93d42cfed24a23b76091f5ecb5c871", withMediationSettings: [])
     }
     
     @IBAction func showAdBtnPressed(_ sender: Any) {
         if adLoaded == true {
             self.statusLabel.text = "Ad requested to show"
-            MPRewardedVideo.presentAd(forAdUnitID: "ef93d42cfed24a23b76091f5ecb5c871", from: self, with: nil)
+            MPRewardedAds.presentRewardedAd(forAdUnitID: "ef93d42cfed24a23b76091f5ecb5c871", from: self, with: nil)
         }
     }
-    
 }
 
-extension ViewController:MPRewardedVideoDelegate {
+extension ViewController:MPRewardedAdsDelegate {
     
-    func rewardedVideoAdDidLoad(forAdUnitID adUnitID: String!) {
+    func rewardedAdDidLoad(forAdUnitID adUnitID: String!) {
         self.statusLabel.text = "Ad loaded"
         self.adLoaded = true
     }
-    func rewardedVideoAdDidFailToLoad(forAdUnitID adUnitID: String!, error: Error!) {
+    
+    func rewardedAdDidFailToLoad(forAdUnitID adUnitID: String!, error: Error!) {
         self.statusLabel.text = "Error: \(error.debugDescription)"
         self.adLoaded = false
     }
     
-    func rewardedVideoAdDidAppear(forAdUnitID adUnitID: String!) {
-        print("rewardedVideoAdDidAppear")
+    func rewardedAdDidPresent(forAdUnitID adUnitID: String!) {
+        print("rewardedAdDidPresent")
     }
     
-    func rewardedVideoAdDidDisappear(forAdUnitID adUnitID: String!) {
+    func rewardedAdDidDismiss(forAdUnitID adUnitID: String!) {
         self.statusLabel.text = "Ad not loaded"
         self.adLoaded = false
     }
     
-    func rewardedVideoAdShouldReward(forAdUnitID adUnitID: String!, reward: MPRewardedVideoReward!) {
+    func rewardedAdShouldReward(forAdUnitID adUnitID: String!, reward: MPReward!) {
         print("Reward received : Type : \(reward.currencyType ?? "No Curency") | Amount: \(reward.amount ?? 0)")
     }
 }
-

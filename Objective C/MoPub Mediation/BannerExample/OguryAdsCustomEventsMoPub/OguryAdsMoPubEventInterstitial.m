@@ -21,14 +21,24 @@
 
 - (void)requestAdWithAdapterInfo:(NSDictionary *)info adMarkup:(NSString *)adMarkup {
     NSString *assetKey = [info objectForKey:@"asset_key"];
-       if (assetKey != nil) {
-           [[OguryAds shared]setupWithAssetKey:assetKey];
-       }
-       [[OguryAds shared] defineMediationName:@"MoPub"];
-       NSString *adunitId = [info objectForKey:@"ad_unit_id"];
-       self.interstitial = [[OguryAdsInterstitial alloc] initWithAdUnitID:adunitId];
-       self.interstitial.interstitialDelegate = self;
-       [self.interstitial load];
+    if (!assetKey || [assetKey isEqualToString:@""]) {
+        NSError *error = [NSError errorWithCode:MOPUBErrorSDKNotInitialized];
+        [self.delegate fullscreenAdAdapter:self didFailToLoadAdWithError:error];
+        return;
+    }
+    [[OguryAds shared]setupWithAssetKey:assetKey andCompletionHandler:^(NSError *error) {
+        if (error) {
+            NSError *error = [NSError errorWithCode:MOPUBErrorSDKNotInitialized];
+            [self.delegate fullscreenAdAdapter:self didFailToLoadAdWithError:error];
+            return;
+        }
+        [[OguryAds shared] defineMediationName:@"MoPub"];
+        NSString *adunitId = [info objectForKey:@"ad_unit_id"];
+        self.interstitial = [[OguryAdsInterstitial alloc] initWithAdUnitID:adunitId];
+        self.interstitial.interstitialDelegate = self;
+        [self.interstitial load];
+        
+    }];
 }
 
 - (BOOL)isRewardExpected {
@@ -58,6 +68,8 @@
 - (void)oguryAdsInterstitialAdClosed {
     [self.delegate fullscreenAdAdapterAdWillDisappear:self];
     [self.delegate fullscreenAdAdapterAdDidDisappear:self];
+    [self.delegate fullscreenAdAdapterAdWillDismiss:self];
+    [self.delegate fullscreenAdAdapterAdDidDismiss:self];
 }
 
 - (void)oguryAdsInterstitialAdDisplayed {
@@ -71,7 +83,7 @@
 }
 
 - (void)oguryAdsInterstitialAdLoaded {
-   [self.delegate fullscreenAdAdapterDidLoadAd:self];
+    [self.delegate fullscreenAdAdapterDidLoadAd:self];
 }
 
 - (void)oguryAdsInterstitialAdNotAvailable {

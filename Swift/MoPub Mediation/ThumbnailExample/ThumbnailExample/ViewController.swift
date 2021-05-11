@@ -2,12 +2,12 @@
 //  ViewController.swift
 //  ThumbnailExample
 //
-//  Copyright © 2020 Ogury Co. All rights reserved.
+//  Copyright © 2021 Ogury Co. All rights reserved.
 //
 
 import UIKit
 import OguryChoiceManager
-import MoPub
+import MoPubSDK
 
 class ViewController: UIViewController {
     
@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.statusLabel.text = "Choice Manager Loading..."
-        
         //The setup of Ogury Choice Manager is done AppDelegate.swift file.
         OguryChoiceManager.shared().ask(with: self) { (error, answer) in
             if error == nil {
@@ -43,7 +42,6 @@ class ViewController: UIViewController {
             }
         }
     }
-
     
     @IBAction func loadAdBtnPressed(_ sender: Any) {
         statusLabel.text = "Loading Ad..."
@@ -51,7 +49,6 @@ class ViewController: UIViewController {
         thumbnail?.delegate = self;
         thumbnail?.maxAdSize = CGSize(width: 200, height: 200)
         thumbnail?.stopAutomaticallyRefreshingContents()
-        
         
         thumbnail?.localExtras = [
             "rect_corner": "bottom_right",
@@ -73,7 +70,6 @@ class ViewController: UIViewController {
             self.view.addSubview(thumbnailView)
         }
     }
-    
 }
 
 extension ViewController : MPAdViewDelegate {

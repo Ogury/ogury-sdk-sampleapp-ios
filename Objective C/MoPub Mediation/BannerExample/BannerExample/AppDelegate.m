@@ -2,12 +2,12 @@
 //  AppDelegate.m
 //  BannerExample
 //
-//  Copyright © 2020 Ogury Co. All rights reserved.
+//  Copyright © 2021 Ogury Co. All rights reserved.
 //
 
 #import "AppDelegate.h"
 #import <OguryChoiceManager/OguryChoiceManager.h>
-#import <MoPub/MoPub.h>
+#import <MoPubSDK/MoPub.h>
 
 @implementation AppDelegate
 

@@ -2,11 +2,11 @@
 //  AppDelegate.swift
 //  OptinVideoExample
 //
-//  Copyright © 2020 Ogury Co. All rights reserved.
+//  Copyright © 2021 Ogury Co. All rights reserved.
 //
 
 import UIKit
-import MoPub
+import MoPubSDK
 import OguryChoiceManager
 
 @main

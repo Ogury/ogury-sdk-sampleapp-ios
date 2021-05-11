@@ -22,21 +22,30 @@
 
 - (void)requestAdWithSize:(CGSize)size adapterInfo:(NSDictionary *)info adMarkup:(NSString *)adMarkup {
     NSString *assetKey = [info objectForKey:@"asset_key"];
-    if (assetKey != nil) {
-        [[OguryAds shared] setupWithAssetKey:assetKey];
-    }
-    [[OguryAds shared] defineMediationName:@"MoPub"];
-    NSString *adunitId = [info objectForKey:@"ad_unit_id"];
-    self.banner = [[OguryAdsBanner alloc]initWithAdUnitID:adunitId];
-    OguryAdsBannerSize *sizeOguryBanner = [self getOgurySize:size];
-    if (sizeOguryBanner == NULL) {
-        NSError *error = [NSError errorWithCode:MOPUBErrorNoInventory];
+    if (!assetKey || [assetKey isEqualToString:@""]) {
+        NSError *error = [NSError errorWithCode:MOPUBErrorAdapterFailedToLoadAd];
         [self.delegate inlineAdAdapter:self didFailToLoadAdWithError:error];
         return;
     }
-    self.banner.bannerDelegate = self;
-    self.banner.frame = CGRectMake(0, 0, size.width, size.height);
-    [self.banner loadWithSize:sizeOguryBanner];
+    [[OguryAds shared]setupWithAssetKey:assetKey andCompletionHandler:^(NSError *error) {
+        if (error) {
+            NSError *error = [NSError errorWithCode:MOPUBErrorAdapterFailedToLoadAd];
+            [self.delegate inlineAdAdapter:self didFailToLoadAdWithError:error];
+            return;
+        }
+        [[OguryAds shared] defineMediationName:@"MoPub"];
+        NSString *adunitId = [info objectForKey:@"ad_unit_id"];
+        self.banner = [[OguryAdsBanner alloc]initWithAdUnitID:adunitId];
+        OguryAdsBannerSize *sizeOguryBanner = [self getOgurySize:size];
+        if (sizeOguryBanner == NULL) {
+            NSError *error = [NSError errorWithCode:MOPUBErrorNoInventory];
+            [self.delegate inlineAdAdapter:self didFailToLoadAdWithError:error];
+            return;
+        }
+        self.banner.bannerDelegate = self;
+        self.banner.frame = CGRectMake(0, 0, size.width, size.height);
+        [self.banner loadWithSize:sizeOguryBanner];
+    }];
 }
 
 - (OguryAdsBannerSize *)getOgurySize:(CGSize)size {

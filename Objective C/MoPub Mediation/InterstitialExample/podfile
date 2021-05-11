@@ -7,9 +7,9 @@ target 'InterstitialExample' do
 use_frameworks!
 
 # Pods for ogury
-  pod 'OguryAds'
-  pod 'OguryChoiceManager'
+  pod 'OguryAds', '~> 2.3'
+  pod 'OguryChoiceManager', '~> 3.1'
 
 # Pods for MoPub
-  pod 'mopub-ios-sdk'
+  pod 'mopub-ios-sdk', '~> 5.13'
 end

@@ -4,7 +4,7 @@
 //  Copyright © 2020 Ogury Co. All rights reserved.
 //
 
-#import <MoPub/MoPub.h>
+#import <MoPubSDK/MoPub.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

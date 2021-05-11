@@ -2,14 +2,14 @@
 //  ViewController.m
 //  InterstitialExample
 //
-//  Copyright © 2020 Ogury Co. All rights reserved.
+//  Copyright © 2021 Ogury Co. All rights reserved.
 //
 
 #import "ViewController.h"
 #import <OguryChoiceManager/OguryChoiceManager.h>
-#import <MoPub/MoPub.h>
+#import <MoPubSDK/MoPub.h>
 
-@interface ViewController () <MPRewardedVideoDelegate>
+@interface ViewController () <MPRewardedAdsDelegate>
 
 @property (nonatomic, weak) IBOutlet UILabel *statusLabel;
 @property (nonatomic, assign) BOOL isAdLoaded;
@@ -54,39 +54,39 @@
 
 - (IBAction)loadAdBtnPressed:(id)sender {
     self.statusLabel.text = @"Loading Ad...";
-    [MPRewardedVideo setDelegate:self forAdUnitId:@"ef93d42cfed24a23b76091f5ecb5c871"];
-    [MPRewardedVideo loadRewardedVideoAdWithAdUnitID:@"ef93d42cfed24a23b76091f5ecb5c871" withMediationSettings:nil];
+    [MPRewardedAds setDelegate:self forAdUnitId:@"ef93d42cfed24a23b76091f5ecb5c871"];
+    [MPRewardedAds loadRewardedAdWithAdUnitID:@"ef93d42cfed24a23b76091f5ecb5c871" withMediationSettings:@[]];
 }
 
 - (IBAction)showAdBtnPressed:(id)sender {
     if (self.isAdLoaded == YES) {
         self.statusLabel.text = @"Ad requested to show";
-        [MPRewardedVideo presentRewardedVideoAdForAdUnitID:@"ef93d42cfed24a23b76091f5ecb5c871" fromViewController:self withReward:nil];
+        [MPRewardedAds presentRewardedAdForAdUnitID:@"ef93d42cfed24a23b76091f5ecb5c871" fromViewController:self withReward:nil];
     }
 }
 
 #pragma mark - OguryAds Delegate
 
-- (void)rewardedVideoAdDidLoadForAdUnitID:(NSString *)adUnitID {
+- (void)rewardedAdDidLoadForAdUnitID:(NSString *)adUnitID {
     self.statusLabel.text = @"Ad loaded";
     self.isAdLoaded = YES;
 }
 
-- (void)rewardedVideoAdDidFailToLoadForAdUnitID:(NSString *)adUnitID error:(NSError *)error {
+- (void)rewardedAdDidFailToLoadForAdUnitID:(NSString *)adUnitID error:(NSError *)error {
     self.statusLabel.text = [NSString stringWithFormat:@"Error: %@ ",error.description];
     self.isAdLoaded = NO;
 }
 
-- (void)rewardedVideoAdDidAppearForAdUnitID:(NSString *)adUnitID {
-    NSLog(@"rewardedVideoAdDidAppear");
+- (void)rewardedAdDidPresentForAdUnitID:(NSString *)adUnitID {
+    NSLog(@"rewardedAdDidPresentForAdUnitID");
 }
 
-- (void)rewardedVideoAdDidDisappearForAdUnitID:(NSString *)adUnitID {
+- (void)rewardedAdDidDismissForAdUnitID:(NSString *)adUnitID {
     self.statusLabel.text = @"Ad not loaded";
     self.isAdLoaded = NO;
 }
 
-- (void)rewardedVideoAdShouldRewardForAdUnitID:(NSString *)adUnitID reward:(MPRewardedVideoReward *)reward {
+- (void)rewardedAdShouldRewardForAdUnitID:(NSString *)adUnitID reward:(MPReward *)reward {
     NSLog(@"Reward received : Type : %@ | Amount : %@", reward.currencyType, reward.amount);
 }
 
