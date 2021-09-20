@@ -77,14 +77,15 @@ class ViewController: UIViewController {
 }
 
 extension ViewController : GADBannerViewDelegate {
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
         self.statusLabel.text = "Ad received"
         self.adLoaded = true
     }
-    
-    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
-        self.statusLabel.text = "Error: \(error.description)"
+
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+        self.statusLabel.text = "Error: \(error.localizedDescription)"
     }
+
 }
 
 class BlackListViewController: UIViewController {

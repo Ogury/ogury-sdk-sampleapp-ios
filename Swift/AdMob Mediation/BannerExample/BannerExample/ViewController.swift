@@ -103,7 +103,8 @@ class ViewController: UIViewController {
 }
 
 extension ViewController : GADBannerViewDelegate {
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
         if (bannerView == smallBanner) {
             addNewStatus("Small Banner received")
             smallBannerLoaded = true
@@ -111,23 +112,24 @@ extension ViewController : GADBannerViewDelegate {
             addNewStatus("MPU Banner received")
             mpuLoaded = true
         }
-        
-        
     }
-    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+
+
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
         if (bannerView == smallBanner) {
             addNewStatus("Small Banner Presented")
         } else if (bannerView == mpuBanner){
             addNewStatus("MPU Banner Presented")
         }
     }
-    
-    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
         if (bannerView == smallBanner) {
-            self.addNewStatus("Small Banner Error: \(error.description)")
+            self.addNewStatus("Small Banner Error: \(error.localizedDescription)")
         } else if (bannerView == mpuBanner){
-            self.addNewStatus("MPU Banner Error: \(error.description)")
+            self.addNewStatus("MPU Banner Error: \(error.localizedDescription)")
         }
     }
+
 }
 
