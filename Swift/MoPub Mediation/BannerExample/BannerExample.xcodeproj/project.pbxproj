@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2080AFC2FE54CE5471492B1C /* Pods_BannerExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 953AF0DB6FD70CBAF5826C09 /* Pods_BannerExample.framework */; };
-		544946FC257F856300CE74AB /* OGMThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 544946EF257F856300CE74AB /* OGMThumbnailView.m */; };
-		544946FD257F856300CE74AB /* OguryAdsMoPubEventBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 544946F1257F856300CE74AB /* OguryAdsMoPubEventBanner.m */; };
-		544946FE257F856300CE74AB /* OguryAdsMoPubEventInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = 544946F2257F856300CE74AB /* OguryAdsMoPubEventInterstitial.m */; };
-		544946FF257F856300CE74AB /* OguryAdsMoPubEventOptin.m in Sources */ = {isa = PBXBuildFile; fileRef = 544946F5257F856300CE74AB /* OguryAdsMoPubEventOptin.m */; };
-		54494700257F856300CE74AB /* OguryAdsMoPubEventThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = 544946F8257F856300CE74AB /* OguryAdsMoPubEventThumbnail.m */; };
-		54494701257F856300CE74AB /* OguryAdsAdapterConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 544946FB257F856300CE74AB /* OguryAdsAdapterConfiguration.m */; };
 		5451F11D253EC22000EECB6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451F11C253EC22000EECB6C /* AppDelegate.swift */; };
 		5451F121253EC22000EECB6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5451F120253EC22000EECB6C /* ViewController.swift */; };
 		5451F124253EC22000EECB6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5451F122253EC22000EECB6C /* Main.storyboard */; };
@@ -23,19 +17,6 @@
 
 /* Begin PBXFileReference section */
 		299FEDA579FF30C40EFDFA30 /* Pods-BannerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BannerExample.release.xcconfig"; path = "Target Support Files/Pods-BannerExample/Pods-BannerExample.release.xcconfig"; sourceTree = "<group>"; };
-		544946EF257F856300CE74AB /* OGMThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGMThumbnailView.m; sourceTree = "<group>"; };
-		544946F0257F856300CE74AB /* OGMThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGMThumbnailView.h; sourceTree = "<group>"; };
-		544946F1257F856300CE74AB /* OguryAdsMoPubEventBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsMoPubEventBanner.m; sourceTree = "<group>"; };
-		544946F2257F856300CE74AB /* OguryAdsMoPubEventInterstitial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsMoPubEventInterstitial.m; sourceTree = "<group>"; };
-		544946F3257F856300CE74AB /* OguryAdsMoPubEventThumbnail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsMoPubEventThumbnail.h; sourceTree = "<group>"; };
-		544946F4257F856300CE74AB /* OguryAdsAdapterConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsAdapterConfiguration.h; sourceTree = "<group>"; };
-		544946F5257F856300CE74AB /* OguryAdsMoPubEventOptin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsMoPubEventOptin.m; sourceTree = "<group>"; };
-		544946F6257F856300CE74AB /* MopubCustomEvents-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MopubCustomEvents-Bridging-Header.h"; sourceTree = "<group>"; };
-		544946F7257F856300CE74AB /* OguryAdsMoPubEventBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsMoPubEventBanner.h; sourceTree = "<group>"; };
-		544946F8257F856300CE74AB /* OguryAdsMoPubEventThumbnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsMoPubEventThumbnail.m; sourceTree = "<group>"; };
-		544946F9257F856300CE74AB /* OguryAdsMoPubEventInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsMoPubEventInterstitial.h; sourceTree = "<group>"; };
-		544946FA257F856300CE74AB /* OguryAdsMoPubEventOptin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsMoPubEventOptin.h; sourceTree = "<group>"; };
-		544946FB257F856300CE74AB /* OguryAdsAdapterConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsAdapterConfiguration.m; sourceTree = "<group>"; };
 		5451F119253EC22000EECB6C /* BannerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BannerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5451F11C253EC22000EECB6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5451F120253EC22000EECB6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,38 +49,9 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		544946ED257F856300CE74AB /* OguryAdsCustomEventsMoPub */ = {
-			isa = PBXGroup;
-			children = (
-				544946EE257F856300CE74AB /* Thumbnail */,
-				544946F1257F856300CE74AB /* OguryAdsMoPubEventBanner.m */,
-				544946F2257F856300CE74AB /* OguryAdsMoPubEventInterstitial.m */,
-				544946F3257F856300CE74AB /* OguryAdsMoPubEventThumbnail.h */,
-				544946F4257F856300CE74AB /* OguryAdsAdapterConfiguration.h */,
-				544946F5257F856300CE74AB /* OguryAdsMoPubEventOptin.m */,
-				544946F6257F856300CE74AB /* MopubCustomEvents-Bridging-Header.h */,
-				544946F7257F856300CE74AB /* OguryAdsMoPubEventBanner.h */,
-				544946F8257F856300CE74AB /* OguryAdsMoPubEventThumbnail.m */,
-				544946F9257F856300CE74AB /* OguryAdsMoPubEventInterstitial.h */,
-				544946FA257F856300CE74AB /* OguryAdsMoPubEventOptin.h */,
-				544946FB257F856300CE74AB /* OguryAdsAdapterConfiguration.m */,
-			);
-			path = OguryAdsCustomEventsMoPub;
-			sourceTree = "<group>";
-		};
-		544946EE257F856300CE74AB /* Thumbnail */ = {
-			isa = PBXGroup;
-			children = (
-				544946EF257F856300CE74AB /* OGMThumbnailView.m */,
-				544946F0257F856300CE74AB /* OGMThumbnailView.h */,
-			);
-			path = Thumbnail;
-			sourceTree = "<group>";
-		};
 		5451F110253EC22000EECB6C = {
 			isa = PBXGroup;
 			children = (
-				544946ED257F856300CE74AB /* OguryAdsCustomEventsMoPub */,
 				5451F11B253EC22000EECB6C /* BannerExample */,
 				5451F11A253EC22000EECB6C /* Products */,
 				2A3B2A095D38051D9D40D2D1 /* Pods */,
@@ -250,13 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54494701257F856300CE74AB /* OguryAdsAdapterConfiguration.m in Sources */,
-				544946FE257F856300CE74AB /* OguryAdsMoPubEventInterstitial.m in Sources */,
-				544946FC257F856300CE74AB /* OGMThumbnailView.m in Sources */,
 				5451F121253EC22000EECB6C /* ViewController.swift in Sources */,
-				544946FF257F856300CE74AB /* OguryAdsMoPubEventOptin.m in Sources */,
-				54494700257F856300CE74AB /* OguryAdsMoPubEventThumbnail.m in Sources */,
-				544946FD257F856300CE74AB /* OguryAdsMoPubEventBanner.m in Sources */,
 				5451F11D253EC22000EECB6C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

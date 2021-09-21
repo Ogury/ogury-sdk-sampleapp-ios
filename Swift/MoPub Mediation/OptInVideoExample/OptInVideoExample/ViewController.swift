@@ -6,81 +6,98 @@
 //
 
 import UIKit
-import MoPub
+import MoPubSDK
 import OguryChoiceManager
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var statusLabel: UILabel!
     var adLoaded: Bool = false
+    private var statusArray = [String]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.statusLabel.text = "Choice Manager Loading..."
+        self.addStatus("Choice Manager Loading...")
         
         //The setup of Ogury Choice Manager is done AppDelegate.swift file.
         OguryChoiceManager.shared().ask(with: self) { (error, answer) in
             if error == nil {
                 switch answer {
                 case .noAnswer: // TCF Option
-                    self.statusLabel.text = "Choice Manager No Answer"
+                    self.addStatus("Choice Manager No Answer")
                 case .fullApproval: // TCF Option
-                    self.statusLabel.text = "Choice Manager Full Approval"
+                    self.addStatus("Choice Manager Full Approval")
                 case .partialApproval: // TCF Option
-                    self.statusLabel.text = "Choice Manager Partial Approval"
+                    self.addStatus("Choice Manager Partial Approval")
                 case .refusal: // TCF Option
-                    self.statusLabel.text = "Choice Manager Refusal"
+                    self.addStatus("Choice Manager Refusal")
                 case .saleAllowed: // CCPA Option
-                    self.statusLabel.text = "Choice Manager Sale Allowed"
+                    self.addStatus("Choice Manager Sale Allowed")
                 case .saleDenied: // CCPA Option
-                    self.statusLabel.text = "Choice Manager Sale Denided"
+                    self.addStatus("Choice Manager Sale Denided")
                 default:
-                    self.statusLabel.text = "Choice Manager Unknown Option"
+                    self.addStatus("Choice Manager Unknown Option")
                 }
             } else {
-                self.statusLabel.text = "Choice Manager error : \(error.debugDescription)"
+                self.addStatus("Choice Manager error : \(error.debugDescription)")
             }
         }
     }
 
-    
+    private func addStatus(_ text: String) {
+        statusArray.append(text)
+        if statusArray.count > 6 {
+            statusArray.removeFirst()
+        }
+        self.statusLabel.text = statusArray.joined(separator: "\n")
+    }
+
     @IBAction func loadAdBtnPressed(_ sender: Any) {
-        self.statusLabel.text = "Loading Ad..."
-        MPRewardedVideo.setDelegate(self, forAdUnitId: "ef93d42cfed24a23b76091f5ecb5c871")
-        MPRewardedVideo.loadAd(withAdUnitID: "ef93d42cfed24a23b76091f5ecb5c871", withMediationSettings: nil)
+        self.addStatus("Loading Ad...")
+        MPRewardedAds.setDelegate(self, forAdUnitId: "ebfc19b6252649ef9f77520a5ac85531")
+        MPRewardedAds.loadRewardedAd(withAdUnitID: "ebfc19b6252649ef9f77520a5ac85531", withMediationSettings: nil)
     }
     
     @IBAction func showAdBtnPressed(_ sender: Any) {
-        if adLoaded == true {
-            self.statusLabel.text = "Ad requested to show"
-            MPRewardedVideo.presentAd(forAdUnitID: "ef93d42cfed24a23b76091f5ecb5c871", from: self, with: nil)
+        guard adLoaded else {
+            self.addStatus("Ad not loaded")
+            return
         }
+
+        self.addStatus("Ad requested to show")
+        MPRewardedAds.presentRewardedAd(forAdUnitID: "ebfc19b6252649ef9f77520a5ac85531", from: self, with: nil)
     }
     
 }
 
-extension ViewController:MPRewardedVideoDelegate {
+extension ViewController:MPRewardedAdsDelegate {
     
-    func rewardedVideoAdDidLoad(forAdUnitID adUnitID: String!) {
-        self.statusLabel.text = "Ad loaded"
+    func rewardedAdDidLoad(forAdUnitID adUnitID: String!) {
+        self.addStatus("rewardedAdDidLoad")
         self.adLoaded = true
     }
-    func rewardedVideoAdDidFailToLoad(forAdUnitID adUnitID: String!, error: Error!) {
-        self.statusLabel.text = "Error: \(error.debugDescription)"
+    func rewardedAdDidFailToLoad(forAdUnitID adUnitID: String!, error: Error!) {
+        self.addStatus("rewardedAdDidFailToLoad: \(error.debugDescription)")
         self.adLoaded = false
     }
-    
+
+    func rewardedAdDidDismiss(forAdUnitID adUnitID: String!) {
+        self.addStatus("rewardedAdDidDismiss")
+    }
+
     func rewardedVideoAdDidAppear(forAdUnitID adUnitID: String!) {
-        print("rewardedVideoAdDidAppear")
+        self.addStatus("rewardedVideoAdDidAppear")
     }
     
     func rewardedVideoAdDidDisappear(forAdUnitID adUnitID: String!) {
-        self.statusLabel.text = "Ad not loaded"
+        self.addStatus("rewardedVideoAdDidDisappear")
         self.adLoaded = false
     }
     
-    func rewardedVideoAdShouldReward(forAdUnitID adUnitID: String!, reward: MPRewardedVideoReward!) {
-        print("Reward received : Type : \(reward.currencyType ?? "No Curency") | Amount: \(reward.amount ?? 0)")
+    func rewardedAdShouldReward(forAdUnitID adUnitID: String!, reward: MPReward!) {
+        self.addStatus("Reward received : Type : \(reward.currencyType ?? "No Curency") | Amount: \(reward.amount ?? 0)")
     }
+
 }
 

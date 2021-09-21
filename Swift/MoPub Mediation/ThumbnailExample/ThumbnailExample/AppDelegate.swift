@@ -7,7 +7,7 @@
 
 import UIKit
 import OguryChoiceManager
-import MoPub
+import MoPubSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
