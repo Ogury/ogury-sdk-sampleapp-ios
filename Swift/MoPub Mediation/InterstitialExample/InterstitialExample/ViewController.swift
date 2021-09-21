@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MoPub
+import MoPubSDK
 import OguryChoiceManager
 
 class ViewController: UIViewController {
@@ -14,10 +14,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     var interstitial: MPInterstitialAdController?
     var adLoaded: Bool = false
-    
+    private var statusArray = [String]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.statusLabel.text = "Choice Manager Loading..."
+        self.addStatus("Choice Manager Loading...")
         
         //The setup of Ogury Choice Manager is done AppDelegate.swift file.
         
@@ -25,33 +26,40 @@ class ViewController: UIViewController {
             if error == nil {
                 switch answer {
                 case .noAnswer: // TCF Option
-                    self.statusLabel.text = "Choice Manager No Answer"
+                    self.addStatus("Choice Manager No Answer")
                 case .fullApproval: // TCF Option
-                    self.statusLabel.text = "Choice Manager Full Approval"
+                    self.addStatus("Choice Manager Full Approval")
                 case .partialApproval: // TCF Option
-                    self.statusLabel.text = "Choice Manager Partial Approval"
+                    self.addStatus("Choice Manager Partial Approval")
                 case .refusal: // TCF Option
-                    self.statusLabel.text = "Choice Manager Refusal"
+                    self.addStatus("Choice Manager Refusal")
                 case .saleAllowed: // CCPA Option
-                    self.statusLabel.text = "Choice Manager Sale Allowed"
+                    self.addStatus("Choice Manager Sale Allowed")
                 case .saleDenied: // CCPA Option
-                    self.statusLabel.text = "Choice Manager Sale Denided"
+                    self.addStatus("Choice Manager Sale Denided")
                 default:
-                    self.statusLabel.text = "Choice Manager Unknown Option"
+                    self.addStatus("Choice Manager Unknown Option")
                 }
             } else {
-                self.statusLabel.text = "Choice Manager error : \(error.debugDescription)"
+                self.addStatus("Choice Manager error : \(error.debugDescription)")
             }
         }
     }
 
+    private func addStatus(_ text: String) {
+        statusArray.append(text)
+        if statusArray.count > 6 {
+            statusArray.removeFirst()
+        }
+        self.statusLabel.text = statusArray.joined(separator: "\n")
+    }
     
     @IBAction func loadAdBtnPressed(_ sender: Any) {
-        self.statusLabel.text = "Loading Ad..."
+        self.addStatus("Loading Ad...")
         
-        interstitial = MPInterstitialAdController(forAdUnitId: "de5cb2a3b2bc4d5cb6c97a89be556a6f")
+        interstitial = MPInterstitialAdController(forAdUnitId: "4a0c441a9c6c4990982c36dfc5e72508")
         guard let interstitial = interstitial else {
-            self.statusLabel.text = "Error while initialising the ad"
+            self.addStatus("Error while initialising the ad")
             return
         }
         interstitial.delegate = self
@@ -59,11 +67,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showAdBtnPressed(_ sender: Any) {
-        guard let interstitial = interstitial else {
+        guard let interstitial = interstitial, adLoaded else {
+            self.addStatus("Ad not loaded")
             return
         }
         if adLoaded == true {
-            self.statusLabel.text = "Ad requested to show"
+            self.addStatus("Ad requested to show")
             interstitial.show(from: self)
         }
     }
@@ -72,23 +81,25 @@ class ViewController: UIViewController {
 
 extension ViewController:MPInterstitialAdControllerDelegate {
     func interstitialDidLoadAd(_ interstitial: MPInterstitialAdController!) {
-        self.statusLabel.text = "Ad received"
+        self.addStatus("Ad received")
         self.adLoaded = true
     }
     
     func interstitialDidFail(toLoadAd interstitial: MPInterstitialAdController!, withError error: Error!) {
-        self.statusLabel.text = "Error: \(error.debugDescription)"
+        self.addStatus("Error: \(error.debugDescription)")
         self.adLoaded = false
     }
+
     func interstitialDidAppear(_ interstitial: MPInterstitialAdController!) {
-        print("interstitialDidAppear")
+        self.addStatus("interstitialDidAppear")
     }
+
     func interstitialDidDisappear(_ interstitial: MPInterstitialAdController!) {
-        self.statusLabel.text = "Ad not loaded"
+        self.addStatus("Ad not loaded")
         self.adLoaded = false
     }
     func interstitialDidReceiveTapEvent(_ interstitial: MPInterstitialAdController!) {
-        print("interstitialDidReceiveTapEvent")
+        self.addStatus("interstitialDidReceiveTapEvent")
     }
     
 }

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MoPub
+import MoPubSDK
 import OguryChoiceManager
 
 class ViewController: UIViewController {
@@ -24,6 +24,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addNewStatus("Choice Manager Loading...")
+
+        let moPubsdkConfig = MPMoPubConfiguration.init(adUnitIdForAppInitialization: "a4593fc7714d49c682a00cbd512bd711")
+
+        moPubsdkConfig.loggingLevel = .debug
+//        moPubsdkConfig.mediatedNetworkConfigurations = ["OguryAdapterConfiguration":
+//                                                        ["asset_key": "OGY-5575CC173955"]]
+
+        self.addNewStatus("MoPub initializing")
+        MoPub.sharedInstance().initializeSdk(with: moPubsdkConfig) {
+            self.addNewStatus("MoPub initialized")
+        }
         
         //The setup of Ogury Choice Manager is done AppDelegate.swift file.
         OguryChoiceManager.shared().ask(with: self) { (error, answer) in
@@ -52,7 +63,7 @@ class ViewController: UIViewController {
 
     @IBAction func loadMPUBtnPressed(_ sender: Any) {
         self.addNewStatus("MPU Loading ...")
-        mpuBanner = MPAdView.init(adUnitId: "4db28cd8fe2e4c9bbee175d86df53ee2")
+        mpuBanner = MPAdView.init(adUnitId: "a4593fc7714d49c682a00cbd512bd711")
         mpuBanner!.delegate = self
         
         mpuBanner!.frame = CGRect(x: 0, y: 0, width: mpuView.frame.width, height: mpuView.frame.height);
@@ -61,7 +72,7 @@ class ViewController: UIViewController {
     
     @IBAction func loadSmallBannerBtnPressed(_ sender: Any) {
         self.addNewStatus("Small Banner Loading ...")
-        smallBanner = MPAdView.init(adUnitId: "7e2bf143b2c0470fab647c0868571370")
+        smallBanner = MPAdView.init(adUnitId: "3816a61b79794ab6bc1cd6713d5b42c0")
         smallBanner!.delegate = self
         
         smallBanner!.frame = CGRect(x: 0, y: 0, width: smallBannerView.frame.width, height: smallBannerView.frame.height);

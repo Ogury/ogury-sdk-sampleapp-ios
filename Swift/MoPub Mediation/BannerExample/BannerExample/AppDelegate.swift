@@ -7,7 +7,7 @@
 
 import UIKit
 import OguryChoiceManager
-import MoPub
+import MoPubSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let sdkConfig = MPMoPubConfiguration.init(adUnitIdForAppInitialization: "7e2bf143b2c0470fab647c0868571370")
         sdkConfig.loggingLevel = .debug
+        sdkConfig.mediatedNetworkConfigurations = ["OguryAdapterConfiguration":
+                                                        ["asset_key": "OGY-5575CC173955"]]
+
         MoPub.sharedInstance().initializeSdk(with: sdkConfig) {
             print("MoPub initialized")
         }
