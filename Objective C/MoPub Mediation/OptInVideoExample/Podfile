@@ -1,7 +1,7 @@
 # Uncomment the next line to define a global platform for your project
 # minimum is iOS 10 for Ogury SDKs
 # platform :ios, '10.0'
-target 'InterstitialExample' do
+target 'OptInVideoExample' do
 
 # Comment the next line if you don't want to use dynamic frameworks
 use_frameworks!
@@ -12,4 +12,6 @@ use_frameworks!
 
 # Pods for MoPub
   pod 'mopub-ios-sdk'
+  pod 'MoPub-OguryAds-Adapters', '1.5.0.0'
+
 end

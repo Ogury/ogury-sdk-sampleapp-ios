@@ -7,7 +7,7 @@
 
 #import "AppDelegate.h"
 #import <OguryChoiceManager/OguryChoiceManager.h>
-#import <MoPub/MoPub.h>
+#import <MoPubSDK/MoPub.h>
 
 @implementation AppDelegate
 

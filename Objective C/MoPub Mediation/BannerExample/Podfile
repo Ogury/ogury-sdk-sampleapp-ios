@@ -12,5 +12,6 @@ use_frameworks!
 
 # Pods for MoPub
   pod 'mopub-ios-sdk'
+  pod 'MoPub-OguryAds-Adapters', '1.5.0.0'
 
 end
