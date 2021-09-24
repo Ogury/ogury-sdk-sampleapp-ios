@@ -138,7 +138,7 @@ static NSString * const OGMThumbnailAdBlacklist = @"blacklist";
     
     id objectBlacklist = self.localExtras[OGMThumbnailAdBlacklist];
     if (objectBlacklist && [objectBlacklist isKindOfClass:[NSArray class]]) {
-        [self.thumbnail setWhitelistBundleIdentifiers:(NSArray *)objectBlacklist];
+        [self.thumbnail setBlacklistViewControllers:(NSArray *)objectBlacklist];
     } else if (objectBlacklist) {
         NSLog(@"Missing or invalid extra '%@' to configure Thumbnail ad.", OGMThumbnailAdBlacklist);
     }
