@@ -80,12 +80,12 @@
 }
 
 #pragma mark - AdMob Delegate
-- (void)adViewDidReceiveAd:(GADBannerView *)bannerView {
+- (void)bannerViewDidReceiveAd:(GADBannerView *)bannerView {
     self.statusLabel.text = @"Ad received";
     self.isAdLoaded = YES;
 }
 
-- (void)adView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(GADRequestError *)error {
+- (void)bannerView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(NSError *)error {
     self.statusLabel.text = [NSString stringWithFormat:@"Error: %@",error.description];
 }
 
