@@ -14,84 +14,88 @@ class ViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     var rewardedAd: GADRewardedAd?
     var adLoaded: Bool = false
-    
+    private var statusArray = [String]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.statusLabel.text = "Choice Manager Loading..."
+        self.addStatus("Choice Manager Loading...")
         
         //The setup of Ogury Choice Manager is done AppDelegate.swift file.
         OguryChoiceManager.shared().ask(with: self) { (error, answer) in
             if error == nil {
                 switch answer {
                 case .noAnswer: // TCF Option
-                    self.statusLabel.text = "Choice Manager No Answer"
-                case .fullApproval: // TCF Option
-                    self.statusLabel.text = "Choice Manager Full Approval"
-                case .partialApproval: // TCF Option
-                    self.statusLabel.text = "Choice Manager Partial Approval"
-                case .refusal: // TCF Option
-                    self.statusLabel.text = "Choice Manager Refusal"
-                case .saleAllowed: // CCPA Option
-                    self.statusLabel.text = "Choice Manager Sale Allowed"
-                case .saleDenied: // CCPA Option
-                    self.statusLabel.text = "Choice Manager Sale Denided"
+                    self.addStatus("Choice Manager No Answer")
+                case .fullApproval: // TCF Option)
+                    self.addStatus("Choice Manager Full Approval")
+                case .partialApproval: // TCF Option)
+                    self.addStatus("Choice Manager Partial Approval")
+                case .refusal: // TCF Option)
+                    self.addStatus("Choice Manager Refusal")
+                case .saleAllowed: // CCPA Option)
+                    self.addStatus("Choice Manager Sale Allowed")
+                case .saleDenied: // CCPA Option)
+                    self.addStatus("Choice Manager Sale Denided")
                 default:
-                    self.statusLabel.text = "Choice Manager Unknown Option"
+                    self.addStatus("Choice Manager Unknown Option")
                 }
             } else {
-                self.statusLabel.text = "Choice Manager error : \(error.debugDescription)"
+                self.addStatus("Choice Manager error : \(error.debugDescription)")
             }
         }
+    }
+
+    private func addStatus(_ text: String) {
+        statusArray.append(text)
+        if statusArray.count > 6 {
+            statusArray.removeFirst()
+        }
+        self.statusLabel.text = statusArray.joined(separator: "\n")
     }
 
     
     @IBAction func loadAdBtnPressed(_ sender: Any) {
-        self.statusLabel.text = "Loading Ad..."
-        
-        rewardedAd = GADRewardedAd(adUnitID: "ca-app-pub-7079119646488414/1484954054")
-        guard let rewardedAd = rewardedAd else {
-            self.statusLabel.text = "Error while initialising the ad"
-            return
-        }
-        rewardedAd.load(GADRequest()) { error in
+        self.addStatus("Loading Ad...")
+        let request = GADRequest()
+        GADRewardedAd.load(withAdUnitID: "ca-app-pub-7079119646488414/1484954054", request: request, completionHandler: { [self] ad, error in
             if let error = error {
-                self.statusLabel.text = "Error: \(error)"
-            } else {
-                DispatchQueue.main.async {
-                    self.statusLabel.text = "Ad received"
-                    self.adLoaded = true
-                }
+                self.addStatus("Error: \(error.localizedDescription)")
+                return
             }
-        }
+            rewardedAd = ad
+            rewardedAd?.fullScreenContentDelegate = self
+            adLoaded = true
+            addStatus("Ad received")
+        })
     }
     
     @IBAction func showAdBtnPressed(_ sender: Any) {
-        guard let rewardedAd = rewardedAd else {
+        guard let rewardedAd = rewardedAd, adLoaded else {
+            self.addStatus("Ad not ready")
             return
         }
-        if adLoaded == true {
-            self.statusLabel.text = "Ad requested to show"
-            rewardedAd.present(fromRootViewController: self, delegate: self)
-        }
+        self.addStatus("Ad requested to show")
+        rewardedAd.present(fromRootViewController: self, userDidEarnRewardHandler: {
+            //reward your user here
+            self.addStatus("User rewarded")
+        })
     }
     
 }
 
-extension ViewController:GADRewardedAdDelegate {
-    func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
-        print("Reward received with ammount: \(reward.amount) and type: \(reward.type) ")
+extension ViewController: GADFullScreenContentDelegate {
+
+    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        self.addStatus("Error: \(error.localizedDescription)")
     }
-    
-    func rewardedAdDidPresent(_ rewardedAd: GADRewardedAd) {
-        self.statusLabel.text = "Ad on screen"
+
+    func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        self.addStatus("Ad presented")
     }
-    
-    func rewardedAdDidDismiss(_ rewardedAd: GADRewardedAd) {
-        self.statusLabel.text = "Ad not loaded"
-    }
-    
-    func rewardedAd(_ rewardedAd: GADRewardedAd, didFailToPresentWithError error: Error) {
-        self.statusLabel.text = "Error: \(error)"
+
+    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        self.addStatus("Ad dismissed")
+        self.adLoaded = false
     }
 }
 
