@@ -7,15 +7,22 @@
 
 #import "AppDelegate.h"
 #import <OguryChoiceManager/OguryChoiceManager.h>
-#import <MoPub/MoPub.h>
+#import <MoPubSDK/MoPub.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
     [OguryChoiceManager.sharedManager setupWithAssetKey:@"OGY-5575CC173955"];
-    
-    MPMoPubConfiguration * sdkConfig = [[MPMoPubConfiguration alloc]initWithAdUnitIdForAppInitialization:@"de5cb2a3b2bc4d5cb6c97a89be556a6f"];
+
+    // Declare your Ogury asset key
+    NSMutableDictionary *oguryConfigs = [NSMutableDictionary new];
+    [oguryConfigs setObject:@"YOUR_OGURY_ASSET_KEY" forKey:@"OGY-5575CC173955"];
+
+    MPMoPubConfiguration * sdkConfig = [[MPMoPubConfiguration alloc]initWithAdUnitIdForAppInitialization:@"4a0c441a9c6c4990982c36dfc5e72508"];
     sdkConfig.loggingLevel = MPBLogLevelDebug;
+    sdkConfig.mediatedNetworkConfigurations = [@{@"OguryAdapterConfiguration":oguryConfigs} mutableCopy];
+
     [[MoPub sharedInstance]initializeSdkWithConfiguration:sdkConfig completion:^{
         NSLog(@"MoPub initialized");
     }];

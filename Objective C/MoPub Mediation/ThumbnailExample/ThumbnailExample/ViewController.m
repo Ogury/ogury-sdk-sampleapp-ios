@@ -8,7 +8,7 @@
 #import "ViewController.h"
 #import "BlackListViewController.h"
 #import <OguryChoiceManager/OguryChoiceManager.h>
-#import <MoPub/MoPub.h>
+#import <MoPubSDK/MoPub.h>
 
 @interface ViewController()<MPAdViewDelegate>
 

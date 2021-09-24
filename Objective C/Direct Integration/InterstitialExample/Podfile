@@ -9,7 +9,5 @@ use_frameworks!
 # Pods for ogury
   pod 'OguryAds'
   pod 'OguryChoiceManager'
-
-# Pods for MoPub
-  pod 'mopub-ios-sdk'
+    
 end
