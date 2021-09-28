@@ -60,7 +60,7 @@
 
 - (IBAction)loadMPUBtnPressed:(id)sender {
     [self addNewStatus:@"MPU Loading ..."];
-    self.mpuBanner = [[MPAdView alloc] initWithAdUnitId:@"a4593fc7714d49c682a00cbd512bd711"];
+    self.mpuBanner = [[MPAdView alloc] initWithAdUnitId:@"mopub_adunit"];
     self.mpuBanner.delegate = self;
     self.mpuBanner.frame = CGRectMake(0, 0, self.mpuView.frame.size.width, self.mpuView.frame.size.height);
     [self.mpuBanner loadAdWithMaxAdSize:CGSizeMake(self.mpuView.frame.size.width, self.mpuView.frame.size.height)];
@@ -68,7 +68,7 @@
 
 - (IBAction)loadSmallBannerBtnPressed:(id)sender {
     [self addNewStatus:@"Small Banner Loading ..."];
-    self.smallBanner = [[MPAdView alloc] initWithAdUnitId:@"3816a61b79794ab6bc1cd6713d5b42c0"];
+    self.smallBanner = [[MPAdView alloc] initWithAdUnitId:@"mopub_adunit"];
     self.smallBanner.delegate = self;
     self.smallBanner.frame = CGRectMake(0, 0, self.smallBannerView.frame.size.width, self.smallBannerView.frame.size.height);
     [self.smallBanner loadAdWithMaxAdSize:CGSizeMake(self.smallBannerView.frame.size.width, self.smallBannerView.frame.size.height)];

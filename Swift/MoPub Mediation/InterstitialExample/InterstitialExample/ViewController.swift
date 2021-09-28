@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     @IBAction func loadAdBtnPressed(_ sender: Any) {
         self.addStatus("Loading Ad...")
         
-        interstitial = MPInterstitialAdController(forAdUnitId: "4a0c441a9c6c4990982c36dfc5e72508")
+        interstitial = MPInterstitialAdController(forAdUnitId: "mopub_adunit")
         guard let interstitial = interstitial else {
             self.addStatus("Error while initialising the ad")
             return

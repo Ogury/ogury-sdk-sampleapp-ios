@@ -52,14 +52,14 @@ class ViewController: UIViewController {
 
     @IBAction func loadMPUBtnPressed(_ sender: Any) {
         self.addNewStatus("MPU Loading ...")
-        mpuBanner = OguryAdsBanner.init(adUnitID: "73eb6620-b234-0138-8e13-0242ac120004_test")
+        mpuBanner = OguryAdsBanner.init(adUnitID: "ogury_adunit")
         mpuBanner!.bannerDelegate = self
         self.mpuBanner?.load(with: OguryAdsBannerSize.mpu_300x250())
     }
     
     @IBAction func loadSmallBannerBtnPressed(_ sender: Any) {
         self.addNewStatus("Small Banner Loading ...")
-        smallBanner = OguryAdsBanner.init(adUnitID: "c3a1a5e0-4f39-0138-42f4-0242ac120004_test")
+        smallBanner = OguryAdsBanner.init(adUnitID: "ogury_adunit")
         smallBanner!.bannerDelegate = self
         self.smallBanner?.load(with: OguryAdsBannerSize.small_banner_320x50())
     }

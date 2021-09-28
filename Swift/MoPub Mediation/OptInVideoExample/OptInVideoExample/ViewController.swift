@@ -55,8 +55,8 @@ class ViewController: UIViewController {
 
     @IBAction func loadAdBtnPressed(_ sender: Any) {
         self.addStatus("Loading Ad...")
-        MPRewardedAds.setDelegate(self, forAdUnitId: "ebfc19b6252649ef9f77520a5ac85531")
-        MPRewardedAds.loadRewardedAd(withAdUnitID: "ebfc19b6252649ef9f77520a5ac85531", withMediationSettings: nil)
+        MPRewardedAds.setDelegate(self, forAdUnitId: "mopub_adunit")
+        MPRewardedAds.loadRewardedAd(withAdUnitID: "mopub_adunit", withMediationSettings: nil)
     }
     
     @IBAction func showAdBtnPressed(_ sender: Any) {
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
         }
 
         self.addStatus("Ad requested to show")
-        MPRewardedAds.presentRewardedAd(forAdUnitID: "ebfc19b6252649ef9f77520a5ac85531", from: self, with: nil)
+        MPRewardedAds.presentRewardedAd(forAdUnitID: "mopub_adunit", from: self, with: nil)
     }
     
 }

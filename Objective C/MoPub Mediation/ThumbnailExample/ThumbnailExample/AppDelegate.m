@@ -14,9 +14,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [OguryChoiceManager.sharedManager setupWithAssetKey:@"OGY-5575CC173955"];
+    [OguryChoiceManager.sharedManager setupWithAssetKey:@"asset_key"];
     
-    MPMoPubConfiguration * sdkConfig = [[MPMoPubConfiguration alloc]initWithAdUnitIdForAppInitialization:@"b5cabe32c7f741d687d411d5f45ec4e6"];
+    MPMoPubConfiguration * sdkConfig = [[MPMoPubConfiguration alloc]initWithAdUnitIdForAppInitialization:@"mopub_adunit"];
     sdkConfig.loggingLevel = MPBLogLevelDebug;
     [[MoPub sharedInstance]initializeSdkWithConfiguration:sdkConfig completion:^{
         NSLog(@"MoPub initialized");

@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     @IBAction func loadAdBtnPressed(_ sender: Any) {
         self.statusLabel.text = "Loading Ad..."
         
-        thumbnail = OguryAdsThumbnailAd.init(adUnitID: "7fe46720-4a9f-0138-0f06-0242ac120004_test")
+        thumbnail = OguryAdsThumbnailAd.init(adUnitID: "ogury_adunit")
         thumbnail!.thumbnailAdDelegate = self
         
         thumbnail?.setWhitelistBundleIdentifiers(["com.example.bundle","com.example.bundle2"]) // Extenal bundle where thumbnail is allowed to show

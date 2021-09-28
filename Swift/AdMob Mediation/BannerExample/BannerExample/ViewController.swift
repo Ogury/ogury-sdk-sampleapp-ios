@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     @IBAction func loadMPUBtnPressed(_ sender: Any) {
         self.addNewStatus("MPU Loading ...")
         mpuBanner = GADBannerView(adSize: kGADAdSizeMediumRectangle)
-        mpuBanner!.adUnitID = "ca-app-pub-7079119646488414/1229378159"
+        mpuBanner!.adUnitID = "admob_adunit"
         mpuBanner!.rootViewController = self
         mpuBanner!.delegate = self
         self.mpuBanner?.load(GADRequest())
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
     @IBAction func loadSmallBannerBtnPressed(_ sender: Any) {
         self.addNewStatus("Small Banner Loading ...")
         smallBanner = GADBannerView(adSize: kGADAdSizeBanner)
-        smallBanner!.adUnitID = "ca-app-pub-7079119646488414/7876060447"
+        smallBanner!.adUnitID = "admob_adunit"
         smallBanner!.rootViewController = self
         smallBanner!.delegate = self
         self.smallBanner?.load(GADRequest())

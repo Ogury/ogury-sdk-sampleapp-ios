@@ -55,7 +55,7 @@
 
 - (IBAction)loadAdBtnPressed:(id)sender {
     self.statusLabel.text = @"Loading Ad...";
-    self.optinVideo = [[OguryAdsOptinVideo alloc]initWithAdUnitID:@"b1773ac0-4a9d-0138-d91c-0242ac120004_test"];
+    self.optinVideo = [[OguryAdsOptinVideo alloc]initWithAdUnitID:@"ogury_adunit"];
     self.optinVideo.optInVideoDelegate = self;
     [self.optinVideo load];
 }

@@ -61,14 +61,14 @@
 
 - (IBAction)loadMPUBtnPressed:(id)sender {
     [self addNewStatus:@"MPU Loading ..."];
-    self.mpuBanner = [[OguryAdsBanner alloc] initWithAdUnitID:@"73eb6620-b234-0138-8e13-0242ac120004_test"];
+    self.mpuBanner = [[OguryAdsBanner alloc] initWithAdUnitID:@"ogury_adunit"];
     self.mpuBanner.bannerDelegate = self;
     [self.mpuBanner loadWithSize:OguryAdsBannerSize.mpu_300x250];
 }
 
 - (IBAction)loadSmallBannerBtnPressed:(id)sender {
     [self addNewStatus:@"Small Banner Loading ..."];
-    self.smallBanner = [[OguryAdsBanner alloc] initWithAdUnitID:@"c3a1a5e0-4f39-0138-42f4-0242ac120004_test"];
+    self.smallBanner = [[OguryAdsBanner alloc] initWithAdUnitID:@"ogury_adunit"];
     self.smallBanner.bannerDelegate = self;
     [self.smallBanner loadWithSize:OguryAdsBannerSize.small_banner_320x50];
 }

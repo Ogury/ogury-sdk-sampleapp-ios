@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         
         let request = GADRequest()
 
-        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-7079119646488414/4240067767",request: request,
+        GADInterstitialAd.load(withAdUnitID:"admob_adunit",request: request,
             completionHandler: { [self] ad, error in
                 if let error = error {
                     self.addStatus("Error: \(error.localizedDescription)")

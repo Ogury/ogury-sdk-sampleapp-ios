@@ -55,7 +55,7 @@
 
 - (IBAction)loadAdBtnPressed:(id)sender {
     self.statusLabel.text = @"Thumbnail Loading ...";
-    self.thumbnail = [[MPAdView alloc] initWithAdUnitId:@"b5cabe32c7f741d687d411d5f45ec4e6"];
+    self.thumbnail = [[MPAdView alloc] initWithAdUnitId:@"mopub_adunit"];
     self.thumbnail.delegate = self;
     self.thumbnail.maxAdSize = CGSizeMake(200, 200);
     [self.thumbnail stopAutomaticallyRefreshingContents];

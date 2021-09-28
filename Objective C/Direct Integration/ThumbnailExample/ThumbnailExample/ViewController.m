@@ -58,7 +58,7 @@
 
 - (IBAction)loadAdBtnPressed:(id)sender {
     self.statusLabel.text = @"Loading Ad...";
-    self.thumbnail = [[OguryAdsThumbnailAd alloc]initWithAdUnitID:@"7fe46720-4a9f-0138-0f06-0242ac120004_test"];
+    self.thumbnail = [[OguryAdsThumbnailAd alloc]initWithAdUnitID:@"ogury_adunit"];
     self.thumbnail.thumbnailAdDelegate = self;
     
     [self.thumbnail setWhitelistBundleIdentifiers:@[@"com.example.bundle",@"com.example.bundle2"]];// Extenal bundle where thumbnail is allowed to show

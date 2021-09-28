@@ -55,7 +55,7 @@
 
 - (IBAction)loadAdBtnPressed:(id)sender {
     self.statusLabel.text = @"Loading Ad...";
-    self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:@"ca-app-pub-7079119646488414/4240067767"];
+    self.interstitial = [[GADInterstitial alloc] initWithAdUnitID:@"admob_adunit"];
     self.interstitial.delegate = self;
     [self.interstitial loadRequest:[GADRequest new]];
 }

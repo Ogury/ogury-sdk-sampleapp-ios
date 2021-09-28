@@ -25,7 +25,7 @@
     self.statusLabel.text = @"Choice Manager Loading...";
     
     //The setup of Ogury Choice Manager is done AppDelegate file.
-    [[OguryChoiceManager sharedManager] setupWithAssetKey:@"OGY-5575CC173955"];
+    [[OguryChoiceManager sharedManager] setupWithAssetKey:@"asset_key"];
     [[OguryChoiceManager sharedManager] askWithViewController:self andCompletionBlock:^(NSError * _Nullable error, OguryChoiceManagerAnswer answer) {
         if (!error) {
             switch (answer) {
@@ -56,7 +56,7 @@
 
 - (IBAction)loadAdBtnPressed:(id)sender {
     self.statusLabel.text = @"Loading Ad...";
-    self.rewardedAd = [[GADRewardedAd alloc] initWithAdUnitID:@"ca-app-pub-7079119646488414/1484954054"];
+    self.rewardedAd = [[GADRewardedAd alloc] initWithAdUnitID:@"admob_adunit"];
     [self.rewardedAd loadRequest:[GADRequest new] completionHandler:^(GADRequestError * _Nullable error) {
         if (error) {
             self.statusLabel.text = [NSString stringWithFormat:@"Error: %@",error.description];

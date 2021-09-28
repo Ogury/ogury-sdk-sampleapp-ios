@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     @IBAction func loadAdBtnPressed(_ sender: Any) {
         self.statusLabel.text = "Loading Ad..."
         
-        rewardedAd = OguryAdsOptinVideo.init(adUnitID: "b1773ac0-4a9d-0138-d91c-0242ac120004_test")
+        rewardedAd = OguryAdsOptinVideo.init(adUnitID: "ogury_adunit")
         guard let rewardedAd = rewardedAd else {
             self.statusLabel.text = "Error while initialising the ad"
             return

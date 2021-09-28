@@ -13,8 +13,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [OguryChoiceManager.sharedManager setupWithAssetKey:@"OGY-5575CC173955"];
-    [OguryAds.shared setupWithAssetKey:@"OGY-5575CC173955"];
+    [OguryChoiceManager.sharedManager setupWithAssetKey:@"asset_key"];
+    [OguryAds.shared setupWithAssetKey:@"asset_key"];
     return YES;
 }
 

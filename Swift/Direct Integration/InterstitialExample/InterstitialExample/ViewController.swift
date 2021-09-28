@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     @IBAction func loadAdBtnPressed(_ sender: Any) {
         self.statusLabel.text = "Loading Ad..."
         
-        interstitial = OguryAdsInterstitial.init(adUnitID: "cdab8440-4a9d-0138-0f05-0242ac120004_test")
+        interstitial = OguryAdsInterstitial.init(adUnitID: "ogury_adunitt")
         guard let interstitial = interstitial else {
             self.statusLabel.text = "Error while initialising the ad"
             return

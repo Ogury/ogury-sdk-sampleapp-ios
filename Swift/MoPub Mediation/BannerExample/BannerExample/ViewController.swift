@@ -25,11 +25,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.addNewStatus("Choice Manager Loading...")
 
-        let moPubsdkConfig = MPMoPubConfiguration.init(adUnitIdForAppInitialization: "a4593fc7714d49c682a00cbd512bd711")
+        let moPubsdkConfig = MPMoPubConfiguration.init(adUnitIdForAppInitialization: "mopub_adunit")
 
         moPubsdkConfig.loggingLevel = .debug
 //        moPubsdkConfig.mediatedNetworkConfigurations = ["OguryAdapterConfiguration":
-//                                                        ["asset_key": "OGY-5575CC173955"]]
+//                                                        ["asset_key": "asset_key"]]
 
         self.addNewStatus("MoPub initializing")
         MoPub.sharedInstance().initializeSdk(with: moPubsdkConfig) {
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
 
     @IBAction func loadMPUBtnPressed(_ sender: Any) {
         self.addNewStatus("MPU Loading ...")
-        mpuBanner = MPAdView.init(adUnitId: "a4593fc7714d49c682a00cbd512bd711")
+        mpuBanner = MPAdView.init(adUnitId: "mopub_adunit")
         mpuBanner!.delegate = self
         
         mpuBanner!.frame = CGRect(x: 0, y: 0, width: mpuView.frame.width, height: mpuView.frame.height);
@@ -72,7 +72,7 @@ class ViewController: UIViewController {
     
     @IBAction func loadSmallBannerBtnPressed(_ sender: Any) {
         self.addNewStatus("Small Banner Loading ...")
-        smallBanner = MPAdView.init(adUnitId: "3816a61b79794ab6bc1cd6713d5b42c0")
+        smallBanner = MPAdView.init(adUnitId: "mopub_adunit")
         smallBanner!.delegate = self
         
         smallBanner!.frame = CGRect(x: 0, y: 0, width: smallBannerView.frame.width, height: smallBannerView.frame.height);

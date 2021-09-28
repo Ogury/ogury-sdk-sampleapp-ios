@@ -11,7 +11,7 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [OguryChoiceManager.sharedManager setupWithAssetKey:@"OGY-5575CC173955"];
+    [OguryChoiceManager.sharedManager setupWithAssetKey:@"asset_key"];
     // Override point for customization after application launch.
     return YES;
 }

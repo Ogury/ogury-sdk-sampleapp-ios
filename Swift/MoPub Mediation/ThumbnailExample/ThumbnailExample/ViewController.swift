@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     
     @IBAction func loadAdBtnPressed(_ sender: Any) {
         statusLabel.text = "Loading Ad..."
-        thumbnail = MPAdView.init(adUnitId: "b5cabe32c7f741d687d411d5f45ec4e6")
+        thumbnail = MPAdView.init(adUnitId: "mopub_adunit")
         thumbnail?.delegate = self;
         thumbnail?.maxAdSize = CGSize(width: 200, height: 200)
         thumbnail?.stopAutomaticallyRefreshingContents()

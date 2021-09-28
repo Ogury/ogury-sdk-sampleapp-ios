@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         self.statusLabel.text = "Loading Ad..."
         let adSizeThumbnail = GADAdSizeFromCGSize(CGSize(width: 180  , height: 180)) //The size of the thumbnail
         thumbnail = GADBannerView(adSize: adSizeThumbnail)
-        thumbnail!.adUnitID = "ca-app-pub-7079119646488414/3304877156" //Google Ad Unit Id
+        thumbnail!.adUnitID = "admob_adunit" //Google Ad Unit Id
         thumbnail!.rootViewController = self
         thumbnail!.delegate = self
         

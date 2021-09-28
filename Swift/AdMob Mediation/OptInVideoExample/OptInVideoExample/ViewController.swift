@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     @IBAction func loadAdBtnPressed(_ sender: Any) {
         self.addStatus("Loading Ad...")
         let request = GADRequest()
-        GADRewardedAd.load(withAdUnitID: "ca-app-pub-7079119646488414/1484954054", request: request, completionHandler: { [self] ad, error in
+        GADRewardedAd.load(withAdUnitID: "admob_adunit", request: request, completionHandler: { [self] ad, error in
             if let error = error {
                 self.addStatus("Error: \(error.localizedDescription)")
                 return

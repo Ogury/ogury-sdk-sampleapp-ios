@@ -65,7 +65,7 @@
 
 - (IBAction)loadAdBtnPressed:(id)sender {
     [self addStatus: @"Loading Ad..."];
-    self.interstitial = [MPInterstitialAdController interstitialAdControllerForAdUnitId:@"4a0c441a9c6c4990982c36dfc5e72508"];
+    self.interstitial = [MPInterstitialAdController interstitialAdControllerForAdUnitId:@"mopub_adunit"];
     self.interstitial.delegate = self;
     [self.interstitial loadAd];
 }

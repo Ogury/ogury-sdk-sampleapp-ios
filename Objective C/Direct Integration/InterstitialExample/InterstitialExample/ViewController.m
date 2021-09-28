@@ -55,7 +55,7 @@
 
 - (IBAction)loadAdBtnPressed:(id)sender {
     self.statusLabel.text = @"Loading Ad...";
-    self.interstitial = [[OguryAdsInterstitial alloc]initWithAdUnitID:@"cdab8440-4a9d-0138-0f05-0242ac120004_test"];
+    self.interstitial = [[OguryAdsInterstitial alloc]initWithAdUnitID:@"ogury_adunitt"];
     self.interstitial.interstitialDelegate = self;
     [self.interstitial load];
 }

@@ -65,14 +65,14 @@
 
 - (IBAction)loadAdBtnPressed:(id)sender {
     [self addStatus: @"Loading Ad..."];
-    [MPRewardedAds setDelegate:self forAdUnitId:@"ebfc19b6252649ef9f77520a5ac85531"];
-    [MPRewardedAds loadRewardedAdWithAdUnitID:@"ebfc19b6252649ef9f77520a5ac85531" withMediationSettings:nil];
+    [MPRewardedAds setDelegate:self forAdUnitId:@"mopub_adunit"];
+    [MPRewardedAds loadRewardedAdWithAdUnitID:@"mopub_adunit" withMediationSettings:nil];
 }
 
 - (IBAction)showAdBtnPressed:(id)sender {
     if (self.isAdLoaded == YES) {
         [self addStatus: @"Ad requested to show"];
-        [MPRewardedAds presentRewardedAdForAdUnitID:@"ebfc19b6252649ef9f77520a5ac85531" fromViewController:self withReward:nil];
+        [MPRewardedAds presentRewardedAdForAdUnitID:@"mopub_adunit" fromViewController:self withReward:nil];
     }
 }
 

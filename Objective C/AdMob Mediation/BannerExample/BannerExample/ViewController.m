@@ -62,7 +62,7 @@
 - (IBAction)loadMPUBtnPressed:(id)sender {
     [self addNewStatus:@"MPU Loading ..."];
     self.mpuBanner = [[GADBannerView alloc]initWithAdSize:kGADAdSizeMediumRectangle];
-    self.mpuBanner.adUnitID = @"ca-app-pub-7079119646488414/1229378159";
+    self.mpuBanner.adUnitID = @"admob_adunit";
     self.mpuBanner.delegate = self;
     self.mpuBanner.rootViewController = self;
     [self.mpuBanner loadRequest:[GADRequest new]];
@@ -71,7 +71,7 @@
 - (IBAction)loadSmallBannerBtnPressed:(id)sender {
     [self addNewStatus:@"Small Banner Loading ..."];
     self.smallBanner = [[GADBannerView alloc]initWithAdSize:kGADAdSizeBanner];
-    self.smallBanner.adUnitID = @"ca-app-pub-7079119646488414/7876060447";
+    self.smallBanner.adUnitID = @"admob_adunit";
     self.smallBanner.delegate = self;
     self.smallBanner.rootViewController = self;
     [self.smallBanner loadRequest:[GADRequest new]];
