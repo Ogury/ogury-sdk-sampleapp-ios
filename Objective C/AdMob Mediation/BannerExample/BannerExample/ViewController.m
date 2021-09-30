@@ -81,13 +81,18 @@
     if (self.isMpuLoaded == YES) {
         [self addNewStatus:@"MPU requested to show"];
         [self.mpuView addSubview:self.mpuBanner];
+    } else {
+        [self addNewStatus:@"MPU not loaded"];
     }
+
 }
 
 - (IBAction)showSmallBannerBtnPressed:(id)sender {
     if (self.isSmallBannerLoaded == YES) {
         [self addNewStatus:@"Small Banner requested to show"];
         [self.smallBannerView addSubview:self.smallBanner];
+    } else {
+        [self addNewStatus:@"Small Banner not loaded"];
     }
 }
 

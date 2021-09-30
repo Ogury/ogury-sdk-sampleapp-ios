@@ -11,7 +11,7 @@
 
 @interface ViewController () <MPInterstitialAdControllerDelegate>
 
-@property (nonatomic, weak) IBOutlet UILabel *statusLabel;
+@property (nonatomic, weak) IBOutlet UITextView *statusTextView;
 @property (nonatomic, strong) MPInterstitialAdController *interstitial;
 @property (nonatomic, assign) BOOL isAdLoaded;
 
@@ -19,52 +19,41 @@
 
 @implementation ViewController
 
-- (void) addStatus: (NSString*)string {
-    NSMutableString *tmp = [[NSString stringWithFormat:@"%@\n%@", self.statusLabel.text, string] mutableCopy];
-
-    if ([[tmp componentsSeparatedByString:@"\n"] count] > 6) {
-        NSRange range = [tmp rangeOfString:@"\n"];
-        tmp = [[tmp substringFromIndex: range.location + 1] mutableCopy];
-    }
-
-    self.statusLabel.text = tmp;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self addStatus: @"Choice Manager Loading..."];
+    [self addNewStatus: @"Choice Manager Loading..."];
     //The setup of Ogury Choice Manager is done AppDelegate file.
     [[OguryChoiceManager sharedManager] askWithViewController:self andCompletionBlock:^(NSError * _Nullable error, OguryChoiceManagerAnswer answer) {
         if (!error) {
             switch (answer) {
                 case OguryChoiceManagerAnswerNoAnswer:
-                    [self addStatus: @"Choice Manager No Answer"];
+                    [self addNewStatus: @"Choice Manager No Answer"];
                     break;
                 case OguryChoiceManagerAnswerFullApproval: // TCF Option
-                     [self addStatus: @"Choice Manager Full Approval"];
+                     [self addNewStatus: @"Choice Manager Full Approval"];
                     break;
                 case OguryChoiceManagerAnswerPartialApproval: // TCF Option
-                      [self addStatus: @"Choice Manager Partial Approval"];
+                      [self addNewStatus: @"Choice Manager Partial Approval"];
                     break;
                 case OguryChoiceManagerAnswerRefusal: // TCF Option
-                       [self addStatus: @"Choice Manager Refusal"];
+                       [self addNewStatus: @"Choice Manager Refusal"];
                     break;
                 case OguryChoiceManagerAnswerSaleAllowed: // CCPA Option
-                        [self addStatus: @"Choice Manager Sale Allowed"];
+                        [self addNewStatus: @"Choice Manager Sale Allowed"];
                     break;
                 case OguryChoiceManagerAnswerSaleDenied: // CCPA Option
-                         [self addStatus: @"Choice Manager Unknown Option"];
+                         [self addNewStatus: @"Choice Manager Unknown Option"];
                     break;
             }
         } else {
-            [self addStatus: [NSString stringWithFormat:@"Choice Manager error : %@", error.description]];
+            [self addNewStatus: [NSString stringWithFormat:@"Choice Manager error : %@", error.description]];
         }
     }];
 }
 
 - (IBAction)loadAdBtnPressed:(id)sender {
-    [self addStatus: @"Loading Ad..."];
+    [self addNewStatus: @"Loading Ad..."];
     self.interstitial = [MPInterstitialAdController interstitialAdControllerForAdUnitId:@"mopub_adunit"];
     self.interstitial.delegate = self;
     [self.interstitial loadAd];
@@ -72,33 +61,43 @@
 
 - (IBAction)showAdBtnPressed:(id)sender {
     if (self.isAdLoaded == YES) {
-        [self addStatus: @"Ad requested to show"];
+        [self addNewStatus: @"Ad requested to show"];
         [self.interstitial showFromViewController:self];
+    } else {
+        [self addNewStatus: @"Ad not loaded"];
     }
-    
 }
+
+
+- (void)addNewStatus:(NSString *)status {
+    NSString * statusLog = [status stringByAppendingString:@"\n"];
+    self.statusTextView.text = [self.statusTextView.text stringByAppendingString:statusLog];
+    NSRange bottom = NSMakeRange(self.statusTextView.text.length-1, 1);
+    [self.statusTextView scrollRangeToVisible:bottom];
+}
+
 
 #pragma mark - MoPub Delegate
 - (void)interstitialDidLoadAd:(MPInterstitialAdController *)interstitial {
-    [self addStatus: @"Ad received"];
+    [self addNewStatus: @"Ad received"];
     self.isAdLoaded = YES;
 }
 
 - (void)interstitialDidFailToLoadAd:(MPInterstitialAdController *)interstitial withError:(NSError *)error {
-    [self addStatus: [NSString stringWithFormat:@"Error: %@",error.description]];
+    [self addNewStatus: [NSString stringWithFormat:@"Error: %@",error.description]];
 }
 
 - (void)interstitialDidPresent:(MPInterstitialAdController *)interstitial {
-    [self addStatus: @"Interstitial did present"];
+    [self addNewStatus: @"Interstitial did present"];
 }
 
 - (void)interstitialDidDismiss:(MPInterstitialAdController *)interstitial {
-    [self addStatus: @"Ad not loaded"];
+    [self addNewStatus: @"Ad not loaded"];
     self.isAdLoaded = NO;
 }
 
 - (void)interstitialDidReceiveTapEvent:(MPInterstitialAdController *)interstitial {
-    NSLog(@"interstitialDidReceiveTapEvent");
+    [self addNewStatus: @"interstitialDidReceiveTapEvent"];
 }
 
 @end

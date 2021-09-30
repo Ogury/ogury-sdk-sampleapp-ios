@@ -78,6 +78,8 @@
         [self addNewStatus:@"MPU requested to show"];
         self.mpuBanner.frame = CGRectMake(0, 0, self.mpuView.frame.size.width, self.mpuView.frame.size.height);
         [self.mpuView addSubview:self.mpuBanner];
+    } else {
+        [self addNewStatus:@"MPU not loaded"];
     }
 }
 
@@ -86,6 +88,8 @@
         [self addNewStatus:@"Small Banner requested to show"];
         self.smallBanner.frame = CGRectMake(0, 0, self.smallBannerView.frame.size.width, self.smallBannerView.frame.size.height);
         [self.smallBannerView addSubview:self.smallBanner];
+    } else {
+        [self addNewStatus:@"Small banner not loaded"];
     }
 }
 

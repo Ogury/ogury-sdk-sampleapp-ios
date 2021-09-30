@@ -11,42 +11,42 @@ import OguryChoiceManager
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusTextView: UITextView!
     var thumbnail: GADBannerView?
     var adLoaded: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.statusLabel.text = "Choice Manager Loading..."
-        
+        addNewStatus("Choice Manager Loading...")
+
         //The setup of Ogury Choice Manager is done AppDelegate.swift file.
         OguryChoiceManager.shared().ask(with: self) { (error, answer) in
             if error == nil {
                 switch answer {
                 case .noAnswer: // TCF Option
-                    self.statusLabel.text = "Choice Manager No Answer"
+                    self.addNewStatus("Choice Manager No Answer")
                 case .fullApproval: // TCF Option
-                    self.statusLabel.text = "Choice Manager Full Approval"
+                    self.addNewStatus("Choice Manager Full Approval")
                 case .partialApproval: // TCF Option
-                    self.statusLabel.text = "Choice Manager Partial Approval"
+                    self.addNewStatus("Choice Manager Partial Approval")
                 case .refusal: // TCF Option
-                    self.statusLabel.text = "Choice Manager Refusal"
+                    self.addNewStatus("Choice Manager Refusal")
                 case .saleAllowed: // CCPA Option
-                    self.statusLabel.text = "Choice Manager Sale Allowed"
+                    self.addNewStatus("Choice Manager Sale Allowed")
                 case .saleDenied: // CCPA Option
-                    self.statusLabel.text = "Choice Manager Sale Denided"
+                    self.addNewStatus("Choice Manager Sale Denided")
                 default:
-                    self.statusLabel.text = "Choice Manager Unknown Option"
+                    self.addNewStatus("Choice Manager Unknown Option")
                 }
             } else {
-                self.statusLabel.text = "Choice Manager error : \(error.debugDescription)"
+                self.addNewStatus("Choice Manager error : \(error.debugDescription)")
             }
         }
     }
 
     
     @IBAction func loadAdBtnPressed(_ sender: Any) {
-        self.statusLabel.text = "Loading Ad..."
+        self.addNewStatus("Loading Ad...")
         let adSizeThumbnail = GADAdSizeFromCGSize(CGSize(width: 180  , height: 180)) //The size of the thumbnail
         thumbnail = GADBannerView(adSize: adSizeThumbnail)
         thumbnail!.adUnitID = "admob_adunit" //Google Ad Unit Id
@@ -65,12 +65,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showAdBtnPressed(_ sender: Any) {
-        guard let thumbnailView = thumbnail else {
+        guard let thumbnailView = thumbnail, adLoaded else {
+            self.addNewStatus("Ad not loaded")
             return
         }
-        if adLoaded == true {
-            self.statusLabel.text = "Ad requested to show"
-            self.view.addSubview(thumbnailView)
+        self.addNewStatus("Ad requested to show")
+        self.view.addSubview(thumbnailView)
+    }
+
+    func addNewStatus(_ status: String) {
+        DispatchQueue.main.async {
+            let textToLog = status + "\n"
+            self.statusTextView.textStorage.append(NSAttributedString(string: textToLog))
+            let bottom = NSMakeRange(self.statusTextView.text.count - 1, 1)
+            self.statusTextView.scrollRangeToVisible(bottom)
         }
     }
     
@@ -78,12 +86,12 @@ class ViewController: UIViewController {
 
 extension ViewController : GADBannerViewDelegate {
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
-        self.statusLabel.text = "Ad received"
+        self.addNewStatus("Ad received")
         self.adLoaded = true
     }
 
     func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
-        self.statusLabel.text = "Error: \(error.localizedDescription)"
+        self.addNewStatus("Error: \(error.localizedDescription)")
     }
 
 }

@@ -12,7 +12,7 @@
 
 @interface ViewController()<MPAdViewDelegate>
 
-@property (nonatomic, weak) IBOutlet UILabel *statusLabel;
+@property (nonatomic, weak) IBOutlet UITextView *statusTextView;
 @property (nonatomic, strong) MPAdView *thumbnail;
 @property (nonatomic, assign) BOOL isAdLoaded;
 
@@ -22,39 +22,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.statusLabel.text = @"Choice Manager Loading...";
+    [self addNewStatus: @"Choice Manager Loading..."];
     
     //The setup of Ogury Choice Manager and is done AppDelegate file.
     [[OguryChoiceManager sharedManager] askWithViewController:self andCompletionBlock:^(NSError * _Nullable error, OguryChoiceManagerAnswer answer) {
         if (!error) {
             switch (answer) {
                 case OguryChoiceManagerAnswerNoAnswer:
-                    self.statusLabel.text = @"Choice Manager No Answer";
+                    [self addNewStatus: @"Choice Manager No Answer"];
                     break;
                 case OguryChoiceManagerAnswerFullApproval: // TCF Option
-                    self.statusLabel.text = @"Choice Manager Full Approval";
+                    [self addNewStatus: @"Choice Manager Full Approval"];
                     break;
                 case OguryChoiceManagerAnswerPartialApproval: // TCF Option
-                    self.statusLabel.text = @"Choice Manager Partial Approval";
+                    [self addNewStatus: @"Choice Manager Partial Approval"];
                     break;
                 case OguryChoiceManagerAnswerRefusal: // TCF Option
-                    self.statusLabel.text = @"Choice Manager Refusal";
+                    [self addNewStatus: @"Choice Manager Refusal"];
                     break;
                 case OguryChoiceManagerAnswerSaleAllowed: // CCPA Option
-                    self.statusLabel.text = @"Choice Manager Sale Allowed";
+                    [self addNewStatus: @"Choice Manager Sale Allowed"];
                     break;
                 case OguryChoiceManagerAnswerSaleDenied: // CCPA Option
-                    self.statusLabel.text = @"Choice Manager Unknown Option";
+                    [self addNewStatus: @"Choice Manager Unknown Option"];
                     break;
             }
         } else {
-            self.statusLabel.text = [NSString stringWithFormat:@"Choice Manager error : %@", error.description];
+            [self addNewStatus: [NSString stringWithFormat:@"Choice Manager error : %@", error.description]];
         }
     }];
 }
 
 - (IBAction)loadAdBtnPressed:(id)sender {
-    self.statusLabel.text = @"Thumbnail Loading ...";
+    [self addNewStatus: @"Thumbnail Loading ..."];
     self.thumbnail = [[MPAdView alloc] initWithAdUnitId:@"mopub_adunit"];
     self.thumbnail.delegate = self;
     self.thumbnail.maxAdSize = CGSizeMake(200, 200);
@@ -73,9 +73,16 @@
 
 - (IBAction)showAdBtnPressed:(id)sender {
     if (self.isAdLoaded == YES) {
-        self.statusLabel.text = @"Ad requested to show";
+        [self addNewStatus: @"Ad requested to show"];
         [self.view addSubview:self.thumbnail];
     }
+}
+
+- (void)addNewStatus:(NSString *)status {
+    NSString * statusLog = [status stringByAppendingString:@"\n"];
+    self.statusTextView.text = [self.statusTextView.text stringByAppendingString:statusLog];
+    NSRange bottom = NSMakeRange(self.statusTextView.text.length-1, 1);
+    [self.statusTextView scrollRangeToVisible:bottom];
 }
 
 #pragma mark - MoPub Delegate
@@ -85,12 +92,12 @@
 }
 
 - (void)adViewDidLoadAd:(MPAdView *)view adSize:(CGSize)adSize {
-    self.statusLabel.text = @"Ad received";
+    [self addNewStatus: @"Ad received"];
     self.isAdLoaded = YES;
 }
 
 - (void)adView:(MPAdView *)view didFailToLoadAdWithError:(NSError *)error {
-    self.statusLabel.text = [NSString stringWithFormat:@"Error %@", error.description];
+    [self addNewStatus: [NSString stringWithFormat:@"Error %@", error.description]];
 }
 
 @end

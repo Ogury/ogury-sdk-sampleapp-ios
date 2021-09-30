@@ -65,28 +65,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showMPUBtnPressed(_ sender: Any) {
-        guard let mpuBanner = mpuBanner else {
-            addNewStatus("MPU not initialised")
+        guard let mpuBanner = mpuBanner, mpuLoaded else {
+            addNewStatus("MPU not loaded")
             return
         }
-        
-        if mpuLoaded == true {
-            addNewStatus("MPU requested to show")
-            mpuBanner.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: mpuView.frame.size)
-            mpuView.addSubview(mpuBanner)
-        }
+        addNewStatus("MPU requested to show")
+        mpuBanner.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: mpuView.frame.size)
+        mpuView.addSubview(mpuBanner)
     }
     
     @IBAction func showSmallBannerBtnPressed(_ sender: Any) {
-        guard let smallBanner = smallBanner else {
-            addNewStatus("Small Banner not initialised")
+        guard let smallBanner = smallBanner, smallBannerLoaded else {
+            addNewStatus("Small Banner not loaded")
             return
         }
-        if smallBannerLoaded == true {
-            addNewStatus("Small Banner requested to show")
-            smallBanner.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: smallBannerView.frame.size)
-            smallBannerView.addSubview(smallBanner)
-        }
+        addNewStatus("Small Banner requested to show")
+        smallBanner.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: smallBannerView.frame.size)
+        smallBannerView.addSubview(smallBanner)
     }
     
     func addNewStatus(_ status: String) {
