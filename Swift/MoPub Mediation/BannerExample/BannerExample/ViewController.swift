@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MoPub
+import MoPubSDK
 import OguryChoiceManager
 
 class ViewController: UIViewController {
@@ -24,6 +24,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addNewStatus("Choice Manager Loading...")
+
+        let moPubsdkConfig = MPMoPubConfiguration.init(adUnitIdForAppInitialization: "mopub_adunit")
+
+        moPubsdkConfig.loggingLevel = .debug
+
+        self.addNewStatus("MoPub initializing")
+        MoPub.sharedInstance().initializeSdk(with: moPubsdkConfig) {
+            self.addNewStatus("MoPub initialized")
+        }
         
         //The setup of Ogury Choice Manager is done AppDelegate.swift file.
         OguryChoiceManager.shared().ask(with: self) { (error, answer) in
@@ -52,7 +61,7 @@ class ViewController: UIViewController {
 
     @IBAction func loadMPUBtnPressed(_ sender: Any) {
         self.addNewStatus("MPU Loading ...")
-        mpuBanner = MPAdView.init(adUnitId: "4db28cd8fe2e4c9bbee175d86df53ee2")
+        mpuBanner = MPAdView.init(adUnitId: "mopub_adunit")
         mpuBanner!.delegate = self
         
         mpuBanner!.frame = CGRect(x: 0, y: 0, width: mpuView.frame.width, height: mpuView.frame.height);
@@ -61,7 +70,7 @@ class ViewController: UIViewController {
     
     @IBAction func loadSmallBannerBtnPressed(_ sender: Any) {
         self.addNewStatus("Small Banner Loading ...")
-        smallBanner = MPAdView.init(adUnitId: "7e2bf143b2c0470fab647c0868571370")
+        smallBanner = MPAdView.init(adUnitId: "mopub_adunit")
         smallBanner!.delegate = self
         
         smallBanner!.frame = CGRect(x: 0, y: 0, width: smallBannerView.frame.width, height: smallBannerView.frame.height);
@@ -69,26 +78,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showMPUBtnPressed(_ sender: Any) {
-        guard let mpuBanner = mpuBanner else {
-            addNewStatus("MPU not initialised")
+        guard let mpuBanner = mpuBanner, mpuLoaded else {
+            addNewStatus("MPU not loaded")
             return
         }
-        
-        if mpuLoaded == true {
-            addNewStatus("MPU requested to show")
-            mpuView.addSubview(mpuBanner)
-        }
+
+        addNewStatus("MPU requested to show")
+        mpuView.addSubview(mpuBanner)
     }
     
     @IBAction func showSmallBannerBtnPressed(_ sender: Any) {
-        guard let smallBanner = smallBanner else {
-            addNewStatus("Small Banner not initialised")
+        guard let smallBanner = smallBanner, smallBannerLoaded else {
+            addNewStatus("Small Banner not loaded")
             return
         }
-        if smallBannerLoaded == true {
-            addNewStatus("Small Banner requested to show")
-            smallBannerView.addSubview(smallBanner)
-        }
+        addNewStatus("Small Banner requested to show")
+        smallBannerView.addSubview(smallBanner)
     }
     
     func addNewStatus(_ status: String) {

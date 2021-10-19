@@ -14,12 +14,9 @@
 		547FD6B1257E50D200FF4F44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547FD6B0257E50D200FF4F44 /* Assets.xcassets */; };
 		547FD6B4257E50D200FF4F44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547FD6B2257E50D200FF4F44 /* LaunchScreen.storyboard */; };
 		547FD6B7257E50D200FF4F44 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 547FD6B6257E50D200FF4F44 /* main.m */; };
-		54D170BB2587BB1C00D989B3 /* OGMThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D170AE2587BB1C00D989B3 /* OGMThumbnailView.m */; };
-		54D170BC2587BB1C00D989B3 /* OguryAdsMoPubEventBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D170B02587BB1C00D989B3 /* OguryAdsMoPubEventBanner.m */; };
-		54D170BD2587BB1C00D989B3 /* OguryAdsMoPubEventInterstitial.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D170B12587BB1C00D989B3 /* OguryAdsMoPubEventInterstitial.m */; };
-		54D170BE2587BB1C00D989B3 /* OguryAdsMoPubEventOptin.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D170B42587BB1C00D989B3 /* OguryAdsMoPubEventOptin.m */; };
-		54D170BF2587BB1C00D989B3 /* OguryAdsMoPubEventThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D170B72587BB1C00D989B3 /* OguryAdsMoPubEventThumbnail.m */; };
-		54D170C02587BB1C00D989B3 /* OguryAdsAdapterConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D170BA2587BB1C00D989B3 /* OguryAdsAdapterConfiguration.m */; };
+		5856AFDF26FDDF30005934E2 /* OGMThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5856AFD926FDDF30005934E2 /* OGMThumbnailView.m */; };
+		5856AFE026FDDF30005934E2 /* OguryAdsMoPubEventThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = 5856AFDD26FDDF30005934E2 /* OguryAdsMoPubEventThumbnail.m */; };
+		5856AFE126FDDF30005934E2 /* OguryAdsAdapterConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5856AFDE26FDDF30005934E2 /* OguryAdsAdapterConfiguration.m */; };
 		DCC1B9BCC5B6193A0ACB0F13 /* Pods_ThumbnailExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381E36859DC6CC6185663B91 /* Pods_ThumbnailExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,19 +35,12 @@
 		547FD6B3257E50D200FF4F44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		547FD6B5257E50D200FF4F44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		547FD6B6257E50D200FF4F44 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		54D170AE2587BB1C00D989B3 /* OGMThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGMThumbnailView.m; sourceTree = "<group>"; };
-		54D170AF2587BB1C00D989B3 /* OGMThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGMThumbnailView.h; sourceTree = "<group>"; };
-		54D170B02587BB1C00D989B3 /* OguryAdsMoPubEventBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsMoPubEventBanner.m; sourceTree = "<group>"; };
-		54D170B12587BB1C00D989B3 /* OguryAdsMoPubEventInterstitial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsMoPubEventInterstitial.m; sourceTree = "<group>"; };
-		54D170B22587BB1C00D989B3 /* OguryAdsMoPubEventThumbnail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsMoPubEventThumbnail.h; sourceTree = "<group>"; };
-		54D170B32587BB1C00D989B3 /* OguryAdsAdapterConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsAdapterConfiguration.h; sourceTree = "<group>"; };
-		54D170B42587BB1C00D989B3 /* OguryAdsMoPubEventOptin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsMoPubEventOptin.m; sourceTree = "<group>"; };
-		54D170B52587BB1C00D989B3 /* MopubCustomEvents-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MopubCustomEvents-Bridging-Header.h"; sourceTree = "<group>"; };
-		54D170B62587BB1C00D989B3 /* OguryAdsMoPubEventBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsMoPubEventBanner.h; sourceTree = "<group>"; };
-		54D170B72587BB1C00D989B3 /* OguryAdsMoPubEventThumbnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsMoPubEventThumbnail.m; sourceTree = "<group>"; };
-		54D170B82587BB1C00D989B3 /* OguryAdsMoPubEventInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsMoPubEventInterstitial.h; sourceTree = "<group>"; };
-		54D170B92587BB1C00D989B3 /* OguryAdsMoPubEventOptin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsMoPubEventOptin.h; sourceTree = "<group>"; };
-		54D170BA2587BB1C00D989B3 /* OguryAdsAdapterConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsAdapterConfiguration.m; sourceTree = "<group>"; };
+		5856AFD926FDDF30005934E2 /* OGMThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OGMThumbnailView.m; sourceTree = "<group>"; };
+		5856AFDA26FDDF30005934E2 /* OGMThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OGMThumbnailView.h; sourceTree = "<group>"; };
+		5856AFDB26FDDF30005934E2 /* OguryAdsMoPubEventThumbnail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsMoPubEventThumbnail.h; sourceTree = "<group>"; };
+		5856AFDC26FDDF30005934E2 /* OguryAdsAdapterConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OguryAdsAdapterConfiguration.h; sourceTree = "<group>"; };
+		5856AFDD26FDDF30005934E2 /* OguryAdsMoPubEventThumbnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsMoPubEventThumbnail.m; sourceTree = "<group>"; };
+		5856AFDE26FDDF30005934E2 /* OguryAdsAdapterConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OguryAdsAdapterConfiguration.m; sourceTree = "<group>"; };
 		C0311B375A9DAE39EDC3918B /* Pods-ThumbnailExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThumbnailExample.release.xcconfig"; path = "Target Support Files/Pods-ThumbnailExample/Pods-ThumbnailExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,7 +76,7 @@
 		547FD695257E50D000FF4F44 = {
 			isa = PBXGroup;
 			children = (
-				54D170AC2587BB1C00D989B3 /* OguryAdsCustomEventsMoPub */,
+				5856AFD726FDDF30005934E2 /* OguryAdsCustomEventsMoPub_1.3.5.0 */,
 				547FD6A0257E50D000FF4F44 /* ThumbnailExample */,
 				547FD69F257E50D000FF4F44 /* Products */,
 				144D28874F74F7E761E7C2A6 /* Pods */,
@@ -120,30 +110,23 @@
 			path = ThumbnailExample;
 			sourceTree = "<group>";
 		};
-		54D170AC2587BB1C00D989B3 /* OguryAdsCustomEventsMoPub */ = {
+		5856AFD726FDDF30005934E2 /* OguryAdsCustomEventsMoPub_1.3.5.0 */ = {
 			isa = PBXGroup;
 			children = (
-				54D170AD2587BB1C00D989B3 /* Thumbnail */,
-				54D170B02587BB1C00D989B3 /* OguryAdsMoPubEventBanner.m */,
-				54D170B12587BB1C00D989B3 /* OguryAdsMoPubEventInterstitial.m */,
-				54D170B22587BB1C00D989B3 /* OguryAdsMoPubEventThumbnail.h */,
-				54D170B32587BB1C00D989B3 /* OguryAdsAdapterConfiguration.h */,
-				54D170B42587BB1C00D989B3 /* OguryAdsMoPubEventOptin.m */,
-				54D170B52587BB1C00D989B3 /* MopubCustomEvents-Bridging-Header.h */,
-				54D170B62587BB1C00D989B3 /* OguryAdsMoPubEventBanner.h */,
-				54D170B72587BB1C00D989B3 /* OguryAdsMoPubEventThumbnail.m */,
-				54D170B82587BB1C00D989B3 /* OguryAdsMoPubEventInterstitial.h */,
-				54D170B92587BB1C00D989B3 /* OguryAdsMoPubEventOptin.h */,
-				54D170BA2587BB1C00D989B3 /* OguryAdsAdapterConfiguration.m */,
+				5856AFD826FDDF30005934E2 /* Thumbnail */,
+				5856AFDB26FDDF30005934E2 /* OguryAdsMoPubEventThumbnail.h */,
+				5856AFDC26FDDF30005934E2 /* OguryAdsAdapterConfiguration.h */,
+				5856AFDD26FDDF30005934E2 /* OguryAdsMoPubEventThumbnail.m */,
+				5856AFDE26FDDF30005934E2 /* OguryAdsAdapterConfiguration.m */,
 			);
-			path = OguryAdsCustomEventsMoPub;
+			path = OguryAdsCustomEventsMoPub_1.3.5.0;
 			sourceTree = "<group>";
 		};
-		54D170AD2587BB1C00D989B3 /* Thumbnail */ = {
+		5856AFD826FDDF30005934E2 /* Thumbnail */ = {
 			isa = PBXGroup;
 			children = (
-				54D170AE2587BB1C00D989B3 /* OGMThumbnailView.m */,
-				54D170AF2587BB1C00D989B3 /* OGMThumbnailView.h */,
+				5856AFD926FDDF30005934E2 /* OGMThumbnailView.m */,
+				5856AFDA26FDDF30005934E2 /* OGMThumbnailView.h */,
 			);
 			path = Thumbnail;
 			sourceTree = "<group>";
@@ -262,15 +245,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5463D816258B6BEB008ECC75 /* BlackListViewController.m in Sources */,
-				54D170BC2587BB1C00D989B3 /* OguryAdsMoPubEventBanner.m in Sources */,
+				5856AFDF26FDDF30005934E2 /* OGMThumbnailView.m in Sources */,
 				547FD6B7257E50D200FF4F44 /* main.m in Sources */,
-				54D170BE2587BB1C00D989B3 /* OguryAdsMoPubEventOptin.m in Sources */,
 				547FD6A9257E50D000FF4F44 /* ViewController.m in Sources */,
-				54D170C02587BB1C00D989B3 /* OguryAdsAdapterConfiguration.m in Sources */,
+				5856AFE126FDDF30005934E2 /* OguryAdsAdapterConfiguration.m in Sources */,
 				547FD6A3257E50D000FF4F44 /* AppDelegate.m in Sources */,
-				54D170BD2587BB1C00D989B3 /* OguryAdsMoPubEventInterstitial.m in Sources */,
-				54D170BB2587BB1C00D989B3 /* OGMThumbnailView.m in Sources */,
-				54D170BF2587BB1C00D989B3 /* OguryAdsMoPubEventThumbnail.m in Sources */,
+				5856AFE026FDDF30005934E2 /* OguryAdsMoPubEventThumbnail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

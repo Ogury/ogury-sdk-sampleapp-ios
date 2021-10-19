@@ -7,7 +7,7 @@
 
 #import "ViewController.h"
 #import <OguryChoiceManager/OguryChoiceManager.h>
-#import <MoPub/MoPub.h>
+#import <MoPubSDK/MoPub.h>
 
 @interface ViewController ()<MPAdViewDelegate>
 
@@ -60,7 +60,7 @@
 
 - (IBAction)loadMPUBtnPressed:(id)sender {
     [self addNewStatus:@"MPU Loading ..."];
-    self.mpuBanner = [[MPAdView alloc] initWithAdUnitId:@"4db28cd8fe2e4c9bbee175d86df53ee2"];
+    self.mpuBanner = [[MPAdView alloc] initWithAdUnitId:@"mopub_adunit"];
     self.mpuBanner.delegate = self;
     self.mpuBanner.frame = CGRectMake(0, 0, self.mpuView.frame.size.width, self.mpuView.frame.size.height);
     [self.mpuBanner loadAdWithMaxAdSize:CGSizeMake(self.mpuView.frame.size.width, self.mpuView.frame.size.height)];
@@ -68,7 +68,7 @@
 
 - (IBAction)loadSmallBannerBtnPressed:(id)sender {
     [self addNewStatus:@"Small Banner Loading ..."];
-    self.smallBanner = [[MPAdView alloc] initWithAdUnitId:@"7e2bf143b2c0470fab647c0868571370"];
+    self.smallBanner = [[MPAdView alloc] initWithAdUnitId:@"mopub_adunit"];
     self.smallBanner.delegate = self;
     self.smallBanner.frame = CGRectMake(0, 0, self.smallBannerView.frame.size.width, self.smallBannerView.frame.size.height);
     [self.smallBanner loadAdWithMaxAdSize:CGSizeMake(self.smallBannerView.frame.size.width, self.smallBannerView.frame.size.height)];
@@ -78,6 +78,8 @@
     if (self.isMpuLoaded == YES) {
         [self addNewStatus:@"MPU requested to show"];
         [self.mpuView addSubview:self.mpuBanner];
+    } else {
+        [self addNewStatus:@"MPU not loaded"];
     }
 }
 
@@ -85,6 +87,8 @@
     if (self.isSmallBannerLoaded == YES) {
         [self addNewStatus:@"Small Banner requested to show"];
         [self.smallBannerView addSubview:self.smallBanner];
+    } else {
+        [self addNewStatus:@"Small banner not loaded"];
     }
 }
 

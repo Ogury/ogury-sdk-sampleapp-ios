@@ -11,44 +11,44 @@ import OguryAds
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusTextView: UITextView!
     var thumbnail: OguryAdsThumbnailAd?
     var adLoaded: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.statusLabel.text = "Choice Manager Loading..."
+        addNewStatus("Choice Manager Loading...")
         
         //The setup of Ogury Choice Manager is done AppDelegate.swift file.
         OguryChoiceManager.shared().ask(with: self) { (error, answer) in
             if error == nil {
                 switch answer {
                 case .noAnswer: // TCF Option
-                    self.statusLabel.text = "Choice Manager No Answer"
+                    self.addNewStatus("Choice Manager No Answer")
                 case .fullApproval: // TCF Option
-                    self.statusLabel.text = "Choice Manager Full Approval"
+                    self.addNewStatus("Choice Manager Full Approval")
                 case .partialApproval: // TCF Option
-                    self.statusLabel.text = "Choice Manager Partial Approval"
+                    self.addNewStatus("Choice Manager Partial Approval")
                 case .refusal: // TCF Option
-                    self.statusLabel.text = "Choice Manager Refusal"
+                    self.addNewStatus("Choice Manager Refusal")
                 case .saleAllowed: // CCPA Option
-                    self.statusLabel.text = "Choice Manager Sale Allowed"
+                    self.addNewStatus("Choice Manager Sale Allowed")
                 case .saleDenied: // CCPA Option
-                    self.statusLabel.text = "Choice Manager Sale Denided"
+                    self.addNewStatus("Choice Manager Sale Denided")
                 default:
-                    self.statusLabel.text = "Choice Manager Unknown Option"
+                    self.addNewStatus("Choice Manager Unknown Option")
                 }
             } else {
-                self.statusLabel.text = "Choice Manager error : \(error.debugDescription)"
+                self.addNewStatus("Choice Manager error : \(error.debugDescription)")
             }
         }
     }
 
     
     @IBAction func loadAdBtnPressed(_ sender: Any) {
-        self.statusLabel.text = "Loading Ad..."
+        addNewStatus("Loading Ad...")
         
-        thumbnail = OguryAdsThumbnailAd.init(adUnitID: "7fe46720-4a9f-0138-0f06-0242ac120004_test")
+        thumbnail = OguryAdsThumbnailAd.init(adUnitID: "ogury_adunit")
         thumbnail!.thumbnailAdDelegate = self
         
         thumbnail?.setWhitelistBundleIdentifiers(["com.example.bundle","com.example.bundle2"]) // Extenal bundle where thumbnail is allowed to show
@@ -62,8 +62,17 @@ class ViewController: UIViewController {
             return
         }
         if adLoaded == true {
-            self.statusLabel.text = "Ad requested to show"
+            addNewStatus("Ad requested to show")
             thumbnailView.show(with: OguryRectCorner.bottomRight, margin: OguryOffset(x: 20, y: 20))
+        }
+    }
+
+    func addNewStatus(_ status: String) {
+        DispatchQueue.main.async {
+            let textToLog = status + "\n"
+            self.statusTextView.textStorage.append(NSAttributedString(string: textToLog))
+            let bottom = NSMakeRange(self.statusTextView.text.count - 1, 1)
+            self.statusTextView.scrollRangeToVisible(bottom)
         }
     }
     
@@ -71,30 +80,30 @@ class ViewController: UIViewController {
 
 extension ViewController : OguryAdsThumbnailAdDelegate {
     func oguryAdsThumbnailAdAdLoaded() {
-        self.statusLabel.text = "Ad received"
+        addNewStatus("Ad received")
         self.adLoaded = true
     }
     
     func oguryAdsThumbnailAdAdClosed() {
-        self.statusLabel.text = "Ad Closed"
+        addNewStatus("Ad Closed")
         self.adLoaded = false
     }
     
     func oguryAdsThumbnailAdAdClicked() {
-        self.statusLabel.text = "Ad Clicked"
+        addNewStatus("Ad Clicked")
     }
     
     func oguryAdsThumbnailAdAdDisplayed() {
-        self.statusLabel.text = "Ad on screen"
+        addNewStatus("Ad on screen")
     }
     
     func oguryAdsThumbnailAdAdNotAvailable() {
-        self.statusLabel.text = "Ad Not Available"
+        addNewStatus("Ad Not Available")
     }
     
     //For more informations about error codes please refer to our documentation at https://docs.ogury.co/
     func oguryAdsThumbnailAdAdError(_ errorType: OguryAdsErrorType) {
-        self.statusLabel.text = "Error: \(errorType.rawValue)"
+        addNewStatus("Error: \(errorType.rawValue)")
         self.adLoaded = false
     }
 }

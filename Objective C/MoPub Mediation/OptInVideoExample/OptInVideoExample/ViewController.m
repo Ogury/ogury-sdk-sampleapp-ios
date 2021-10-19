@@ -7,11 +7,11 @@
 
 #import "ViewController.h"
 #import <OguryChoiceManager/OguryChoiceManager.h>
-#import <MoPub/MoPub.h>
+#import <MoPubSDK/MoPub.h>
 
-@interface ViewController () <MPRewardedVideoDelegate>
+@interface ViewController () <MPRewardedAdsDelegate>
 
-@property (nonatomic, weak) IBOutlet UILabel *statusLabel;
+@property (nonatomic, weak) IBOutlet UITextView *statusTextView;
 @property (nonatomic, assign) BOOL isAdLoaded;
 
 @end
@@ -20,74 +20,86 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.statusLabel.text = @"Choice Manager Loading...";
     
+    [self addNewStatus:  @"Choice Manager Loading..."];
+
     //The setup of Ogury Choice Manager is done AppDelegate file.
     [[OguryChoiceManager sharedManager] askWithViewController:self andCompletionBlock:^(NSError * _Nullable error, OguryChoiceManagerAnswer answer) {
         if (!error) {
             switch (answer) {
                 case OguryChoiceManagerAnswerNoAnswer:
-                    self.statusLabel.text = @"Choice Manager No Answer";
+                    [self addNewStatus:@"Choice Manager No Answer"];
                     break;
                 case OguryChoiceManagerAnswerFullApproval: // TCF Option
-                    self.statusLabel.text = @"Choice Manager Full Approval";
+                    [self addNewStatus: @"Choice Manager Full Approval"];
                     break;
                 case OguryChoiceManagerAnswerPartialApproval: // TCF Option
-                    self.statusLabel.text = @"Choice Manager Partial Approval";
+                    [self addNewStatus: @"Choice Manager Partial Approval"];
                     break;
                 case OguryChoiceManagerAnswerRefusal: // TCF Option
-                    self.statusLabel.text = @"Choice Manager Refusal";
+                    [self addNewStatus: @"Choice Manager Refusal"];
                     break;
                 case OguryChoiceManagerAnswerSaleAllowed: // CCPA Option
-                    self.statusLabel.text = @"Choice Manager Sale Allowed";
+                    [self addNewStatus: @"Choice Manager Sale Allowed"];
                     break;
                 case OguryChoiceManagerAnswerSaleDenied: // CCPA Option
-                    self.statusLabel.text = @"Choice Manager Unknown Option";
+                    [self addNewStatus: @"Choice Manager Unknown Option"];
                     break;
             }
         } else {
-            self.statusLabel.text = [NSString stringWithFormat:@"Choice Manager error : %@", error.description];
+            [self addNewStatus: [NSString stringWithFormat:@"Choice Manager error : %@", error.description]];
         }
     }];
 }
 
 - (IBAction)loadAdBtnPressed:(id)sender {
-    self.statusLabel.text = @"Loading Ad...";
-    [MPRewardedVideo setDelegate:self forAdUnitId:@"ef93d42cfed24a23b76091f5ecb5c871"];
-    [MPRewardedVideo loadRewardedVideoAdWithAdUnitID:@"ef93d42cfed24a23b76091f5ecb5c871" withMediationSettings:nil];
+    [self addNewStatus: @"Loading Ad..."];
+    [MPRewardedAds setDelegate:self forAdUnitId:@"mopub_adunit"];
+    [MPRewardedAds loadRewardedAdWithAdUnitID:@"mopub_adunit" withMediationSettings:nil];
 }
 
 - (IBAction)showAdBtnPressed:(id)sender {
     if (self.isAdLoaded == YES) {
-        self.statusLabel.text = @"Ad requested to show";
-        [MPRewardedVideo presentRewardedVideoAdForAdUnitID:@"ef93d42cfed24a23b76091f5ecb5c871" fromViewController:self withReward:nil];
+        [self addNewStatus: @"Ad requested to show"];
+        [MPRewardedAds presentRewardedAdForAdUnitID:@"mopub_adunit" fromViewController:self withReward:nil];
+    } else {
+        [self addNewStatus: @"Ad not loaded"];
     }
 }
 
+
+- (void)addNewStatus:(NSString *)status {
+    NSString * statusLog = [status stringByAppendingString:@"\n"];
+    self.statusTextView.text = [self.statusTextView.text stringByAppendingString:statusLog];
+    NSRange bottom = NSMakeRange(self.statusTextView.text.length-1, 1);
+    [self.statusTextView scrollRangeToVisible:bottom];
+}
+
+
 #pragma mark - OguryAds Delegate
 
-- (void)rewardedVideoAdDidLoadForAdUnitID:(NSString *)adUnitID {
-    self.statusLabel.text = @"Ad loaded";
+
+- (void)rewardedAdDidLoadForAdUnitID:(NSString *)adUnitID {
+    [self addNewStatus: @"Ad loaded"];
     self.isAdLoaded = YES;
 }
 
-- (void)rewardedVideoAdDidFailToLoadForAdUnitID:(NSString *)adUnitID error:(NSError *)error {
-    self.statusLabel.text = [NSString stringWithFormat:@"Error: %@ ",error.description];
+- (void)rewardedAdDidFailToLoadForAdUnitID:(NSString *)adUnitID error:(NSError *)error{
+    [self addNewStatus: [NSString stringWithFormat:@"Error: %@ ",error.description]];
     self.isAdLoaded = NO;
 }
 
-- (void)rewardedVideoAdDidAppearForAdUnitID:(NSString *)adUnitID {
+- (void)rewardedAdDidPresentForAdUnitID:(NSString *)adUnitID{
     NSLog(@"rewardedVideoAdDidAppear");
 }
 
-- (void)rewardedVideoAdDidDisappearForAdUnitID:(NSString *)adUnitID {
-    self.statusLabel.text = @"Ad not loaded";
+- (void)rewardedAdDidDismissForAdUnitID:(NSString *)adUnitID {
+    [self addNewStatus: @"Ad not loaded"];
     self.isAdLoaded = NO;
 }
 
-- (void)rewardedVideoAdShouldRewardForAdUnitID:(NSString *)adUnitID reward:(MPRewardedVideoReward *)reward {
-    NSLog(@"Reward received : Type : %@ | Amount : %@", reward.currencyType, reward.amount);
+- (void)rewardedAdShouldRewardForAdUnitID:(NSString *)adUnitID reward:(MPReward *)reward {
+    [self addNewStatus: [NSString stringWithFormat: @"Reward received : Type : %@ | Amount : %@", reward.currencyType, reward.amount]];
 }
 
 @end

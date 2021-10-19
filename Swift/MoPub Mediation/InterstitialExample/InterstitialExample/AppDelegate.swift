@@ -7,7 +7,7 @@
 
 import UIKit
 import OguryChoiceManager
-import MoPub
+import MoPubSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,10 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        OguryChoiceManager.shared().setup(withAssetKey: "OGY-5575CC173955"); //Ogury Asset Key
+        OguryChoiceManager.shared().setup(withAssetKey: "asset_key"); //Ogury Asset Key
         
-        let sdkConfig = MPMoPubConfiguration.init(adUnitIdForAppInitialization: "de5cb2a3b2bc4d5cb6c97a89be556a6f")
+        let sdkConfig = MPMoPubConfiguration.init(adUnitIdForAppInitialization: "mopub_adunit")
         sdkConfig.loggingLevel = .debug
+        sdkConfig.mediatedNetworkConfigurations = ["OguryAdapterConfiguration":
+                                                        ["asset_key": "asset_key"]]
+
+
         MoPub.sharedInstance().initializeSdk(with: sdkConfig) {
             print("MoPub initialized")
         }

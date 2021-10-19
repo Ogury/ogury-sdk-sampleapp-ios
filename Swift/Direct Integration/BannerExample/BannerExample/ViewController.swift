@@ -52,41 +52,36 @@ class ViewController: UIViewController {
 
     @IBAction func loadMPUBtnPressed(_ sender: Any) {
         self.addNewStatus("MPU Loading ...")
-        mpuBanner = OguryAdsBanner.init(adUnitID: "73eb6620-b234-0138-8e13-0242ac120004_test")
+        mpuBanner = OguryAdsBanner.init(adUnitID: "ogury_adunit")
         mpuBanner!.bannerDelegate = self
         self.mpuBanner?.load(with: OguryAdsBannerSize.mpu_300x250())
     }
     
     @IBAction func loadSmallBannerBtnPressed(_ sender: Any) {
         self.addNewStatus("Small Banner Loading ...")
-        smallBanner = OguryAdsBanner.init(adUnitID: "c3a1a5e0-4f39-0138-42f4-0242ac120004_test")
+        smallBanner = OguryAdsBanner.init(adUnitID: "ogury_adunit")
         smallBanner!.bannerDelegate = self
         self.smallBanner?.load(with: OguryAdsBannerSize.small_banner_320x50())
     }
     
     @IBAction func showMPUBtnPressed(_ sender: Any) {
-        guard let mpuBanner = mpuBanner else {
-            addNewStatus("MPU not initialised")
+        guard let mpuBanner = mpuBanner, mpuLoaded else {
+            addNewStatus("MPU not loaded")
             return
         }
-        
-        if mpuLoaded == true {
-            addNewStatus("MPU requested to show")
-            mpuBanner.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: mpuView.frame.size)
-            mpuView.addSubview(mpuBanner)
-        }
+        addNewStatus("MPU requested to show")
+        mpuBanner.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: mpuView.frame.size)
+        mpuView.addSubview(mpuBanner)
     }
     
     @IBAction func showSmallBannerBtnPressed(_ sender: Any) {
-        guard let smallBanner = smallBanner else {
-            addNewStatus("Small Banner not initialised")
+        guard let smallBanner = smallBanner, smallBannerLoaded else {
+            addNewStatus("Small Banner not loaded")
             return
         }
-        if smallBannerLoaded == true {
-            addNewStatus("Small Banner requested to show")
-            smallBanner.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: smallBannerView.frame.size)
-            smallBannerView.addSubview(smallBanner)
-        }
+        addNewStatus("Small Banner requested to show")
+        smallBanner.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: smallBannerView.frame.size)
+        smallBannerView.addSubview(smallBanner)
     }
     
     func addNewStatus(_ status: String) {

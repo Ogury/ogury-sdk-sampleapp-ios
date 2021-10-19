@@ -62,7 +62,7 @@
 - (IBAction)loadMPUBtnPressed:(id)sender {
     [self addNewStatus:@"MPU Loading ..."];
     self.mpuBanner = [[GADBannerView alloc]initWithAdSize:kGADAdSizeMediumRectangle];
-    self.mpuBanner.adUnitID = @"ca-app-pub-7079119646488414/1229378159";
+    self.mpuBanner.adUnitID = @"admob_adunit";
     self.mpuBanner.delegate = self;
     self.mpuBanner.rootViewController = self;
     [self.mpuBanner loadRequest:[GADRequest new]];
@@ -71,7 +71,7 @@
 - (IBAction)loadSmallBannerBtnPressed:(id)sender {
     [self addNewStatus:@"Small Banner Loading ..."];
     self.smallBanner = [[GADBannerView alloc]initWithAdSize:kGADAdSizeBanner];
-    self.smallBanner.adUnitID = @"ca-app-pub-7079119646488414/7876060447";
+    self.smallBanner.adUnitID = @"admob_adunit";
     self.smallBanner.delegate = self;
     self.smallBanner.rootViewController = self;
     [self.smallBanner loadRequest:[GADRequest new]];
@@ -81,13 +81,18 @@
     if (self.isMpuLoaded == YES) {
         [self addNewStatus:@"MPU requested to show"];
         [self.mpuView addSubview:self.mpuBanner];
+    } else {
+        [self addNewStatus:@"MPU not loaded"];
     }
+
 }
 
 - (IBAction)showSmallBannerBtnPressed:(id)sender {
     if (self.isSmallBannerLoaded == YES) {
         [self addNewStatus:@"Small Banner requested to show"];
         [self.smallBannerView addSubview:self.smallBanner];
+    } else {
+        [self addNewStatus:@"Small Banner not loaded"];
     }
 }
 
@@ -99,7 +104,7 @@
 }
 
 #pragma mark - AdMob Delegate
-- (void)adViewDidReceiveAd:(GADBannerView *)bannerView {
+- (void)bannerViewDidReceiveAd:(GADBannerView *)bannerView {
         if (bannerView == self.smallBanner) {
             [self addNewStatus:@"Small Banner Ad received"];
             self.isSmallBannerLoaded = YES;
@@ -109,7 +114,7 @@
         }
 }
 
-- (void)adViewWillPresentScreen:(GADBannerView *)bannerView {
+- (void)bannerViewWillPresentScreen:(GADBannerView *)bannerView {
         if (bannerView == self.smallBanner) {
             [self addNewStatus:@"Small Banner on screen"];
         } else if (bannerView == self.mpuBanner){
@@ -117,12 +122,12 @@
         }
 }
 
-- (void)adView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(GADRequestError *)error {
-        if (bannerView == self.smallBanner) {
-            [self addNewStatus:[NSString stringWithFormat:@"Small Banner Error: %@", error.description]];
-        } else if (bannerView == self.mpuBanner){
-            [self addNewStatus:[NSString stringWithFormat:@"MPU Banner Error: %@", error.description]];
-        }
+- (void)bannerView:(GADBannerView *)bannerView didFailToReceiveAdWithError:(NSError *)error {
+    if (bannerView == self.smallBanner) {
+        [self addNewStatus:[NSString stringWithFormat:@"Small Banner Error: %@", error.localizedDescription]];
+    } else if (bannerView == self.mpuBanner){
+        [self addNewStatus:[NSString stringWithFormat:@"MPU Banner Error: %@", error.localizedDescription]];
+    }
 }
 
 @end

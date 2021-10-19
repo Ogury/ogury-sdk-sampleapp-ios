@@ -61,14 +61,14 @@
 
 - (IBAction)loadMPUBtnPressed:(id)sender {
     [self addNewStatus:@"MPU Loading ..."];
-    self.mpuBanner = [[OguryAdsBanner alloc] initWithAdUnitID:@"73eb6620-b234-0138-8e13-0242ac120004_test"];
+    self.mpuBanner = [[OguryAdsBanner alloc] initWithAdUnitID:@"ogury_adunit"];
     self.mpuBanner.bannerDelegate = self;
     [self.mpuBanner loadWithSize:OguryAdsBannerSize.mpu_300x250];
 }
 
 - (IBAction)loadSmallBannerBtnPressed:(id)sender {
     [self addNewStatus:@"Small Banner Loading ..."];
-    self.smallBanner = [[OguryAdsBanner alloc] initWithAdUnitID:@"c3a1a5e0-4f39-0138-42f4-0242ac120004_test"];
+    self.smallBanner = [[OguryAdsBanner alloc] initWithAdUnitID:@"ogury_adunit"];
     self.smallBanner.bannerDelegate = self;
     [self.smallBanner loadWithSize:OguryAdsBannerSize.small_banner_320x50];
 }
@@ -78,6 +78,8 @@
         [self addNewStatus:@"MPU requested to show"];
         self.mpuBanner.frame = CGRectMake(0, 0, self.mpuView.frame.size.width, self.mpuView.frame.size.height);
         [self.mpuView addSubview:self.mpuBanner];
+    } else {
+        [self addNewStatus:@"MPU not loaded"];
     }
 }
 
@@ -86,6 +88,8 @@
         [self addNewStatus:@"Small Banner requested to show"];
         self.smallBanner.frame = CGRectMake(0, 0, self.smallBannerView.frame.size.width, self.smallBannerView.frame.size.height);
         [self.smallBannerView addSubview:self.smallBanner];
+    } else {
+        [self addNewStatus:@"Small banner not loaded"];
     }
 }
 

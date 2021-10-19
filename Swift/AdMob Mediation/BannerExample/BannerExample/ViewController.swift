@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     @IBAction func loadMPUBtnPressed(_ sender: Any) {
         self.addNewStatus("MPU Loading ...")
         mpuBanner = GADBannerView(adSize: kGADAdSizeMediumRectangle)
-        mpuBanner!.adUnitID = "ca-app-pub-7079119646488414/1229378159"
+        mpuBanner!.adUnitID = "admob_adunit"
         mpuBanner!.rootViewController = self
         mpuBanner!.delegate = self
         self.mpuBanner?.load(GADRequest())
@@ -63,33 +63,29 @@ class ViewController: UIViewController {
     @IBAction func loadSmallBannerBtnPressed(_ sender: Any) {
         self.addNewStatus("Small Banner Loading ...")
         smallBanner = GADBannerView(adSize: kGADAdSizeBanner)
-        smallBanner!.adUnitID = "ca-app-pub-7079119646488414/7876060447"
+        smallBanner!.adUnitID = "admob_adunit"
         smallBanner!.rootViewController = self
         smallBanner!.delegate = self
         self.smallBanner?.load(GADRequest())
     }
     
     @IBAction func showMPUBtnPressed(_ sender: Any) {
-        guard let mpuBanner = mpuBanner else {
-            addNewStatus("MPU not initialised")
+        guard let mpuBanner = mpuBanner, mpuLoaded else {
+            addNewStatus("MPU not loaded")
             return
         }
-        
-        if mpuLoaded == true {
-            addNewStatus("MPU requested to show")
-            mpuView.addSubview(mpuBanner)
-        }
+
+        addNewStatus("MPU requested to show")
+        mpuView.addSubview(mpuBanner)
     }
     
     @IBAction func showSmallBannerBtnPressed(_ sender: Any) {
-        guard let smallBanner = smallBanner else {
-            addNewStatus("Small Banner not initialised")
+        guard let smallBanner = smallBanner, smallBannerLoaded else {
+            addNewStatus("Small Banner not loaded")
             return
         }
-        if mpuLoaded == true {
-            addNewStatus("Small Banner requested to show")
-            smallBannerView.addSubview(smallBanner)
-        }
+        addNewStatus("Small Banner requested to show")
+        smallBannerView.addSubview(smallBanner)
     }
     
     func addNewStatus(_ status: String) {
@@ -103,7 +99,8 @@ class ViewController: UIViewController {
 }
 
 extension ViewController : GADBannerViewDelegate {
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
         if (bannerView == smallBanner) {
             addNewStatus("Small Banner received")
             smallBannerLoaded = true
@@ -111,23 +108,24 @@ extension ViewController : GADBannerViewDelegate {
             addNewStatus("MPU Banner received")
             mpuLoaded = true
         }
-        
-        
     }
-    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
+
+
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
         if (bannerView == smallBanner) {
             addNewStatus("Small Banner Presented")
         } else if (bannerView == mpuBanner){
             addNewStatus("MPU Banner Presented")
         }
     }
-    
-    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
         if (bannerView == smallBanner) {
-            self.addNewStatus("Small Banner Error: \(error.description)")
+            self.addNewStatus("Small Banner Error: \(error.localizedDescription)")
         } else if (bannerView == mpuBanner){
-            self.addNewStatus("MPU Banner Error: \(error.description)")
+            self.addNewStatus("MPU Banner Error: \(error.localizedDescription)")
         }
     }
+
 }
 

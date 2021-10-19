@@ -11,84 +11,92 @@ import OguryChoiceManager
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var statusLabel: UILabel!
-    var interstitial: GADInterstitial?
+    @IBOutlet weak var statusTextView: UITextView!
+    var interstitial: GADInterstitialAd?
     var adLoaded: Bool = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.statusLabel.text = "Choice Manager Loading..."
+        self.addNewStatus("Choice Manager Loading...")
         
-        //The setup of Ogury Choice Manager is done AppDelegate.swift file.
-        
+        //The setup of Ogury Choice Manager and Ogury Ads is done AppDelegate.swift file.
         OguryChoiceManager.shared().ask(with: self) { (error, answer) in
             if error == nil {
                 switch answer {
                 case .noAnswer: // TCF Option
-                    self.statusLabel.text = "Choice Manager No Answer"
+                    self.addNewStatus("Choice Manager No Answer")
                 case .fullApproval: // TCF Option
-                    self.statusLabel.text = "Choice Manager Full Approval"
+                    self.addNewStatus("Choice Manager Full Approval")
                 case .partialApproval: // TCF Option
-                    self.statusLabel.text = "Choice Manager Partial Approval"
+                    self.addNewStatus("Choice Manager Partial Approval")
                 case .refusal: // TCF Option
-                    self.statusLabel.text = "Choice Manager Refusal"
+                    self.addNewStatus("Choice Manager Refusal")
                 case .saleAllowed: // CCPA Option
-                    self.statusLabel.text = "Choice Manager Sale Allowed"
+                    self.addNewStatus("Choice Manager Sale Allowed")
                 case .saleDenied: // CCPA Option
-                    self.statusLabel.text = "Choice Manager Sale Denided"
+                    self.addNewStatus("Choice Manager Sale Denided")
                 default:
-                    self.statusLabel.text = "Choice Manager Unknown Option"
+                    self.addNewStatus("Choice Manager Unknown Option")
                 }
             } else {
-                self.statusLabel.text = "Choice Manager error : \(error.debugDescription)"
+                self.addNewStatus("Choice Manager error : \(error.debugDescription)")
             }
         }
     }
-
     
     @IBAction func loadAdBtnPressed(_ sender: Any) {
-        self.statusLabel.text = "Loading Ad..."
+        self.addNewStatus("Loading Ad...")
         
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-7079119646488414/4240067767")
-        guard let interstitial = interstitial else {
-            self.statusLabel.text = "Error while initialising the ad"
-            return
-        }
-        interstitial.delegate = self
-        interstitial.load(GADRequest())
+        let request = GADRequest()
+
+        GADInterstitialAd.load(withAdUnitID:"admob_adunit",request: request,
+            completionHandler: { [self] ad, error in
+                if let error = error {
+                    self.addNewStatus("Error: \(error.localizedDescription)")
+                    return
+                }
+                interstitial = ad
+                interstitial?.fullScreenContentDelegate = self
+                adLoaded = true
+                self.addNewStatus("Ad received")
+            }
+        )
     }
     
     @IBAction func showAdBtnPressed(_ sender: Any) {
-        guard let interstitial = interstitial else {
+        guard let interstitial = interstitial, adLoaded else {
+            self.addNewStatus("Ad not loaded")
             return
         }
-        if adLoaded == true {
-            self.statusLabel.text = "Ad requested to show"
-            interstitial.present(fromRootViewController: self)
+        self.addNewStatus("Ad requested to show")
+        interstitial.present(fromRootViewController: self)
+    }
+
+    func addNewStatus(_ status: String) {
+        DispatchQueue.main.async {
+            let textToLog = status + "\n"
+            self.statusTextView.textStorage.append(NSAttributedString(string: textToLog))
+            let bottom = NSMakeRange(self.statusTextView.text.count - 1, 1)
+            self.statusTextView.scrollRangeToVisible(bottom)
         }
     }
-    
+
 }
 
-extension ViewController:GADInterstitialDelegate {
-    
-    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
-        self.statusLabel.text = "Ad received"
-        self.adLoaded = true
-    }
-    
-    func interstitial(_ ad: GADInterstitial, didFailToReceiveAdWithError error: GADRequestError) {
-        self.statusLabel.text = "Error: \(error.description)"
+extension ViewController: GADFullScreenContentDelegate {
 
+    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        self.addNewStatus("Error: \(error.localizedDescription)")
     }
-    
-    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-        self.statusLabel.text = "Ad not loaded"
+
+    func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        self.addNewStatus("Ad presented")
     }
-    
-    func interstitialWillLeaveApplication(_ ad: GADInterstitial) {
-        print("interstitialWillLeaveApplication")
+
+    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        self.addNewStatus("Ad dismissed")
+        self.adLoaded = false
     }
-    
+
 }
 

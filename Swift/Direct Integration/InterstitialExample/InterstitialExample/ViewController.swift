@@ -11,13 +11,13 @@ import OguryAds
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusTextView: UITextView!
     var interstitial: OguryAdsInterstitial?
     var adLoaded: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.statusLabel.text = "Choice Manager Loading..."
+        self.addNewStatus("Choice Manager Loading...")
         
         //The setup of Ogury Choice Manager and Ogury Ads is done AppDelegate.swift file.
         
@@ -25,33 +25,33 @@ class ViewController: UIViewController {
             if error == nil {
                 switch answer {
                 case .noAnswer: // TCF Option
-                    self.statusLabel.text = "Choice Manager No Answer"
+                    self.addNewStatus("Choice Manager No Answer")
                 case .fullApproval: // TCF Option
-                    self.statusLabel.text = "Choice Manager Full Approval"
+                    self.addNewStatus("Choice Manager Full Approval")
                 case .partialApproval: // TCF Option
-                    self.statusLabel.text = "Choice Manager Partial Approval"
+                    self.addNewStatus("Choice Manager Partial Approval")
                 case .refusal: // TCF Option
-                    self.statusLabel.text = "Choice Manager Refusal"
+                    self.addNewStatus("Choice Manager Refusal")
                 case .saleAllowed: // CCPA Option
-                    self.statusLabel.text = "Choice Manager Sale Allowed"
+                    self.addNewStatus("Choice Manager Sale Allowed")
                 case .saleDenied: // CCPA Option
-                    self.statusLabel.text = "Choice Manager Sale Denided"
+                    self.addNewStatus("Choice Manager Sale Denided")
                 default:
-                    self.statusLabel.text = "Choice Manager Unknown Option"
+                    self.addNewStatus("Choice Manager Unknown Option")
                 }
             } else {
-                self.statusLabel.text = "Choice Manager error : \(error.debugDescription)"
+                self.addNewStatus("Choice Manager error : \(error.debugDescription)")
             }
         }
     }
 
     
     @IBAction func loadAdBtnPressed(_ sender: Any) {
-        self.statusLabel.text = "Loading Ad..."
+        self.addNewStatus("Loading Ad...")
         
-        interstitial = OguryAdsInterstitial.init(adUnitID: "cdab8440-4a9d-0138-0f05-0242ac120004_test")
+        interstitial = OguryAdsInterstitial.init(adUnitID: "ogury_adunitt")
         guard let interstitial = interstitial else {
-            self.statusLabel.text = "Error while initialising the ad"
+            self.addNewStatus("Error while initialising the ad")
             return
         }
         interstitial.interstitialDelegate = self
@@ -59,12 +59,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showAdBtnPressed(_ sender: Any) {
-        guard let interstitial = interstitial else {
+        guard let interstitial = interstitial, adLoaded else {
+            self.addNewStatus("Ad not loaded")
             return
         }
-        if adLoaded == true {
-            self.statusLabel.text = "Ad requested to show"
-            interstitial.showAd(in: self)
+        self.addNewStatus("Ad requested to show")
+        interstitial.showAd(in: self)
+    }
+
+    func addNewStatus(_ status: String) {
+        DispatchQueue.main.async {
+            let textToLog = status + "\n"
+            self.statusTextView.textStorage.append(NSAttributedString(string: textToLog))
+            let bottom = NSMakeRange(self.statusTextView.text.count - 1, 1)
+            self.statusTextView.scrollRangeToVisible(bottom)
         }
     }
     
@@ -73,30 +81,30 @@ class ViewController: UIViewController {
 extension ViewController:OguryAdsInterstitialDelegate {
     
     func oguryAdsInterstitialAdLoaded() {
-        self.statusLabel.text = "Ad received"
+        self.addNewStatus("Ad received")
         self.adLoaded = true
     }
     
     func oguryAdsInterstitialAdClosed() {
-        self.statusLabel.text = "Ad Closed"
+        self.addNewStatus("Ad Closed")
         self.adLoaded = false
     }
     
     func oguryAdsInterstitialAdDisplayed() {
-        self.statusLabel.text = "Ad on screen"
+        self.addNewStatus("Ad on screen")
     }
     
     func oguryAdsInterstitialAdClicked() {
-        self.statusLabel.text = "Ad Clicked"
+        self.addNewStatus("Ad Clicked")
     }
     
     func oguryAdsInterstitialAdNotAvailable() {
-        self.statusLabel.text = "Ad Not Available"
+        self.addNewStatus("Ad Not Available")
     }
     
     //For more informations about error codes please refer to our documentation at https://docs.ogury.co/
     func oguryAdsInterstitialAdError(_ errorType: OguryAdsErrorType) {
-        self.statusLabel.text = "Error: \(errorType.rawValue)"
+        self.addNewStatus("Error: \(errorType.rawValue)")
         self.adLoaded = false
     }
 }
