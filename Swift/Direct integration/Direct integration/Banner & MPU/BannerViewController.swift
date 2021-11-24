@@ -1,8 +1,8 @@
 //
-//  BannerManager.swift
+//  BannerViewController.swift
 //  Direct Integration Sample
 //
-//  Created by Fernand Peng on 09/11/2021.
+//  Copyright © 2020 Ogury Co. All rights reserved.
 //
 
 import UIKit
@@ -49,14 +49,14 @@ class BannerViewController: UIViewController {
 
     @IBAction func loadMPUBtnPressed(_ sender: Any) {
         addNewStatus("[Ad][MPU] Loading ...")
-        mpuBanner = OguryAdsBanner.init(adUnitID: ConstantKeys.mpuAdUnit)
+        mpuBanner = OguryAdsBanner(adUnitID: ConstantKeys.mpuAdUnit)
         mpuBanner!.bannerDelegate = self
         self.mpuBanner?.load(with: OguryAdsBannerSize.mpu_300x250())
     }
     
     @IBAction func loadSmallBannerBtnPressed(_ sender: Any) {
         addNewStatus("[Ad][Banner] Loading ...")
-        smallBanner = OguryAdsBanner.init(adUnitID: ConstantKeys.bannerAdUnit)
+        smallBanner = OguryAdsBanner(adUnitID: ConstantKeys.bannerAdUnit)
         smallBanner!.bannerDelegate = self
         self.smallBanner?.load(with: OguryAdsBannerSize.small_banner_320x50())
     }

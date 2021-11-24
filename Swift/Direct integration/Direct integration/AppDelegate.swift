@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Direct Integration Sample
 //
-//  Created by Fernand Peng on 09/11/2021.
+//  Copyright © 2020 Ogury Co. All rights reserved.
 //
 
 import UIKit

@@ -1,8 +1,8 @@
 //
-//  InterstitialManager.swift
+//  InterstitialViewController.swift
 //  Direct Integration Sample
 //
-//  Created by Fernand Peng on 09/11/2021.
+//  Copyright © 2020 Ogury Co. All rights reserved.
 //
 
 import UIKit
@@ -48,7 +48,7 @@ class InterstitialViewController: UIViewController {
     @IBAction func loadAdBtnPressed(_ sender: Any) {
         addNewStatus("[Ad][Interstitial] Loading ...")
 
-        interstitial = OguryAdsInterstitial.init(adUnitID: ConstantKeys.interstitialAdUnit)
+        interstitial = OguryAdsInterstitial(adUnitID: ConstantKeys.interstitialAdUnit)
         guard let interstitial = interstitial else {
             addNewStatus("[Ad][Interstitial] Init error")
             return

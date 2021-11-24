@@ -2,7 +2,7 @@
 //  OptinViewController.swift
 //  Direct Integration Sample
 //
-//  Created by Fernand Peng on 16/11/2021.
+//  Copyright © 2020 Ogury Co. All rights reserved.
 //
 
 import UIKit
@@ -47,7 +47,7 @@ class OptinViewController: UIViewController {
     @IBAction func loadAdBtnPressed(_ sender: Any) {
         addNewStatus("[Ad][Opt-in] Loading")
 
-        rewardedAd = OguryAdsOptinVideo.init(adUnitID: ConstantKeys.optinAdUnit)
+        rewardedAd = OguryAdsOptinVideo(adUnitID: ConstantKeys.optinAdUnit)
         guard let rewardedAd = rewardedAd else {
             addNewStatus("[Ad][Opt-in] Init error")
             return

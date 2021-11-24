@@ -2,7 +2,7 @@
 //  ThumbnailViewController.swift
 //  Direct Integration Sample
 //
-//  Created by Fernand Peng on 16/11/2021.
+//  Copyright © 2020 Ogury Co. All rights reserved.
 //
 
 import UIKit
@@ -47,7 +47,7 @@ class ThumbnailViewController: UIViewController {
     @IBAction func loadAdBtnPressed(_ sender: Any) {
         addNewStatus("[Ad][Thumbnail] Loading..")
 
-        thumbnail = OguryAdsThumbnailAd.init(adUnitID: ConstantKeys.thumbnailAdUnit)
+        thumbnail = OguryAdsThumbnailAd(adUnitID: ConstantKeys.thumbnailAdUnit)
         thumbnail!.thumbnailAdDelegate = self
         
         thumbnail?.setWhitelistBundleIdentifiers(["com.example.bundle","com.example.bundle2"]) // Extenal bundle where thumbnail is allowed to show
