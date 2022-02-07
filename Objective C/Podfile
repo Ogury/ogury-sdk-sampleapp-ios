@@ -1,0 +1,26 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+workspace 'Objective C sample.xcworkspace'
+
+project 'Direct integration/Direct integration'
+project 'Admob integration/Admob integration'
+
+target 'Direct integration' do
+  project 'Direct integration/Direct integration'
+  use_frameworks!
+
+  # Pods for Direct Integration
+  pod 'OgurySdk'
+end
+
+
+target 'Admob integration' do
+  project 'Admob integration/Admob integration'
+    use_frameworks!
+
+    # Pods for Admob Integration
+    pod 'OguryAds'
+    pod 'OguryChoiceManager'
+    pod 'Google-Mobile-Ads-SDK'
+end
+

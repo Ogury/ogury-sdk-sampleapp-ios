@@ -1,69 +1,35 @@
 //
 //  InterstitialViewController.swift
-//  Direct Integration Sample
+//  Direct Integration
 //
 //  Copyright © 2020 Ogury Co. All rights reserved.
 //
 
 import UIKit
-import OguryChoiceManager
 import OguryAds
 
 class InterstitialViewController: UIViewController {
     
     @IBOutlet weak var statusTextView: UITextView!
-    var interstitial: OguryAdsInterstitial?
-    
+    var interstitial: OguryInterstitialAd?
+
     override func viewDidLoad() {
-        super.viewDidLoad()
-        self.addNewStatus("[Choice Manager] Loading...")
-        
-        //The setup of Ogury Choice Manager and Ogury Ads is done AppDelegate.swift file.
-        
-        OguryChoiceManager.shared().ask(with: self) { (error, answer) in
-            if error == nil {
-                switch answer {
-                case .noAnswer: // TCF Option
-                    self.addNewStatus("[Choice Manager] No Answer")
-                case .fullApproval: // TCF Option
-                    self.addNewStatus("[Choice Manager] Full Approval")
-                case .partialApproval: // TCF Option
-                    self.addNewStatus("[Choice Manager] Partial Approval")
-                case .refusal: // TCF Option
-                    self.addNewStatus("[Choice Manager] Refusal")
-                case .saleAllowed: // CCPA Option
-                    self.addNewStatus("[Choice Manager] Sale Allowed")
-                case .saleDenied: // CCPA Option
-                    self.addNewStatus("[Choice Manager] Sale Denided")
-                default:
-                    self.addNewStatus("[Choice Manager] Unknown Option")
-                }
-            } else {
-                self.addNewStatus("[Choice Manager] error : \(error.debugDescription)")
-            }
-        }
+        interstitial = OguryInterstitialAd(adUnitId: ConstantKeys.interstitialAdUnit)
+        interstitial?.delegate = self
     }
 
-    
     @IBAction func loadAdBtnPressed(_ sender: Any) {
-        addNewStatus("[Ad][Interstitial] Loading ...")
-
-        interstitial = OguryAdsInterstitial(adUnitID: ConstantKeys.interstitialAdUnit)
-        guard let interstitial = interstitial else {
-            addNewStatus("[Ad][Interstitial] Init error")
-            return
-        }
-        interstitial.interstitialDelegate = self
-        interstitial.load()
+        addNewStatus("[OguryAds][Interstitial] Loading ...")
+        interstitial?.load()
     }
     
     @IBAction func showAdBtnPressed(_ sender: Any) {
         guard let interstitial = interstitial else {
-            addNewStatus("[Ad][Interstitial] Not loaded")
+            addNewStatus("[OguryAds][Interstitial] Not loaded")
             return
         }
-        addNewStatus("[Ad][Interstitial] Requested to show")
-        interstitial.showAd(in: self)
+        addNewStatus("[OguryAds][Interstitial] Requested to show")
+        interstitial.show(in: self)
     }
 
     func addNewStatus(_ status: String) {
@@ -77,34 +43,30 @@ class InterstitialViewController: UIViewController {
     
 }
 
-extension InterstitialViewController:OguryAdsInterstitialDelegate {
-    
-    func oguryAdsInterstitialAdLoaded() {
-        addNewStatus("[Ad][Interstitial] Ad loaded")
-    }
-    
-    func oguryAdsInterstitialAdClosed() {
-        addNewStatus("[Ad][Interstitial] Ad closed")
-    }
-    
-    func oguryAdsInterstitialAdDisplayed() {
-        addNewStatus("[Ad][Interstitial] Ad displayed")
-    }
-    
-    func oguryAdsInterstitialAdClicked() {
-        addNewStatus("[Ad][Interstitial] Ad clicked")
-    }
-    
-    func oguryAdsInterstitialAdNotAvailable() {
-        addNewStatus("[Ad][Interstitial] Ad not available")
+extension InterstitialViewController: OguryInterstitialAdDelegate {
+    func didLoad(_ interstitial: OguryInterstitialAd) {
+        addNewStatus("[OguryAds][Interstitial] Ad loaded")
     }
 
-    func oguryAdsInterstitialAdOnAdImpression() {
-        addNewStatus("[Ad][Interstitial] Ad on impressions")
+    
+    func didDisplay(_ interstitial: OguryInterstitialAd) {
+        addNewStatus("[OguryAds][Interstitial] Ad displayed")
     }
-    //For more informations about error codes please refer to our documentation at https://docs.ogury.co/
-    func oguryAdsInterstitialAdError(_ errorType: OguryAdsErrorType) {
-        addNewStatus("[Ad][Interstitial] Ad error: \(errorType.rawValue)")
+
+    func didClick(_ interstitial: OguryInterstitialAd) {
+        addNewStatus("[OguryAds][Interstitial] Ad clicked")
+    }
+
+    func didClose(_ interstitial: OguryInterstitialAd) {
+        addNewStatus("[OguryAds][Interstitial] Ad closed")
+    }
+
+    func didTriggerImpressionOguryInterstitialAd(_ interstitial: OguryInterstitialAd) {
+        addNewStatus("[OguryAds][Interstitial] Ad impression")
+    }
+
+    func didFailOguryInterstitialAdWithError(_ error: OguryError, for interstitial: OguryInterstitialAd) {
+        addNewStatus("[OguryAds][Interstitial] Ad error: \(error.code)")
         addNewStatus("For more informations about error codes please refer to our documentation at https://docs.ogury.co/")
     }
 }

@@ -1,68 +1,36 @@
 //
 //  OptinViewController.swift
-//  Direct Integration Sample
+//  Direct Integration
 //
 //  Copyright © 2020 Ogury Co. All rights reserved.
 //
 
 import UIKit
-import OguryChoiceManager
 import OguryAds
 
 class OptinViewController: UIViewController {
     
     @IBOutlet weak var statusTextView: UITextView!
-    var rewardedAd: OguryAdsOptinVideo?
+    var rewardedAd: OguryOptinVideoAd?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.addNewStatus("[Choice Manager] Loading...")
-        
-        //The setup of Ogury Choice Manager and Ogury Ads is done AppDelegate.swift file.
 
-        OguryChoiceManager.shared().ask(with: self) { (error, answer) in
-            if error == nil {
-                switch answer {
-                case .noAnswer: // TCF Option
-                    self.addNewStatus("[Choice Manager] No Answer")
-                case .fullApproval: // TCF Option
-                    self.addNewStatus("[Choice Manager] Full Approval")
-                case .partialApproval: // TCF Option
-                    self.addNewStatus("[Choice Manager] Partial Approval")
-                case .refusal: // TCF Option
-                    self.addNewStatus("[Choice Manager] Refusal")
-                case .saleAllowed: // CCPA Option
-                    self.addNewStatus("[Choice Manager] Sale Allowed")
-                case .saleDenied: // CCPA Option
-                    self.addNewStatus("[Choice Manager] Sale Denided")
-                default:
-                    self.addNewStatus("[Choice Manager] Unknown Option")
-                }
-            } else {
-                self.addNewStatus("[Choice Manager] error : \(error.debugDescription)")
-            }
-        }
+    override func viewDidLoad() {
+        rewardedAd = OguryOptinVideoAd(adUnitId: ConstantKeys.optinAdUnit)
+        rewardedAd?.delegate = self
     }
     
     @IBAction func loadAdBtnPressed(_ sender: Any) {
-        addNewStatus("[Ad][Opt-in] Loading")
-
-        rewardedAd = OguryAdsOptinVideo(adUnitID: ConstantKeys.optinAdUnit)
-        guard let rewardedAd = rewardedAd else {
-            addNewStatus("[Ad][Opt-in] Init error")
-            return
-        }
-        rewardedAd.optInVideoDelegate = self
-        rewardedAd.load()
+        addNewStatus("[OguryAds][Opt-in] Loading")
+        rewardedAd?.load()
     }
     
     @IBAction func showAdBtnPressed(_ sender: Any) {
         guard let rewardedAd = rewardedAd else {
-            addNewStatus("[Ad][Opt-in] Ad not loaded")
+            addNewStatus("[OguryAds][Opt-in] Ad not loaded")
             return
         }
-        addNewStatus("[Ad][Opt-in] Requested to show")
-        rewardedAd.showAd(in: self)
+        addNewStatus("[OguryAds][Opt-in] Requested to show")
+        rewardedAd.show(in: self)
     }
 
     func addNewStatus(_ status: String) {
@@ -76,39 +44,38 @@ class OptinViewController: UIViewController {
 
 }
 
-extension OptinViewController: OguryAdsOptinVideoDelegate {
-    
-    func oguryAdsOptinVideoAdLoaded() {
-        addNewStatus("[Ad][Opt-in] Ad loaded")
-    }
-    
-    func oguryAdsOptinVideoAdClosed() {
-        addNewStatus("[Ad][Opt-in] Ad closed")
-    }
-    
-    func oguryAdsOptinVideoAdClicked() {
-        addNewStatus("[Ad][Opt-in] Ad clicked")
-    }
-    
-    func oguryAdsOptinVideoAdDisplayed() {
-        addNewStatus("[Ad][Opt-in] Ad displayed")
-    }
-    
-    func oguryAdsOptinVideoAdNotAvailable() {
-        addNewStatus("[Ad][Opt-in] Ad not available")
+extension OptinViewController: OguryOptinVideoAdDelegate {
+
+    func didLoad(_ optinVideo: OguryOptinVideoAd) {
+        addNewStatus("[OguryAds][Opt-in] Ad loaded")
     }
 
-    func oguryAdsOptinVideoAdOnAdImpression() {
-        addNewStatus("[Ad][Opt-in] Ad on impressions")
+    func didDisplay(_ optinVideo: OguryOptinVideoAd) {
+        addNewStatus("[OguryAds][Opt-in] Ad displayed")
     }
 
-    func oguryAdsOptinVideoAdRewarded(_ item: OGARewardItem!) {
-        addNewStatus("[Ad][Opt-in] Ad reward received - name: \(item.rewardName), value: \(item.rewardValue)")
+    func didClick(_ optinVideo: OguryOptinVideoAd) {
+        addNewStatus("[OguryAds][Opt-in] Ad clicked")
     }
-    
-    //For more informations about error codes please refer to our documentation at https://docs.ogury.co/
-    func oguryAdsOptinVideoAdError(_ errorType: OguryAdsErrorType) {
-        addNewStatus("[Ad][Opt-in] Ad error: \(errorType.rawValue)")
+
+    func didClose(_ optinVideo: OguryOptinVideoAd) {
+        addNewStatus("[OguryAds][Opt-in] Ad closed")
+    }
+
+    func didTriggerImpressionOguryOptinVideoAd(_ optinVideo: OguryOptinVideoAd) {
+        addNewStatus("[OguryAds][Opt-in] Ad impression")
+    }
+
+    func didRewardOguryOptinVideoAd(with item: OGARewardItem, for optinVideo: OguryOptinVideoAd) {
+        addNewStatus("""
+                     [OguryAds][Opt-in] Ad reward received:
+                       Name: \(item.rewardName)
+                       Value: \(item.rewardValue)
+                     """)
+    }
+
+    func didFailOguryOptinVideoAdWithError(_ error: OguryError, for optinVideo: OguryOptinVideoAd) {
+        addNewStatus("[OguryAds][Opt-in] Ad error: \(error.code)")
         addNewStatus("For more informations about error codes please refer to our documentation at https://docs.ogury.co/")
     }
 }

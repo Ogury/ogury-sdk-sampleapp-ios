@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  Direct Integration Sample
+//  Direct Integration
 //
 //  Copyright © 2020 Ogury Co. All rights reserved.
 //

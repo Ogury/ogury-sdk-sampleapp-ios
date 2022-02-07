@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F9F2E61E9890829E14297DB /* Pods_Direct_integration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03BA27C01E9A3DD2FFB69735 /* Pods_Direct_integration.framework */; };
+		23D049FA3A8C154D3A1C44F8 /* Pods_Direct_integration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972844BBA3F26FCAB14A0395 /* Pods_Direct_integration.framework */; };
 		58302CD72747AD7E0085107C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58302CC02747AD7E0085107C /* Constants.swift */; };
 		58302CD82747AD7E0085107C /* Thumbnail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58302CC22747AD7E0085107C /* Thumbnail.storyboard */; };
 		58302CD92747AD7E0085107C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58302CC32747AD7E0085107C /* AppDelegate.swift */; };
@@ -26,9 +26,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		03BA27C01E9A3DD2FFB69735 /* Pods_Direct_integration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Direct_integration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3153E17E58953F7C3C0B7301 /* Pods-Direct integration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Direct integration.debug.xcconfig"; path = "Target Support Files/Pods-Direct integration/Pods-Direct integration.debug.xcconfig"; sourceTree = "<group>"; };
-		58302CA62747ACE80085107C /* Direct integration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Direct integration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58302CC02747AD7E0085107C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		58302CC22747AD7E0085107C /* Thumbnail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Thumbnail.storyboard; sourceTree = "<group>"; };
 		58302CC32747AD7E0085107C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,7 +42,10 @@
 		58302CD42747AD7E0085107C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58302CD52747AD7E0085107C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58302CD62747AD7E0085107C /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F3FAEF8159EF9B5F9584575D /* Pods-Direct integration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Direct integration.release.xcconfig"; path = "Target Support Files/Pods-Direct integration/Pods-Direct integration.release.xcconfig"; sourceTree = "<group>"; };
+		58FB1AA32762035500C4EAD2 /* Direct integration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Direct integration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68DE2544B852E6A32AE177FA /* Pods-Direct integration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Direct integration.debug.xcconfig"; path = "Target Support Files/Pods-Direct integration/Pods-Direct integration.debug.xcconfig"; sourceTree = "<group>"; };
+		972844BBA3F26FCAB14A0395 /* Pods_Direct_integration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Direct_integration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99D8F6178FFA79AE9838AA42 /* Pods-Direct integration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Direct integration.release.xcconfig"; path = "Target Support Files/Pods-Direct integration/Pods-Direct integration.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,44 +53,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F9F2E61E9890829E14297DB /* Pods_Direct_integration.framework in Frameworks */,
+				23D049FA3A8C154D3A1C44F8 /* Pods_Direct_integration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2BA16D3811EE6472097B57BB /* Pods */ = {
+		4E1B5AD3255B2A48B880DA5B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3153E17E58953F7C3C0B7301 /* Pods-Direct integration.debug.xcconfig */,
-				F3FAEF8159EF9B5F9584575D /* Pods-Direct integration.release.xcconfig */,
+				972844BBA3F26FCAB14A0395 /* Pods_Direct_integration.framework */,
 			);
-			path = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		58302C9D2747ACE80085107C = {
 			isa = PBXGroup;
 			children = (
 				58302CBF2747AD7E0085107C /* Direct integration */,
-				58302CA72747ACE80085107C /* Products */,
-				2BA16D3811EE6472097B57BB /* Pods */,
-				C01B20FAAE9C4D8AEEC13ADE /* Frameworks */,
+				58FB1AA32762035500C4EAD2 /* Direct integration.app */,
+				9A18268AC4E878FBDA92E143 /* Pods */,
+				4E1B5AD3255B2A48B880DA5B /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		58302CA72747ACE80085107C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				58302CA62747ACE80085107C /* Direct integration.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		58302CBF2747AD7E0085107C /* Direct integration */ = {
 			isa = PBXGroup;
 			children = (
-				58302CD62747AD7E0085107C /* SceneDelegate.swift */,
 				58302CC32747AD7E0085107C /* AppDelegate.swift */,
 				58302CC02747AD7E0085107C /* Constants.swift */,
 				58302CC12747AD7E0085107C /* Thumbnail */,
@@ -100,6 +90,7 @@
 				58302CC52747AD7E0085107C /* Home */,
 				58302CD32747AD7E0085107C /* LaunchScreen.storyboard */,
 				58302CCF2747AD7E0085107C /* Assets.xcassets */,
+				58302CD62747AD7E0085107C /* SceneDelegate.swift */,
 				58302CD52747AD7E0085107C /* Info.plist */,
 			);
 			path = "Direct integration";
@@ -135,8 +126,8 @@
 		58302CCC2747AD7E0085107C /* Banner & MPU */ = {
 			isa = PBXGroup;
 			children = (
-				58302CCD2747AD7E0085107C /* BannerViewController.swift */,
 				58302CCE2747AD7E0085107C /* Banner.storyboard */,
+				58302CCD2747AD7E0085107C /* BannerViewController.swift */,
 			);
 			path = "Banner & MPU";
 			sourceTree = "<group>";
@@ -144,18 +135,20 @@
 		58302CD02747AD7E0085107C /* Opt-in */ = {
 			isa = PBXGroup;
 			children = (
-				58302CD12747AD7E0085107C /* OptinViewController.swift */,
 				58302CD22747AD7E0085107C /* Optin.storyboard */,
+				58302CD12747AD7E0085107C /* OptinViewController.swift */,
 			);
 			path = "Opt-in";
 			sourceTree = "<group>";
 		};
-		C01B20FAAE9C4D8AEEC13ADE /* Frameworks */ = {
+		9A18268AC4E878FBDA92E143 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				03BA27C01E9A3DD2FFB69735 /* Pods_Direct_integration.framework */,
+				68DE2544B852E6A32AE177FA /* Pods-Direct integration.debug.xcconfig */,
+				99D8F6178FFA79AE9838AA42 /* Pods-Direct integration.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
+			path = ../Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,11 +158,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58302CBA2747ACEA0085107C /* Build configuration list for PBXNativeTarget "Direct integration" */;
 			buildPhases = (
-				3EB0068B5297398CE5F65FDB /* [CP] Check Pods Manifest.lock */,
+				C5E255E9FBC10329AE5C49E5 /* [CP] Check Pods Manifest.lock */,
 				58302CA22747ACE80085107C /* Sources */,
 				58302CA32747ACE80085107C /* Frameworks */,
 				58302CA42747ACE80085107C /* Resources */,
-				F85B2848064F02AA5347C4BD /* [CP] Embed Pods Frameworks */,
+				51BBF16B05A7B9E1B6683663 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,7 +170,7 @@
 			);
 			name = "Direct integration";
 			productName = "Direct integration";
-			productReference = 58302CA62747ACE80085107C /* Direct integration.app */;
+			productReference = 58FB1AA32762035500C4EAD2 /* Direct integration.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -204,7 +197,7 @@
 				Base,
 			);
 			mainGroup = 58302C9D2747ACE80085107C;
-			productRefGroup = 58302CA72747ACE80085107C /* Products */;
+			productRefGroup = 58302C9D2747ACE80085107C;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -231,7 +224,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3EB0068B5297398CE5F65FDB /* [CP] Check Pods Manifest.lock */ = {
+		51BBF16B05A7B9E1B6683663 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Direct integration/Pods-Direct integration-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Direct integration/Pods-Direct integration-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Direct integration/Pods-Direct integration-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5E255E9FBC10329AE5C49E5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -251,23 +261,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F85B2848064F02AA5347C4BD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Direct integration/Pods-Direct integration-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Direct integration/Pods-Direct integration-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Direct integration/Pods-Direct integration-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -345,6 +338,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -361,7 +355,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -406,6 +400,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -416,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -428,13 +423,14 @@
 		};
 		58302CBB2747ACEA0085107C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3153E17E58953F7C3C0B7301 /* Pods-Direct integration.debug.xcconfig */;
+			baseConfigurationReference = 68DE2544B852E6A32AE177FA /* Pods-Direct integration.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W7JZNL3R6G;
+				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Direct integration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -449,6 +445,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ogury.ios.sampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -457,13 +454,14 @@
 		};
 		58302CBC2747ACEA0085107C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3FAEF8159EF9B5F9584575D /* Pods-Direct integration.release.xcconfig */;
+			baseConfigurationReference = 99D8F6178FFA79AE9838AA42 /* Pods-Direct integration.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W7JZNL3R6G;
+				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Direct integration/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -478,6 +476,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ogury.ios.sampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

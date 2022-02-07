@@ -1,6 +1,0 @@
-framework module Pods_Direct_integration {
-  umbrella header "Pods-Direct integration-umbrella.h"
-
-  export *
-  module * { export * }
-}

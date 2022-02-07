@@ -1,13 +1,12 @@
 //
 //  AppDelegate.swift
-//  Direct Integration Sample
+//  Direct Integration
 //
 //  Copyright © 2020 Ogury Co. All rights reserved.
 //
 
 import UIKit
-import OguryAds
-import OguryChoiceManager
+import OgurySdk
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,16 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         //SDK setup
-        OguryChoiceManager.shared().setup(withAssetKey: ConstantKeys.assetKey)
-        OguryAds.shared().setup(withAssetKey: ConstantKeys.assetKey, andCompletionHandler: { error in
-            if let error = error {
-                print("[Ads][SetUp]Error :\(error.localizedDescription)")
-            } else {
-                print("[Ads][SetUp] success")
-            }
-        })
+        let configuration = OguryConfigurationBuilder(assetKey: ConstantKeys.assetKey).build()
+        Ogury.start(with: configuration)
 
         return true
     }
