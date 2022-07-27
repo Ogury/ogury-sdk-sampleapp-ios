@@ -20,9 +20,6 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         consentLabel.isHidden = true
     }
 
-
-
-
     @IBAction func askUserConsent(_ sender: Any) {
         /*
          * The ask method must be called at each launch of your application
@@ -32,8 +29,6 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
             self.handleConsentCallBack(answer: answer, error: error)
         }
     }
-
-    
 
     @IBAction func editUserConsent(_ sender: Any) {
         OguryChoiceManager.shared().edit(with: self) { (error, answer) in
