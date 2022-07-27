@@ -42,8 +42,6 @@
     }];
 }
 
-
-
 - (void)handleConsentCallBack:(OguryChoiceManagerAnswer)answer error:(NSError* _Nullable)error {
     if (!error) {
         switch (answer) {
