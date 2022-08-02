@@ -20,8 +20,8 @@ target 'Admob integration' do
     use_frameworks!
 
     # Pods for Admob Integration
-    pod 'OguryAds'
-    pod 'OguryChoiceManager'
-    pod 'Google-Mobile-Ads-SDK'
+    pod 'OguryMediationGoogleMobileAds', '~> 2.1.0.0'
+    pod 'Google-Mobile-Ads-SDK', '~> 9'
+
 end
 

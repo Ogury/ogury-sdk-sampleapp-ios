@@ -53,6 +53,9 @@ PODS:
   - OguryChoiceManager (4.0.0):
     - OguryCore (= 1.0.0)
   - OguryCore (1.0.0)
+  - OguryMediationGoogleMobileAds (2.1.0.0):
+    - Google-Mobile-Ads-SDK (~> 9)
+    - OgurySdk (~> 2)
   - OgurySdk (2.0.0):
     - OguryCore (= 1.0.0)
     - OgurySdk/OguryAds (= 2.0.0)
@@ -66,9 +69,8 @@ PODS:
   - PromisesObjC (2.0.0)
 
 DEPENDENCIES:
-  - Google-Mobile-Ads-SDK
-  - OguryAds
-  - OguryChoiceManager
+  - Google-Mobile-Ads-SDK (~> 9)
+  - OguryMediationGoogleMobileAds (~> 2.1.0.0)
   - OgurySdk (~> 2.0.0)
 
 SPEC REPOS:
@@ -78,11 +80,13 @@ SPEC REPOS:
     - GoogleUserMessagingPlatform
     - GoogleUtilities
     - nanopb
+    - OgurySdk
+    - PromisesObjC
+  trunk:
     - OguryAds
     - OguryChoiceManager
     - OguryCore
-    - OgurySdk
-    - PromisesObjC
+    - OguryMediationGoogleMobileAds
 
 SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: d6ff7e6a7e46a76eb91af814d16d040197606afc
@@ -93,9 +97,10 @@ SPEC CHECKSUMS:
   OguryAds: eccb9294b4928e9a07fea79c80723501aaa45053
   OguryChoiceManager: 78847ee0c2ee3dd23496b95358316a23bf7e4537
   OguryCore: d352c1f785acd6c9b2651fb18635cbe74c958cb1
+  OguryMediationGoogleMobileAds: f9be3eab0d98662205ec86805bb6978c3186fa08
   OgurySdk: d8f8f1161e2adea0341458a564e2c6d7f285131f
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: ba9fd68659fb396e873e1fab13b085c988593df9
+PODFILE CHECKSUM: 7420dba58bb78db2c2737bdbc6f8913e5f416389
 
 COCOAPODS: 1.11.3

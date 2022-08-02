@@ -68,7 +68,7 @@ extension InterstitialViewController: GADFullScreenContentDelegate {
         addNewStatus("[Admob][Interstitial] Ad error: \(error.localizedDescription)")
     }
 
-    func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         addNewStatus("[Admob][Interstitial] Ad presented")
     }
 

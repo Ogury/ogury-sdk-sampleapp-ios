@@ -62,7 +62,7 @@ extension OptinViewController: GADFullScreenContentDelegate {
         addNewStatus("[Admob][Opt-in] Ad error: \(error.localizedDescription)")
     }
 
-    func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         addNewStatus("[Admob][Opt-in] Ad presented")
     }
 

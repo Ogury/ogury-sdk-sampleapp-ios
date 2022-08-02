@@ -24,7 +24,6 @@
 		58FA5CC627A02E4300FF334A /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FA5CB727A02E4200FF334A /* Constants.m */; };
 		58FA5CC727A02E4300FF334A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FA5CB927A02E4200FF334A /* HomeViewController.m */; };
 		58FA5CC827A02E4300FF334A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58FA5CBA27A02E4200FF334A /* Home.storyboard */; };
-		58FA5CCA27A0325700FF334A /* OguryMediationGoogleMobileAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FA5CC927A0325700FF334A /* OguryMediationGoogleMobileAds.xcframework */; };
 		A097E76C2A3DD733D32A6511 /* Pods_Admob_integration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 567C4E0F331AA6AB6F208064 /* Pods_Admob_integration.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +57,6 @@
 		58FA5CBA27A02E4200FF334A /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		58FA5CBB27A02E4200FF334A /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		58FA5CBC27A02E4300FF334A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		58FA5CC927A0325700FF334A /* OguryMediationGoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = OguryMediationGoogleMobileAds.xcframework; sourceTree = "<group>"; };
 		7A777BCAE6167D418983EF2B /* Pods-Admob integration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Admob integration.release.xcconfig"; path = "Target Support Files/Pods-Admob integration/Pods-Admob integration.release.xcconfig"; sourceTree = "<group>"; };
 		AF9FDCB0894A71B98B435F86 /* Pods-Admob integration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Admob integration.debug.xcconfig"; path = "Target Support Files/Pods-Admob integration/Pods-Admob integration.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,7 +67,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A097E76C2A3DD733D32A6511 /* Pods_Admob_integration.framework in Frameworks */,
-				58FA5CCA27A0325700FF334A /* OguryMediationGoogleMobileAds.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +112,6 @@
 		584E5E03278595A400681D38 /* Admob integration */ = {
 			isa = PBXGroup;
 			children = (
-				58FA5CC927A0325700FF334A /* OguryMediationGoogleMobileAds.xcframework */,
 				584E5E04278595A400681D38 /* AppDelegate.h */,
 				584E5E05278595A400681D38 /* AppDelegate.m */,
 				58FA5CBC27A02E4300FF334A /* Constants.h */,

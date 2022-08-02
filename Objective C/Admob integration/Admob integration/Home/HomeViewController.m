@@ -8,15 +8,16 @@
 #import <UIKit/UIKit.h>
 #import <OguryChoiceManager/OguryChoiceManager.h>
 #import <GoogleMobileAds/GoogleMobileAds.h>
-#import <OguryAds/OguryAds.h>
+#import <OgurySdk/Ogury.h>
 #import "HomeViewController.h"
 #import "Constants.h"
 
 
-@interface HomeViewController()<OguryAdsInterstitialDelegate>
+@interface HomeViewController()
 
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *consentLabel;
+
 - (void)handleConsentCallBack:(OguryChoiceManagerAnswer)answer error:(NSError* _Nullable)error;
 
 @end
@@ -26,9 +27,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _versionLabel.text = [NSString stringWithFormat:@"OguryAds versions:%@\
-                                                    \nChoice Manager version:%@\
-                                                    \nGoogleMobileAds version:%s", OguryAds.shared.sdkVersion, OguryChoiceManager.sharedManager.consentSDKVersion,
+    _versionLabel.text = [NSString stringWithFormat:@"OgurySdk versions:%@\
+                                                    \nGoogleMobileAds version:%s",
+                          Ogury.getSdkVersion,
                           GoogleMobileAdsVersionString];
     [_consentLabel setHidden:true];
 }

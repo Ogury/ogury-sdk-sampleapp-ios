@@ -6,8 +6,7 @@
 //
 
 #import "AppDelegate.h"
-#import <OguryAds/OguryAds.h>
-#import <OguryChoiceManager/OguryChoiceManager.h>
+#import <OgurySdk/Ogury.h>
 #import "Constants.h"
 
 @interface AppDelegate ()
@@ -19,8 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //OgurySdk set up
-    [OguryChoiceManager.sharedManager setupWithAssetKey: Ogury_asset_key];
-    [OguryAds.shared setupWithAssetKey: Ogury_asset_key];
+    OguryConfigurationBuilder *configurationBuilder = [[OguryConfigurationBuilder alloc] initWithAssetKey:@"OGY-XXXXXXXXXXXX"];
+
+    [Ogury startWithConfiguration:[configurationBuilder build]];
     return YES;
 }
 

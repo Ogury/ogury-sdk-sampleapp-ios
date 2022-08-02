@@ -77,8 +77,8 @@
 }
 
 /// Tells the delegate that the ad presented full screen content.
-- (void)adDidPresentFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
-    [self addNewStatus: @"[Admob][Optin] Ad did present full screen content."];
+- (void)adWillPresentFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
+    [self addNewStatus: @"[Admob][Optin] Ad will present full screen content."];
 }
 
 /// Tells the delegate that the ad dismissed full screen content.

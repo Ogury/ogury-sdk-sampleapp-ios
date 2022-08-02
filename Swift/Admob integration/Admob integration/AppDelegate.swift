@@ -6,26 +6,16 @@
 //
 
 import UIKit
-import OguryAds
-import OguryChoiceManager
+import OgurySdk
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         //SDK setup
-        OguryChoiceManager.shared().setup(withAssetKey: ConstantKeys.assetKey)
-        OguryAds.shared().setup(withAssetKey: ConstantKeys.assetKey, andCompletionHandler: { error in
-            if let error = error {
-                print("[OguryAds][SetUp]Error :\(error.localizedDescription)")
-            } else {
-                print("[OguryAds][SetUp] success")
-            }
-        })
-
+        let configuration = OguryConfigurationBuilder(assetKey: ConstantKeys.assetKey).build()
+        Ogury.start(with: configuration)
         return true
     }
 

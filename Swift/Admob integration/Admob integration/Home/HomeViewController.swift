@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import OguryAds
+import OgurySdk
 import OguryChoiceManager
 import GoogleMobileAds
 
@@ -18,10 +18,8 @@ class HomeViewController: UIViewController {
     // The setup of Ogury Choice Manager and Ogury Ads is done AppDelegate.swift file.
     override func viewDidLoad() {
         versionLabel.text = """
-                                OguryAds version:\(OguryAds.shared().sdkVersion ?? "Error") \
-                                \nChoice Manager version: \(OguryChoiceManager.shared().consentSDKVersion())\
+                                OgurySdk version:\(Ogury.getSdkVersion()) \
                                 \nGoogleMobileAds versions: \(GADMobileAds.sharedInstance().sdkVersion)
-
                                 """
         consentLabel.isHidden = true
     }
