@@ -13,6 +13,12 @@ class ThumbnailViewController: UIViewController {
     @IBOutlet weak var statusTextView: UITextView!
     var thumbnail: GADBannerView?
 
+    /*
+        It's recommended to set up OgurySdk earlier to accelerate the load & impression process,
+            in this sample the set up is done in AppDelegate.swift
+        On needs, replace the bundle id in the project settings and the ConstantKeys.AdUnits by your Google ad unit
+     */
+
     override func viewDidLoad() {
         let adSizeThumbnail = GADAdSizeFromCGSize(CGSize(width: 180  , height: 180)) //The size of the thumbnail
         thumbnail = GADBannerView(adSize: adSizeThumbnail)

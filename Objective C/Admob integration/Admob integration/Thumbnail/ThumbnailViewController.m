@@ -22,6 +22,12 @@
 
 @implementation ThumbnailViewController
 
+/*
+    It's recommended to set up OgurySdk earlier to accelerate the load & impression process,
+        in this sample the set up is done in AppDelegate.m
+    On needs, replace the bundle id in the project settings and the ad unit by your Google ad unit
+ */
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -34,8 +40,8 @@
     self.thumbnail.delegate = self;
     self.thumbnail.rootViewController = self;
     
-    GADRequest * thumbnailRequest = [GADRequest new];
-    GADCustomEventExtras * thumbnailExtras = [GADCustomEventExtras new];
+    GADRequest *thumbnailRequest = [GADRequest new];
+    GADCustomEventExtras *thumbnailExtras = [GADCustomEventExtras new];
     NSArray<NSString*>* whitelist = @[@"com.example.bundle",@"com.example.bundle"]; // Extenal Bundles where thumbnail is allowed to show
     NSArray<NSString*>* blacklist = @[NSStringFromClass([BlackListViewController class])]; // Blacklisted ViewController where thumbnail is not allowed to show
     NSDictionary * extrasParams =@{@"x_margin": @20, @"y_margin": @20, @"rect_corner": @"bottom_right", @"whitelist": whitelist, @"blacklist": blacklist};
@@ -54,7 +60,7 @@
 }
 
 - (void)addNewStatus:(NSString *)status {
-    NSString * statusLog = [status stringByAppendingString:@"\n"];
+    NSString *statusLog = [status stringByAppendingString:@"\n"];
     self.statusTextView.text = [self.statusTextView.text stringByAppendingString:statusLog];
     NSRange bottom = NSMakeRange(self.statusTextView.text.length-1, 1);
     [self.statusTextView scrollRangeToVisible:bottom];

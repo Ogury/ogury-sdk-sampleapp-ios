@@ -20,6 +20,12 @@
 
 @implementation InterstitialViewController
 
+/*
+    It's recommended to set up OgurySdk earlier to accelerate the load & impression process,
+        in this sample the set up is done in AppDelegate.m
+    On needs, replace the bundle id in the project settings and the ad unit by your Google ad unit
+ */
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -54,7 +60,7 @@
 }
 
 - (void)addNewStatus:(NSString *)status {
-    NSString * statusLog = [status stringByAppendingString:@"\n"];
+    NSString *statusLog = [status stringByAppendingString:@"\n"];
     self.statusTextView.text = [self.statusTextView.text stringByAppendingString:statusLog];
     NSRange bottom = NSMakeRange(self.statusTextView.text.length-1, 1);
     [self.statusTextView scrollRangeToVisible:bottom];

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rfa-wQ-PK7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rfa-wQ-PK7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,13 +12,13 @@
         <!--Banner View Controller-->
         <scene sceneID="RuS-lq-vmZ">
             <objects>
-                <viewController id="Rfa-wQ-PK7" customClass="BannerViewController" customModule="Direct_Integration_Sample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Rfa-wQ-PK7" customClass="BannerViewController" customModule="Admob_integration" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tqr-D6-WV3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2tp-g3-JEI">
-                                <rect key="frame" x="71" y="44" width="333" height="245.5"/>
+                                <rect key="frame" x="71" y="44" width="333" height="405"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -33,7 +34,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IcJ-bQ-DZJ" userLabel="MPU Buttons View">
-                                <rect key="frame" x="57" y="297.5" width="120" height="80"/>
+                                <rect key="frame" x="57" y="457" width="120" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BoU-5j-5do">
                                         <rect key="frame" x="2" y="2" width="116" height="28"/>
@@ -65,7 +66,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BI5-Q7-aWM" userLabel="Small Banner Buttons">
-                                <rect key="frame" x="235" y="297.5" width="122" height="80"/>
+                                <rect key="frame" x="235" y="457" width="122" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2J9-PB-C8e">
                                         <rect key="frame" x="2" y="2" width="118" height="28"/>
@@ -97,7 +98,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xuv-QJ-s00" userLabel="MPU View">
-                                <rect key="frame" x="57" y="377.5" width="300" height="250"/>
+                                <rect key="frame" x="57" y="537" width="300" height="250"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VY8-ha-DEQ">
                                         <rect key="frame" x="102.5" y="104.5" width="95.5" height="41"/>
@@ -117,7 +118,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qf4-KS-sOv" userLabel="SmallBanner View">
-                                <rect key="frame" x="47" y="655.5" width="320" height="50"/>
+                                <rect key="frame" x="47" y="812" width="320" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Small Banner - 320x50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d24-CL-wSq">
                                         <rect key="frame" x="72.5" y="14.5" width="175.5" height="21"/>
@@ -144,13 +145,12 @@
                             <constraint firstItem="IcJ-bQ-DZJ" firstAttribute="leading" secondItem="xuv-QJ-s00" secondAttribute="leading" id="MRO-8b-RKt"/>
                             <constraint firstItem="okU-lN-3SV" firstAttribute="trailing" secondItem="2tp-g3-JEI" secondAttribute="trailing" constant="10" id="PZ4-pz-5LD"/>
                             <constraint firstItem="2tp-g3-JEI" firstAttribute="top" secondItem="okU-lN-3SV" secondAttribute="top" id="Xw8-4V-749"/>
-                            <constraint firstItem="okU-lN-3SV" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qf4-KS-sOv" secondAttribute="bottom" constant="1" id="a9y-Fz-JPd"/>
+                            <constraint firstItem="okU-lN-3SV" firstAttribute="bottom" secondItem="qf4-KS-sOv" secondAttribute="bottom" id="a9y-Fz-JPd"/>
                             <constraint firstItem="xuv-QJ-s00" firstAttribute="centerX" secondItem="tqr-D6-WV3" secondAttribute="centerX" id="eqh-2t-3qh"/>
                             <constraint firstItem="xuv-QJ-s00" firstAttribute="top" secondItem="BI5-Q7-aWM" secondAttribute="bottom" id="fnk-l5-OFO"/>
                             <constraint firstItem="xuv-QJ-s00" firstAttribute="top" secondItem="IcJ-bQ-DZJ" secondAttribute="bottom" id="jDs-Kc-TUn"/>
-                            <constraint firstItem="2tp-g3-JEI" firstAttribute="height" secondItem="okU-lN-3SV" secondAttribute="height" multiplier="0.3" id="rrU-a0-IgS"/>
                             <constraint firstItem="BI5-Q7-aWM" firstAttribute="trailing" secondItem="xuv-QJ-s00" secondAttribute="trailing" id="sfw-QC-sRH"/>
-                            <constraint firstItem="qf4-KS-sOv" firstAttribute="top" secondItem="xuv-QJ-s00" secondAttribute="bottom" constant="28" id="ud9-oO-Bty"/>
+                            <constraint firstItem="qf4-KS-sOv" firstAttribute="top" secondItem="xuv-QJ-s00" secondAttribute="bottom" constant="25" id="ud9-oO-Bty"/>
                             <constraint firstItem="qf4-KS-sOv" firstAttribute="centerX" secondItem="tqr-D6-WV3" secondAttribute="centerX" id="vlr-Od-TIt"/>
                             <constraint firstItem="2tp-g3-JEI" firstAttribute="leading" secondItem="nGk-iB-g4z" secondAttribute="trailing" constant="2.5" id="wEf-pS-r4B"/>
                         </constraints>

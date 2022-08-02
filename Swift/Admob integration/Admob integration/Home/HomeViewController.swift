@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var consentLabel: UILabel!
 
-    //The setup of Ogury Choice Manager and Ogury Ads is done AppDelegate.swift file.
+    // The setup of Ogury Choice Manager and Ogury Ads is done AppDelegate.swift file.
     override func viewDidLoad() {
         versionLabel.text = """
                                 OguryAds version:\(OguryAds.shared().sdkVersion ?? "Error") \

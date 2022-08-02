@@ -13,6 +13,12 @@ class OptinViewController: UIViewController {
     @IBOutlet weak var statusTextView: UITextView!
     var rewardedAd: GADRewardedAd?
     
+    /*
+        It's recommended to set up OgurySdk earlier to accelerate the load & impression process,
+            in this sample the set up is done in AppDelegate.swift
+        On needs, replace the bundle id in the project settings and the ConstantKeys.AdUnits by your Google ad unit
+     */
+
     @IBAction func loadAdBtnPressed(_ sender: Any) {
         addNewStatus("[Admob][Opt-in] Loading")
         let request = GADRequest()

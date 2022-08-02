@@ -18,6 +18,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //OgurySdk set up
     [OguryChoiceManager.sharedManager setupWithAssetKey: Ogury_asset_key];
     [OguryAds.shared setupWithAssetKey: Ogury_asset_key];
     return YES;

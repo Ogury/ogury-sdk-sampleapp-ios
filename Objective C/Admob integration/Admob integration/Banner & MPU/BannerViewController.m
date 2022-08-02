@@ -25,6 +25,12 @@
 
 @implementation BannerViewController
 
+/*
+    It's recommended to set up OgurySdk earlier to accelerate the load & impression process,
+        in this sample the set up is done in AppDelegate.m
+    On needs, replace the bundle id in the project settings and the ad unit by your Google ad unit
+ */
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.mpuBanner = [[GADBannerView alloc]initWithAdSize:GADAdSizeMediumRectangle];

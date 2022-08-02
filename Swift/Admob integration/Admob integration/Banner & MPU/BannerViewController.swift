@@ -17,6 +17,12 @@ class BannerViewController: UIViewController {
     var smallBanner: GADBannerView?
     var mpuBanner: GADBannerView?
 
+    /*
+        It's recommended to set up OgurySdk earlier to accelerate the load & impression process,
+            in this sample the set up is done in AppDelegate.swift
+        On needs, replace the bundle id in the project settings and the ConstantKeys.AdUnits by your Google ad unit
+     */
+
     override func viewDidLoad() {
         mpuBanner = GADBannerView(adSize: GADAdSizeMediumRectangle)
         mpuBanner!.adUnitID = ConstantKeys.mpuAdUnit

@@ -13,6 +13,11 @@ class OptinViewController: UIViewController {
     @IBOutlet weak var statusTextView: UITextView!
     var rewardedAd: OguryOptinVideoAd?
     
+    /*
+        Don't forget to do the set up of OgurySdk,
+            in this sample the set up is done in AppDelegate.swift
+        On needs, replace the bundle id in the project settings and the ConstantKeys.AdUnits by your Ogury ad unit
+     */
 
     override func viewDidLoad() {
         rewardedAd = OguryOptinVideoAd(adUnitId: ConstantKeys.optinAdUnit)
