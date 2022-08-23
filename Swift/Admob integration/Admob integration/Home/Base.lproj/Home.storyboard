@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Km7-8l-4oM">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="7E3-xu-dat">
+            <objects>
+                <navigationController id="Km7-8l-4oM" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qGt-IX-od5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="1cV-rp-aWA" kind="relationship" relationship="rootViewController" id="o6m-JJ-xup"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d0e-an-EO5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4806" y="-838"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="ohf-M8-tUK">
+            <objects>
+                <viewController id="1cV-rp-aWA" customClass="HomeViewController" customModule="Admob_integration" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="27e-T0-k7i">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hwh-Zn-uaR">
+                                <rect key="frame" x="80" y="31" width="160" height="357"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="og-logo" translatesAutoresizingMaskIntoConstraints="NO" id="IcD-jB-aeS">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="87"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ads:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X51-bt-yND">
+                                        <rect key="frame" x="0.0" y="92" width="160" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Rw7-ZU-2xX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DBs-QO-8NN">
+                                        <rect key="frame" x="0.0" y="117" width="160" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="b56-sy-LRo">
+                                                <rect key="frame" x="0.0" y="0.0" width="68.5" height="60"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" imagePadding="1" titleAlignment="center">
+                                                    <imageReference key="image" image="rectangle.portrait.bottomhalf.inset.filled" catalog="system" symbolScale="medium"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25" scale="large" weight="regular"/>
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Banner">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="system"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="fQw-im-JCY" kind="show" id="GXp-S5-a3o"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="XkS-yh-OiW">
+                                                <rect key="frame" x="73.5" y="0.0" width="86.5" height="60"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" imagePadding="1" titleAlignment="center">
+                                                    <imageReference key="image" image="rectangle.portrait.inset.filled" catalog="system" symbolScale="medium"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25" scale="large" weight="regular"/>
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Interstitial">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="system"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="xQ4-Ip-ICG" kind="show" id="4aZ-Oz-WUb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="x5h-ez-lvL"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="se4-RR-dIE">
+                                        <rect key="frame" x="0.0" y="182" width="160" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="K40-mQ-xWw">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="60"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" imagePadding="1" titleAlignment="center">
+                                                    <imageReference key="image" image="play.rectangle.fill" catalog="system" symbolScale="medium"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25" scale="large" weight="regular"/>
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Opt-in">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="system"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="Qxv-ll-6xY" kind="show" id="avr-pb-qDT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="QJl-U0-wfP">
+                                                <rect key="frame" x="70" y="0.0" width="90" height="60"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" imagePadding="1" titleAlignment="center">
+                                                    <imageReference key="image" image="rectangle.portrait.topleading.inset.filled" catalog="system" symbolScale="medium"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25" scale="large" weight="regular"/>
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Thumbnail">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="system"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="mzM-aF-oEh" kind="show" id="hO4-At-N8j"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="5zQ-Om-DPD"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CM:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHY-iU-Jsh" userLabel="Ads: 1">
+                                        <rect key="frame" x="0.0" y="247" width="160" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="sgF-C5-5jJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LMp-xQ-iDA">
+                                        <rect key="frame" x="0.0" y="272" width="160" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uue-xv-7ti">
+                                                <rect key="frame" x="0.0" y="0.0" width="73.5" height="60"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" imagePadding="1" titleAlignment="center">
+                                                    <imageReference key="image" image="wallet.pass.fill" catalog="system" symbolScale="medium"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25" scale="large" weight="regular"/>
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Ask">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="system"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="askUserConsent:" destination="1cV-rp-aWA" eventType="touchUpInside" id="77I-7S-aiH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bdb-v1-aPE">
+                                                <rect key="frame" x="78.5" y="0.0" width="81.5" height="60"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" imagePadding="1" titleAlignment="center">
+                                                    <imageReference key="image" image="slider.horizontal.3" catalog="system" symbolScale="medium"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25" scale="large" weight="regular"/>
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="Edit">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="system"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="editUserConsent:" destination="1cV-rp-aWA" eventType="touchUpInside" id="qAa-rr-xbe"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="vbF-Mq-0rw"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cosent:  OK" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpB-c1-ATR" userLabel="Consent status">
+                                        <rect key="frame" x="0.0" y="337" width="160" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="U6g-sl-M1I"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSQ-9w-V7B">
+                                <rect key="frame" x="10" y="443.5" width="33" height="31.5"/>
+                                <string key="text">Label
+Label</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1VJ-Pq-LVd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LSQ-9w-V7B" firstAttribute="leading" secondItem="1VJ-Pq-LVd" secondAttribute="leading" constant="10" id="2Gr-gL-VHI"/>
+                            <constraint firstItem="IcD-jB-aeS" firstAttribute="height" secondItem="1VJ-Pq-LVd" secondAttribute="height" multiplier="0.2" id="HGJ-Re-aKd"/>
+                            <constraint firstItem="hwh-Zn-uaR" firstAttribute="centerY" secondItem="1VJ-Pq-LVd" secondAttribute="centerY" multiplier="0.8" id="Jz8-gL-kdu"/>
+                            <constraint firstItem="1VJ-Pq-LVd" firstAttribute="bottom" secondItem="LSQ-9w-V7B" secondAttribute="bottom" constant="5" id="Ql3-eh-1wm"/>
+                            <constraint firstItem="hwh-Zn-uaR" firstAttribute="centerX" secondItem="1VJ-Pq-LVd" secondAttribute="centerX" id="ViI-PU-Xsm"/>
+                            <constraint firstItem="hwh-Zn-uaR" firstAttribute="width" secondItem="1VJ-Pq-LVd" secondAttribute="width" multiplier="0.5" id="jQG-ew-9oC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ol3-xj-xOR"/>
+                    <connections>
+                        <outlet property="consentLabel" destination="BpB-c1-ATR" id="XKe-nn-aI2"/>
+                        <outlet property="versionLabel" destination="LSQ-9w-V7B" id="0IU-Kv-xFd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r3r-gv-uQx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3788.4057971014495" y="-838.39285714285711"/>
+        </scene>
+        <!--Banner-->
+        <scene sceneID="GFd-D1-E8o">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Banner" id="fQw-im-JCY" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="zBZ-o5-dSm"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hcg-0i-Rpg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3011" y="-948"/>
+        </scene>
+        <!--Interstitial-->
+        <scene sceneID="fEC-UV-dy4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Interstitial" id="xQ4-Ip-ICG" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="NaY-Hv-0cq"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LW9-Na-TVr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2996" y="-838"/>
+        </scene>
+        <!--Optin-->
+        <scene sceneID="gvd-eZ-ke4">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Optin" id="Qxv-ll-6xY" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="eTu-pM-qdP"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1SN-d3-joh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3012" y="-758"/>
+        </scene>
+        <!--Thumbnail-->
+        <scene sceneID="HkW-UO-OSo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Thumbnail" id="mzM-aF-oEh" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="exv-Po-hnh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YDQ-aJ-znu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3012" y="-679"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="og-logo" width="1050" height="548"/>
+        <image name="play.rectangle.fill" catalog="system" width="128" height="93"/>
+        <image name="rectangle.portrait.bottomhalf.inset.filled" catalog="system" width="115" height="128"/>
+        <image name="rectangle.portrait.inset.filled" catalog="system" width="115" height="128"/>
+        <image name="rectangle.portrait.topleading.inset.filled" catalog="system" width="115" height="128"/>
+        <image name="slider.horizontal.3" catalog="system" width="128" height="100"/>
+        <image name="wallet.pass.fill" catalog="system" width="115" height="128"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

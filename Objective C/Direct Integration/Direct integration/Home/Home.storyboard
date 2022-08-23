@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FuE-xH-Vdp">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="DuM-pb-qw3">
+            <objects>
+                <navigationController id="FuE-xH-Vdp" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="soS-Tk-NO6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ibo-EG-rfh" kind="relationship" relationship="rootViewController" id="JWL-zd-NKe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GXT-DZ-RLu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4806" y="-838"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="RSO-Sa-x72">
+            <objects>
+                <viewController id="Ibo-EG-rfh" customClass="HomeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tps-Mr-ZVg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="t66-5B-IeU">
+                                <rect key="frame" x="83" y="151.5" width="248" height="457"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="og-logo" translatesAutoresizingMaskIntoConstraints="NO" id="dnA-RS-Bmq">
+                                        <rect key="frame" x="0.0" y="0.0" width="248" height="155"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ads:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvj-rl-dxl">
+                                        <rect key="frame" x="0.0" y="162" width="248" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="6jn-u0-aue"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qIX-RI-yqK">
+                                        <rect key="frame" x="0.0" y="199" width="248" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahi-hz-iyz">
+                                                <rect key="frame" x="0.0" y="0.0" width="124" height="60"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="Banner" imagePadding="10">
+                                                    <imageReference key="image" image="rectangle.portrait.bottomhalf.inset.filled" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30" scale="medium" weight="regular"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="86z-Ps-PaJ" kind="show" id="mZo-t2-bpm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lg8-tx-XNN">
+                                                <rect key="frame" x="124" y="0.0" width="124" height="60"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="Interstitial" imagePadding="10">
+                                                    <imageReference key="image" image="rectangle.portrait.inset.filled" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30" scale="medium" weight="regular"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="GVS-GD-ifS" kind="show" id="SCs-iy-bqH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="DrY-Il-4Bw"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="B8y-kz-x86">
+                                        <rect key="frame" x="0.0" y="266" width="248" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5I-me-daE">
+                                                <rect key="frame" x="0.0" y="0.0" width="124" height="60"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="Opt-in" imagePadding="10">
+                                                    <imageReference key="image" image="play.rectangle.fill" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30" scale="medium" weight="regular"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="MFq-1Y-k1i" kind="show" id="3Xa-LJ-fwY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4C-F2-Cda">
+                                                <rect key="frame" x="124" y="0.0" width="124" height="60"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="Thumbnail" imagePadding="10">
+                                                    <imageReference key="image" image="rectangle.portrait.topleading.inset.filled" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30" scale="medium" weight="regular"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="qs3-Yd-Ynn" kind="show" id="bkm-QM-VT0"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="gUx-uY-hVE"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CM:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOm-1E-k8s" userLabel="Ads: 1">
+                                        <rect key="frame" x="0.0" y="333" width="248" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="gud-ad-Ge7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZnX-Op-i1H">
+                                        <rect key="frame" x="0.0" y="370" width="248" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQh-Ei-McY">
+                                                <rect key="frame" x="0.0" y="0.0" width="124" height="60"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="Ask" imagePadding="10">
+                                                    <imageReference key="image" image="wallet.pass.fill" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30" scale="medium" weight="regular"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="askUserConsent:" destination="Ibo-EG-rfh" eventType="touchUpInside" id="iTW-jj-dZr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Di3-hI-Kau">
+                                                <rect key="frame" x="124" y="0.0" width="124" height="60"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="Edit" imagePadding="10">
+                                                    <imageReference key="image" image="slider.horizontal.3" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30" scale="medium" weight="regular"/>
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="editUserConsent:" destination="Ibo-EG-rfh" eventType="touchUpInside" id="SzO-Xr-lhA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="g9m-JE-nl9"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cosent:  OK" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWz-aI-7cb" userLabel="Consent status">
+                                        <rect key="frame" x="0.0" y="437" width="248" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Niv-HD-rL2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93C-Cn-3n6">
+                                <rect key="frame" x="10" y="825.5" width="33" height="31.5"/>
+                                <string key="text">Label
+Label</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bfe-Yn-cJW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="93C-Cn-3n6" firstAttribute="leading" secondItem="Bfe-Yn-cJW" secondAttribute="leading" constant="10" id="6rk-yD-njE"/>
+                            <constraint firstItem="dnA-RS-Bmq" firstAttribute="height" secondItem="Bfe-Yn-cJW" secondAttribute="height" multiplier="0.2" id="NPU-uE-WGT"/>
+                            <constraint firstItem="t66-5B-IeU" firstAttribute="centerY" secondItem="Bfe-Yn-cJW" secondAttribute="centerY" multiplier="0.8" id="Nen-NL-dk9"/>
+                            <constraint firstItem="t66-5B-IeU" firstAttribute="width" secondItem="Bfe-Yn-cJW" secondAttribute="width" multiplier="0.6" id="QzE-ai-buD"/>
+                            <constraint firstItem="t66-5B-IeU" firstAttribute="centerX" secondItem="Bfe-Yn-cJW" secondAttribute="centerX" id="jxh-lk-HYC"/>
+                            <constraint firstItem="Bfe-Yn-cJW" firstAttribute="bottom" secondItem="93C-Cn-3n6" secondAttribute="bottom" constant="5" id="lzt-qi-GNx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="nFN-y3-hVC"/>
+                    <connections>
+                        <outlet property="consentLabel" destination="TWz-aI-7cb" id="vNS-ca-vR2"/>
+                        <outlet property="versionLabel" destination="93C-Cn-3n6" id="obm-vv-Yau"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VQZ-jx-qKX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3788.4057971014495" y="-838.39285714285711"/>
+        </scene>
+        <!--Banner-->
+        <scene sceneID="gn4-Ee-a9L">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Banner" id="86z-Ps-PaJ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="kYl-hb-3W6"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mnF-HB-Zes" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3011" y="-948"/>
+        </scene>
+        <!--Interstitial-->
+        <scene sceneID="T6p-pR-d3j">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Interstitial" id="GVS-GD-ifS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="YQS-0K-C3R"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GzS-iS-Ith" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2996" y="-838"/>
+        </scene>
+        <!--Optin-->
+        <scene sceneID="7Zz-RZ-hWe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Optin" id="MFq-1Y-k1i" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="qno-fw-WK7"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hih-gI-Xqf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3012" y="-758"/>
+        </scene>
+        <!--Thumbnail-->
+        <scene sceneID="cx6-sZ-C72">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Thumbnail" id="qs3-Yd-Ynn" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Qs5-ra-reA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2P-Wb-1Ke" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3012" y="-679"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="og-logo" width="1050" height="548"/>
+        <image name="play.rectangle.fill" catalog="system" width="128" height="93"/>
+        <image name="rectangle.portrait.bottomhalf.inset.filled" catalog="system" width="115" height="128"/>
+        <image name="rectangle.portrait.inset.filled" catalog="system" width="115" height="128"/>
+        <image name="rectangle.portrait.topleading.inset.filled" catalog="system" width="115" height="128"/>
+        <image name="slider.horizontal.3" catalog="system" width="128" height="100"/>
+        <image name="wallet.pass.fill" catalog="system" width="115" height="128"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

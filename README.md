@@ -4,32 +4,43 @@ Here you can find integration samples for Ogury Ads and Ogury Choice Manager SDK
 
 ## Available Sample Apps
 Direct Integration:
-- [x] Interstitial-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/Direct%20Integration/InterstitialExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/Direct%20Integration/InterstitialExample)
-- [x] Opt-In Video-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/Direct%20Integration/OptInVideoExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/Direct%20Integration/OptInVideoExample)
-- [x] Thumbnail-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/Direct%20Integration/ThumbnailExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/Direct%20Integration/ThumbnailExample)
-- [x] Banner-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/Direct%20Integration/BannerExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/Direct%20Integration/BannerExample)
+- [x] Interstitial
+- [x] Opt-In Video
+- [x] Thumbnail
+- [x] Banner & MPU
 
 Google AdMob Integration:
-- [x] Interstitial-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/AdMob%20Mediation/InterstitialExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/AdMob%20Mediation/InterstitialExample)
-- [x] Opt-In Video-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/AdMob%20Mediation/OptInVideoExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/AdMob%20Mediation/OptInVideoExample)
-- [x] Thumbnail-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/AdMob%20Mediation/ThumbnailExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/AdMob%20Mediation/ThumbnailExample)
-- [x] Banner-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/AdMob%20Mediation/BannerExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/AdMob%20Mediation/BannerExample)
+- [x] Interstitial
+- [x] Opt-In Video
+- [x] Thumbnail
+- [x] Banner
 
-MoPub Integration:
-- [x] Interstitial-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/MoPub%20Mediation/InterstitialExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/MoPub%20Mediation/InterstitialExample)
-- [x] Opt-In Video-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/MoPub%20Mediation/OptInVideoExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/MoPub%20Mediation/OptInVideoExample)
-- [x] Thumbnail-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/MoPub%20Mediation/ThumbnailExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/MoPub%20Mediation/ThumbnailExample)
-- [x] Banner-[Swift](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Swift/MoPub%20Mediation/BannerExample)|[Objective C](https://github.com/Ogury/ogury-sdk-sampleapp-ios/tree/master/Objective%20C/MoPub%20Mediation/BannerExample)
+
 ## Requirements
-- iOS 10.0+
-- Xcode 11+
+- iOS 15.0+
+- Xcode 13+
 
 ## Installation
-[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website.
-Before running the project you have to install the cocoapods dependecy to the project by running bellow command using terminal in root folder of desired Sample App  
+
+1. [CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website.
+ Before running the project you have to install the cocoapods dependecy to the project by running bellow command using terminal in root folder of desired Sample App (Swift or Objective C)
+
 ```bash
 pod install
 ```
+
+
+2. In your project workspace, choose the corresponding integration sample schema
+
+<img src="images/changeSchema.png"  width="400">
+
+
+3. (Optional) Use your own keys/ad units
+
+    - Replace the bundle identifler in your project target
+    - Replace constants inside the Constants.swift or Constant.m file
+
+
 ## Documentation
 For a complete documentation for Ogury Choice Manager and each type of ad please visit [https://docs.ogury.co](https://docs.ogury.co)
 
